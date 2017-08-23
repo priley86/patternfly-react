@@ -75,8 +75,8 @@
     "prepublish": "npm run build",
     "test": "npm run lint && jest",
     "test:watch": "jest --watchAll",
-    "storybook": "start-storybook -c storybook -p 6006",
-    "build-storybook": "build-storybook -c storybook -o .out",
+    "storybook": "start-storybook -c storybook -s ./public -p 6006",
+    "build-storybook": "build-storybook -c storybook -s ./public -o .out",
     "storybook:deploy": "storybook-to-ghpages",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
