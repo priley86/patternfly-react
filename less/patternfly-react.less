@@ -1,3 +1,31 @@
 /**
   PatternFly React Stylesheets
 */
+
+.wizard-pf-header {
+  background-color: #f5f5f5;
+  border-bottom: none;
+  padding: 10px 18px;
+}
+.wizard-pf-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+.wizard-pf-footer {
+  padding: 14px 15px 17px;
+  text-align: right;
+  & .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0;
+  }
+  & > .btn {
+    padding-left: 10px;
+    padding-right: 10px;
+    & > .fa-angle-left {
+      margin-right: 5px;
+    }
+    & > .fa-angle-right {
+      margin-left: 5px;
+    }
+  }
+}

@@ -23,3 +23,4 @@ export {
 export {
   default as ToastNotificationList
 } from './ToastNotification/ToastNotificationList'
+export { default as Wizard } from './Wizard/Wizard'
