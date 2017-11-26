@@ -20,11 +20,7 @@ Navbar.propTypes = {
  * NavbarHeader Component for Patternfly React
  */
 export const NavbarHeader = props => {
-  return (
-    <div className="navbar-header">
-      {props.children}
-    </div>
-  )
+  return <div className="navbar-header">{props.children}</div>
 }
 NavbarHeader.propTypes = {
   /** children nodes  */
@@ -64,11 +60,7 @@ export const NavbarToggle = () => {
  * NavbarCollapse Component for Patternfly React
  */
 export const NavbarCollapse = props => {
-  return (
-    <div className="collapse navbar-collapse">
-      {props.children}
-    </div>
-  )
+  return <div className="collapse navbar-collapse">{props.children}</div>
 }
 NavbarCollapse.propTypes = {
   /** children nodes  */

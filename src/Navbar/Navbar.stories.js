@@ -35,7 +35,7 @@ stories.addDecorator(
   })
 )
 
-stories.addWithInfo('Navbar', '', () =>
+stories.addWithInfo('Navbar', '', () => (
   <div>
     <Navbar className="navbar navbar-default navbar-pf">
       <NavbarHeader>
@@ -93,4 +93,4 @@ stories.addWithInfo('Navbar', '', () =>
     </Navbar>
     <br />
   </div>
-)
+))

@@ -38,6 +38,7 @@
     "commitizen": "^2.9.6",
     "css-loader": "^0.28.7",
     "cz-conventional-changelog": "^2.0.0",
+    "enzyme": "^3.2.0",
     "eslint": "^3.19.0",
     "eslint-config-prettier": "^2.6.0",
     "eslint-config-standard": "^10.2.1",
@@ -54,9 +55,9 @@
     "less-loader": "^4.0.5",
     "patternfly": "^3.27.4",
     "prettier": "^1.7.4",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-test-renderer": "^16.0.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-test-renderer": "^15.6.2",
     "semantic-release": "^6.3.6",
     "style-loader": "^0.19.0"
   },
@@ -79,6 +80,14 @@
     "build-storybook": "build-storybook -c storybook -s ./public -o .out",
     "storybook:deploy": "storybook-to-ghpages",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/lib/"
+    ],
+    "setupFiles": [
+      "raf/polyfill"
+    ]
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"

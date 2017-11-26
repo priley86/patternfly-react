@@ -194,7 +194,7 @@ stories.addWithInfo('Tabs', '', () => {
   )
 })
 
-stories.addWithInfo('Patternfly Tabs', '', () =>
+stories.addWithInfo('Patternfly Tabs', '', () => (
   <div>
     <Tabs pfStyle activeKey="1" onSelect={action('onSelect')}>
       <Tab eventKey="1" href="/home">
@@ -274,4 +274,4 @@ stories.addWithInfo('Patternfly Tabs', '', () =>
     </Tabs>
     <br />
   </div>
-)
+))
