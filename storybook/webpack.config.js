@@ -12,13 +12,24 @@ module.exports = {
           path.resolve(__dirname, './'),
         ],
       },
-      // Less
+      // Sass
       {
-        test: /\.less$/,
-        loaders: ['style-loader', 'css-loader', 'less-loader'],
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
         include: [
-          path.resolve(__dirname, '../less'),
+          path.resolve(__dirname, '../sass'),
           path.resolve(__dirname, '../src'),
+          path.resolve(__dirname, '../node_modules'),
+          path.resolve(__dirname, '../node_modules/patternfly/dist/sass/'),
+          path.resolve(
+            __dirname,
+            '../node_modules/patternfly/dist/sass/patternfly',
+          ),
+          path.resolve(
+            __dirname,
+            '../node_modules/patternfly/dist/sass/patternfly/dependencies',
+          ),
+          path.resolve(__dirname, '../node_modules/bootstrap-sass'),
           path.resolve(__dirname, './'),
         ],
       },
