@@ -1,7 +1,7 @@
 /**
   PatternFly React Storybook Included Stylesheets
 */
-@import 'patternfly.scss';
+@import 'patternfly';
 
 /**
   Third Party / Dependency LESS imports here
@@ -10,4 +10,4 @@
 /**
   Patternfly React Specific Extensions
 */
-@import '../../sass/patternfly-react.scss';
+@import 'patternfly-react';

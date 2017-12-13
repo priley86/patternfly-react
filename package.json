@@ -52,7 +52,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^19.0.2",
     "node-sass": "^4.7.2",
-    "patternfly": "^3.31.2-beta",
+    "patternfly": "^3.31.0",
     "prettier": "^1.7.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -63,7 +63,7 @@
     "webpack": "^3.9.1"
   },
   "peerDependencies": {
-    "patternfly": "^3.31.2-beta",
+    "patternfly": "^3.31.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.2 || ^16.0.0",
     "react-dom": "^15.6.2 || ^16.0.0"

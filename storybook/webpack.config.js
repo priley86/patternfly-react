@@ -15,22 +15,25 @@ module.exports = {
       // Sass
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
-        include: [
-          path.resolve(__dirname, '../sass'),
-          path.resolve(__dirname, '../src'),
-          path.resolve(__dirname, '../node_modules'),
-          path.resolve(__dirname, '../node_modules/patternfly/dist/sass/'),
-          path.resolve(
-            __dirname,
-            '../node_modules/patternfly/dist/sass/patternfly',
-          ),
-          path.resolve(
-            __dirname,
-            '../node_modules/patternfly/dist/sass/patternfly/dependencies',
-          ),
-          path.resolve(__dirname, '../node_modules/bootstrap-sass'),
-          path.resolve(__dirname, './'),
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [
+                path.resolve(__dirname, '../sass'),
+                path.resolve(
+                  __dirname,
+                  '../node_modules/patternfly/node_modules/bootstrap-sass/assets/stylesheets'
+                ),
+                path.resolve(
+                  __dirname,
+                  '../node_modules/patternfly/node_modules/font-awesome-sass/assets/stylesheets'
+                ),
+              ],
+            },
+          },
         ],
       },
       // Images
