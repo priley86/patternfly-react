@@ -1,0 +1,44 @@
+.filter-pf {
+  .filter-pf-category-select {
+    display: flex;
+  }
+  .filter-pf-category-select-value {
+    border-left-width: 0;
+  }
+  .filter-pf-category-item {
+    margin-bottom: 5px;
+  }
+  .filter-pf-category-label {
+    font-weight: 700;
+    margin-right: 5px;
+    padding: 5px 0 6px 5px;
+  }
+  .filter-pf-fields .form-group {
+    width: 275px;
+  }
+  .filter-pf-select {
+    .dropdown.btn-group {
+      width: 100%;
+    }
+    .dropdown-menu {
+      min-width: 100%;
+    }
+    .caret {
+      margin-top: -5px;
+      position: absolute;
+      top: 50%;
+      right: 12px;
+    }
+  }
+  .filter-pf-select-dropdown {
+    background-color: $color-pf-white;
+    background-image: none;
+    color: $color-pf-black-500;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    padding-right: 25px;
+    text-align: left;
+    width: 100%;
+  }
+}
