@@ -5,7 +5,6 @@ import {
   Row,
   Filter,
   FilterTypeSelector,
-  FilterValueSelector,
   FilterCategorySelector,
   FilterCategoryValueSelector
 } from '../../../index';
@@ -192,7 +191,7 @@ export class MockFilterExample extends React.Component {
 
     if (currentFilterType.filterType === 'select') {
       return (
-        <FilterValueSelector
+        <Filter.ValueSelector
           filterValues={currentFilterType.filterValues}
           currentValue={currentValue}
           onFilterValueSelected={this.filterValueSelected}
@@ -275,7 +274,6 @@ import {
   Row,
   Filter,
   FilterTypeSelector,
-  FilterValueSelector,
   FilterCategorySelector,
   FilterCategoryValueSelector,
 } from 'patternfly-react';
@@ -465,7 +463,7 @@ export class MockFilterExample extends React.Component {
 
     if (currentFilterType.filterType === 'select') {
       return (
-        <FilterValueSelector
+        <Filter.ValueSelector
           filterValues={currentFilterType.filterValues}
           currentValue={currentValue}
           onFilterValueSelected={this.filterValueSelected}

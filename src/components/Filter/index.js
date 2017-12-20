@@ -4,6 +4,9 @@ import FilterValueSelector from './FilterValueSelector';
 import FilterCategorySelector from './FilterCategorySelector';
 import FilterCategoryValueSelector from './FilterCategoryValueSelector';
 
+Filter.ValueSelector = FilterValueSelector;
+// ...
+
 export {
   Filter,
   FilterTypeSelector,

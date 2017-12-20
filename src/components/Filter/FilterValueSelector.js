@@ -5,93 +5,67 @@ import { MenuItem } from '../MenuItem';
 import { bindMethods } from '../../common/helpers';
 import cx from 'classnames';
 
-class FilterValueSelector extends React.Component {
-  constructor() {
-    super();
-    bindMethods(this, ['selectFilterValue']);
-  }
+const FilterValueSelector = ({
+  className,
+  id,
+  filterValues,
+  currentValue,
+  placeholder,
+  onFilterValueSelected,
+  ...props
+}) => {
+  const classes = cx('filter-pf-select', className);
 
-  selectFilterValue(filterValue) {
-    const { onFilterValueSelected } = this.props;
-
-    onFilterValueSelected && onFilterValueSelected(filterValue);
-  }
-
-  renderPlaceHolder() {
-    const { placeholder } = this.props;
-
-    if (!placeholder) {
-      return null;
+  if (placeholder || (filterValues && filterValues.length > 1)) {
+    let title;
+    if (currentValue) {
+      title = currentValue.title || currentValue;
+    } else {
+      title = placeholder || filterValues[0].title || filterValues[0];
     }
+
+    let menuId = 'filterCategoryMenu';
+    menuId += id ? '_' + id : '';
 
     return (
-      <MenuItem
-        title={placeholder}
-        key="Placeholder"
-        onSelect={() => this.selectFilterValue()}
-      >
-        {placeholder}
-      </MenuItem>
-    );
-  }
-
-  renderSelectMenuItems() {
-    const { filterValues, currentValue } = this.props;
-
-    return filterValues.map((item, index) => {
-      let classes = {
-        selected: item === currentValue
-      };
-      return (
-        <MenuItem
-          className={classes}
-          key={item.id || index}
-          onSelect={() => this.selectFilterValue(item)}
+      <div className={classes}>
+        <DropdownButton
+          title={title}
+          id={menuId}
+          className="filter-pf-select-dropdown"
         >
-          {item.title || item}
-        </MenuItem>
-      );
-    });
+          {placeholder && (
+            <MenuItem
+              title={placeholder}
+              key="Placeholder"
+              onSelect={onFilterValueSelected}
+            >
+              {placeholder}
+            </MenuItem>
+          )}
+          {filterValues.map((item, index) => {
+            let classes = {
+              selected: item === currentValue
+            };
+            return (
+              <MenuItem
+                className={classes}
+                key={item.id || index}
+                onSelect={() =>
+                  onFilterValueSelected && onFilterValueSelected(item)
+                }
+              >
+                {item.title || item}
+              </MenuItem>
+            );
+          })}
+        </DropdownButton>
+      </div>
+    );
+  } else {
+    return null;
   }
-
-  render() {
-    const {
-      className,
-      id,
-      filterValues,
-      currentValue,
-      placeholder
-    } = this.props;
-    let classes = cx('filter-pf-select', className);
-
-    if (placeholder || (filterValues && filterValues.length > 1)) {
-      let title;
-      if (currentValue) {
-        title = currentValue.title || currentValue;
-      } else {
-        title = placeholder || filterValues[0].title || filterValues[0];
-      }
-
-      let menuId = 'filterCategoryMenu';
-      menuId += id ? '_' + id : '';
-
-      return (
-        <div className={classes}>
-          <DropdownButton
-            title={title}
-            id={menuId}
-            className="filter-pf-select-dropdown"
-          >
-            {this.renderPlaceHolder()}
-            {this.renderSelectMenuItems()}
-          </DropdownButton>
-        </div>
-      );
-    } else {
-      return null;
-    }
-  }
-}
+};
 
 FilterValueSelector.propTypes = {
   /** Additional css classes */
