@@ -1,11 +1,12 @@
 import React from 'react';
+import { bindMethods } from '../../../common/helpers';
 import { Sort, Toolbar } from '../../../index';
 
-const bindMethods = (context, methods) => {
-  methods.forEach(method => {
-    context[method] = context[method].bind(context);
-  });
-};
+// const bindMethods = (context, methods) => {
+//   methods.forEach(method => {
+//     context[method] = context[method].bind(context);
+//   });
+// };
 
 export const mockSortFields = [
   {
@@ -79,9 +80,9 @@ export class MockSortExample extends React.Component {
   }
 
   toggleCurrentSortDirection() {
-    const { isSortAscending } = this.state;
-
-    this.setState({ isSortAscending: !isSortAscending });
+    this.setState(prevState => {
+      return { isSortAscending: !prevState.isSortAscending };
+    });
   }
   render() {
     const { currentSortType, isSortNumeric, isSortAscending } = this.state;

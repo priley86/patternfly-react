@@ -124,11 +124,20 @@ export class MockFilterExample extends React.Component {
   selectFilterType(filterType) {
     const { currentFilterType } = this.state;
     if (currentFilterType !== filterType) {
-      this.setState({ currentValue: '', currentFilterType: filterType });
-
-      if (filterType.filterType === 'complex-select') {
-        this.setState({ filterCategory: undefined, categoryValue: '' });
-      }
+      this.setState(prevState => {
+        return {
+          currentValue: '',
+          currentFilterType: filterType,
+          filterCategory:
+            filterType.filterType === 'complex-select'
+              ? undefined
+              : prevState.filterCategory,
+          categoryValue:
+            filterType.filterType === 'complex-select'
+              ? ''
+              : prevState.categoryValue
+        };
+      });
     }
   }
 
@@ -181,6 +190,7 @@ export class MockFilterExample extends React.Component {
   }
 
   removeFilter(filter) {
+    const { filterRemoved } = this.props;
     const { activeFilters } = this.state;
 
     let index = activeFilters.indexOf(filter);
@@ -190,6 +200,7 @@ export class MockFilterExample extends React.Component {
         ...activeFilters.slice(index + 1)
       ];
       this.setState({ activeFilters: updated });
+      filterRemoved();
     }
   }
 

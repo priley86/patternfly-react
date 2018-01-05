@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { withInfo } from '@storybook/addon-info/dist/index';
+import { action } from '@storybook/addon-actions';
 import {
   Filter,
   FilterTypeSelector,
@@ -49,5 +50,5 @@ stories.add(
         <pre>{mockFilterExampleSource}</pre>
       </div>
     )
-  })(() => <MockFilterExample />)
+  })(() => <MockFilterExample filterRemoved={action('filterRemoved')} />)
 );
