@@ -98,6 +98,7 @@ export class MockFilterExample extends React.Component {
   }
 
   filterAdded = (field, value) => {
+    const { filterAddedAction } = this.props;
     let filterText = '';
     if (field.title) {
       filterText = field.title;
@@ -119,6 +120,8 @@ export class MockFilterExample extends React.Component {
 
     let activeFilters = [...this.state.activeFilters, { label: filterText }];
     this.setState({ activeFilters: activeFilters });
+
+    filterAddedAction(activeFilters);
   };
 
   selectFilterType(filterType) {
@@ -190,7 +193,6 @@ export class MockFilterExample extends React.Component {
   }
 
   removeFilter(filter) {
-    const { filterRemoved } = this.props;
     const { activeFilters } = this.state;
 
     let index = activeFilters.indexOf(filter);
@@ -200,7 +202,6 @@ export class MockFilterExample extends React.Component {
         ...activeFilters.slice(index + 1)
       ];
       this.setState({ activeFilters: updated });
-      filterRemoved();
     }
   }
 
