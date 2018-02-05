@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import { Card, CardLink, CardDropdownButton } from './index';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
+import { MenuItem } from '../MenuItem';
 
 test('Card Title is working properly', () => {
   const component = renderer.create(
@@ -77,21 +78,20 @@ test('Card Link is working properly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Card Time Frame Filter is working properly', () => {
-  const component = renderer.create(
-    <Card>
-      <Card.TimeFrameFilter />
-    </Card>
-  );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
 test('Card Drop Down Button is working properly', () => {
   const component = renderer.create(
     <Card>
-      <CardDropdownButton title="Dropdown" bsStyle="primary" />
+      <CardDropdownButton
+        id="cardDropdownButton1"
+        title="Last 30 Days"
+        onClick={jest.fn()}
+      >
+        <MenuItem eventKey="1" active>
+          Last 30 Days
+        </MenuItem>
+        <MenuItem eventKey="2">Last 60 Days</MenuItem>
+        <MenuItem eventKey="3">Last 90 Days</MenuItem>
+      </CardDropdownButton>
     </Card>
   );
 

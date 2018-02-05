@@ -5,7 +5,6 @@ import CardContainer from './CardContainer';
 import CardHeading from './CardHeading';
 import CardFooter from './CardFooter';
 import CardLink from './CardLink';
-import CardTimeFrameFilter from './CardTimeFrameFilter';
 import CardDropdownButton from './CardDropdownButton';
 
 Card.Title = CardTitle;
@@ -13,8 +12,7 @@ Card.Body = CardBody;
 Card.Container = CardContainer;
 Card.Heading = CardHeading;
 Card.Footer = CardFooter;
-Card.LinkWithIcon = CardLink;
-Card.TimeFrameFilter = CardTimeFrameFilter;
+Card.Link = CardLink;
 Card.DropdownButton = CardDropdownButton;
 
 export {
@@ -25,6 +23,5 @@ export {
   CardHeading,
   CardFooter,
   CardLink,
-  CardTimeFrameFilter,
   CardDropdownButton
 };
