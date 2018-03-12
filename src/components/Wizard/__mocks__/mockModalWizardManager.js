@@ -28,6 +28,8 @@ export class MockModalWizardManager extends MockWizardBase {
   render() {
     const { showModal, activeStepIndex, activeSubStepIndex } = this.state;
 
+    // TODO we need to refactor the bulk of this to use WizardPattern. Then eventually move all the substep stuff there.
+
     return (
       <div>
         <Button bsStyle="primary" bsSize="large" onClick={this.open}>

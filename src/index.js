@@ -1,3 +1,5 @@
+export { default as controlled } from './common/controlled';
+export * from './common/helpers';
 export * from './components/Alert';
 export * from './components/AboutModal';
 export * from './components/Badge';
@@ -36,7 +38,6 @@ export * from './components/Tooltip';
 export * from './components/TreeView';
 export * from './components/UtilizationBar';
 export * from './components/Wizard';
+export * from './components/WizardPattern';
 export * from './components/VerticalNav';
 export { patternfly } from './common/patternfly';
-export { default as controlled } from './common/controlled';
-export * from './common/helpers';

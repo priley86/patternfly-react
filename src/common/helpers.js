@@ -17,6 +17,14 @@ export const debounce = (func, wait) => {
   return innerFunc;
 };
 
+// Returns true if propName is a non-null property of the props object (can be any object, not just React props).
+export const propExists = (props, propName) =>
+  props && props.hasOwnProperty(propName) && props[propName] !== null;
+
+// Given two objects (props and state), returns the value of propName from props if present, or from state otherwise.
+export const propOrState = (props, state, propName) =>
+  propExists(props, propName) ? props[propName] : state[propName];
+
 // Returns a subset of the given object including only the given keys, with values optionally replaced by a fn.
 export const selectKeys = (obj, keys, fn = val => val) =>
   keys.reduce((values, key) => ({ ...values, [key]: fn(obj[key]) }), {});
