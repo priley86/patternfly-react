@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Modal } from '../../index';
 
 /**
  * WizardBody component for Patternfly React
  */
 const WizardBody = ({ children, className, ...rest }) => {
-  const classes = classNames('wizard-pf-body', className);
+  const classes = classNames('wizard-pf-body', 'clearfix', className);
   return (
-    <div className={classes} {...rest}>
+    <Modal.Body className={classes} {...rest}>
       {children}
-    </div>
+    </Modal.Body>
   );
 };
 WizardBody.propTypes = {
