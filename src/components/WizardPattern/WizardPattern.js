@@ -53,7 +53,7 @@ class WizardPattern extends React.Component {
   }
 
   shouldPreventGoToStep(newStepIndex) {
-    const { activeStepIndex, steps } = this.props;
+    const { activeStepIndex, steps, nextStepDisabled } = this.props;
     const activeStep = steps[activeStepIndex];
     const targetStep = steps[newStepIndex];
     const prevStep = activeStepIndex > 0 && steps[newStepIndex - 1];
@@ -62,8 +62,13 @@ class WizardPattern extends React.Component {
     const preventEnterTarget = propExists(targetStep, 'preventEnter')
       ? targetStep.preventEnter
       : prevStep && prevStep.isInvalid;
+    const nextStepClicked = newStepIndex === activeStepIndex + 1;
 
-    return preventExitActive || preventEnterTarget;
+    return (
+      preventExitActive ||
+      preventEnterTarget ||
+      (nextStepClicked && nextStepDisabled)
+    );
   }
 
   render() {

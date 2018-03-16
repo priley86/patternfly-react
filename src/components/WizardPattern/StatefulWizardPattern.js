@@ -41,7 +41,11 @@ class StatefulWizardPattern extends React.Component {
         nextStepDisabled={shouldDisableNextStep(activeStepIndex)}
         {...otherProps}
         steps={steps.map(step => {
-          const { shouldPreventEnter, shouldPreventExit, ...otherStepProps } = step;
+          const {
+            shouldPreventEnter,
+            shouldPreventExit,
+            ...otherStepProps
+          } = step;
           return otherStepProps;
         })}
         activeStepIndex={activeStepIndex} // Value from state, as set by getDerivedStateFromProps
