@@ -16,6 +16,9 @@ class WizardPattern extends React.Component {
   constructor() {
     super();
     bindMethods(this, [
+      'getActiveStep',
+      'getPrevStep',
+      'getNextStep',
       'onBackClick',
       'onNextClick',
       'goToStep',
@@ -23,13 +26,26 @@ class WizardPattern extends React.Component {
     ]);
   }
 
-  onBackClick() {
-    this.goToStep(Math.max(this.props.activeStepIndex - 1, 0));
-  }
-
   onNextClick() {
     const { steps, activeStepIndex } = this.props;
     this.goToStep(Math.min(activeStepIndex + 1, steps.length - 1));
+  }
+
+  getStep(index = this.props.activeStepIndex) {
+    return this.props.steps[index];
+  }
+
+  getPrevStep(relativeToIndex = this.props.activeStepIndex) {
+    return relativeToIndex > 0 && this.props.steps[relativeToIndex - 1];
+  }
+
+  getNextStep(relativeToIndex = this.props.activeStepIndex) {
+    const { steps } = this.props;
+    return relativeToIndex < steps.length - 1 && steps[relativeToIndex + 1];
+  }
+
+  onBackClick() {
+    this.goToStep(Math.max(this.props.activeStepIndex - 1, 0));
   }
 
   goToStep(newStepIndex) {
@@ -54,14 +70,13 @@ class WizardPattern extends React.Component {
 
   shouldPreventGoToStep(newStepIndex) {
     const { activeStepIndex, steps, nextStepDisabled } = this.props;
-    const activeStep = steps[activeStepIndex];
     const targetStep = steps[newStepIndex];
-    const prevStep = activeStepIndex > 0 && steps[newStepIndex - 1];
+    const stepBeforeTarget = newStepIndex > 0 && steps[newStepIndex - 1];
 
-    const preventExitActive = activeStep.preventExit;
+    const preventExitActive = this.getActiveStep().preventExit;
     const preventEnterTarget = propExists(targetStep, 'preventEnter')
       ? targetStep.preventEnter
-      : prevStep && prevStep.isInvalid;
+      : stepBeforeTarget && stepBeforeTarget.isInvalid;
     const nextStepClicked = newStepIndex === activeStepIndex + 1;
 
     return (
@@ -89,6 +104,9 @@ class WizardPattern extends React.Component {
     const onFirstStep = activeStepIndex === 0;
     const onFinalStep = activeStepIndex === steps.length - 1;
     const activeStepStr = (activeStepIndex + 1).toString();
+
+    const prevStepUnreachable = onFirstStep || this.getPrevStep(); // || ??
+    const nextStepUnreachable = nextStepDisabled; // || ??
 
     return (
       <Modal
@@ -125,7 +143,7 @@ class WizardPattern extends React.Component {
             <Button
               bsStyle="default"
               onClick={this.onBackClick}
-              disabled={onFirstStep}
+              disabled={prevStepUnreachable}
             >
               <Icon type="fa" name="angle-left" />
               {backButtonText}
@@ -133,7 +151,7 @@ class WizardPattern extends React.Component {
             <Button
               bsStyle="primary"
               onClick={onFinalStep ? onHide : this.onNextClick}
-              disabled={nextStepDisabled}
+              disabled={nextStepUnreachable}
             >
               {onFinalStep ? (
                 closeButtonText

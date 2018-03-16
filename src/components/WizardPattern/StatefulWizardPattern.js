@@ -22,8 +22,8 @@ class StatefulWizardPattern extends React.Component {
   onStepChanged(newStepIndex) {
     const { shouldPreventStepChange, steps } = this.props;
     const { activeStepIndex } = this.state;
-    const shouldPreventExit = steps[activeStepIndex].shouldPreventExit;
-    const shouldPreventEnter = steps[newStepIndex].shouldPreventEnter;
+    const { shouldPreventExit } = steps[activeStepIndex];
+    const { shouldPreventEnter } = steps[newStepIndex];
     if (
       shouldPreventStepChange(activeStepIndex, newStepIndex) ||
       (shouldPreventExit && shouldPreventExit(newStepIndex)) ||
