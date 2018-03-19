@@ -27,16 +27,22 @@ const WizardPattern = ({
   closeText,
   loading
 }) => {
+  const onBackClick = () => {
+    goToStep(Math.max(activeStepIndex - 1, 0));
+  };
+
   const onNextClick = () => {
     goToStep(Math.min(activeStepIndex + 1, steps.length - 1));
   };
 
+  const getActiveStep = (relativeToIndex = activeStepIndex) =>
+    steps[relativeToIndex];
+
   const getPrevStep = (relativeToIndex = activeStepIndex) =>
     relativeToIndex > 0 && steps[relativeToIndex - 1];
 
-  const onBackClick = () => {
-    goToStep(Math.max(activeStepIndex - 1, 0));
-  };
+  const getNextStep = (relativeToIndex = activeStepIndex) =>
+    relativeToIndex < steps.length - 1 && steps[relativeToIndex + 1];
 
   const goToStep = newStepIndex => {
     const currentStep = steps[activeStepIndex];
@@ -53,7 +59,7 @@ const WizardPattern = ({
 
   const shouldPreventGoToStep = newStepIndex => {
     const targetStep = steps[newStepIndex];
-    const stepBeforeTarget = newStepIndex > 0 && steps[newStepIndex - 1];
+    const stepBeforeTarget = getPrevStep(newStepIndex);
 
     const preventExitActive = steps[activeStepIndex].preventExit;
     const preventEnterTarget = propExists(targetStep, 'preventEnter')
@@ -72,8 +78,13 @@ const WizardPattern = ({
   const onFinalStep = activeStepIndex === steps.length - 1;
   const activeStepStr = (activeStepIndex + 1).toString();
   const activeStep = getActiveStep();
-  const prevStepUnreachable = onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
-  const nextStepUnreachable = nextStepDisabled || activeStep.isInvalid || activeStep.preventExit;
+  const prevStepUnreachable =
+    onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
+  const nextStepUnreachable =
+    nextStepDisabled ||
+    activeStep.isInvalid ||
+    activeStep.preventExit ||
+    getNextStep().preventEnter;
 
   return (
     <Modal
