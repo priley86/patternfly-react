@@ -5,16 +5,8 @@ import cx from 'classnames';
 /**
  * WizardHeader component for Patternfly React
  */
-const WizardHeader = ({ children, className, embedded, title, ...rest }) => {
-  const classes = cx({ 'wizard-pf-header': !embedded }, className);
-
-  if (embedded) {
-    return (
-      <h2 className={classes} {...rest}>
-        {title}
-      </h2>
-    );
-  }
+const WizardHeader = ({ children, className, title, ...rest }) => {
+  const classes = cx('wizard-pf-header', className);
   return (
     <div className={classes} {...rest}>
       <h4 className="wizard-pf-title">{title}</h4>
@@ -26,15 +18,12 @@ WizardHeader.propTypes = {
   children: PropTypes.node,
   /** Additional css classes */
   className: PropTypes.string,
-  /** Embedded wizard */
-  embedded: PropTypes.bool,
   /** The wizard title */
   title: PropTypes.string
 };
 WizardHeader.defaultProps = {
   children: null,
   className: '',
-  embedded: false,
   title: ''
 };
 export default WizardHeader;
