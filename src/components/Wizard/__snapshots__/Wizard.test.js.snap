@@ -45,32 +45,6 @@ exports[`Wizard Pattern renders properly 1`] = `
           <div
             class="wizard-pf-body clearfix modal-body"
           >
-            <div
-              class="wizard-pf-steps"
-            >
-              <ul
-                class="wizard-pf-steps-indicator"
-              >
-                <li
-                  class="wizard-pf-step active"
-                >
-                  <a
-                    href="#"
-                  >
-                    <span
-                      class="wizard-pf-step-number"
-                    >
-                      1
-                    </span>
-                    <span
-                      class="wizard-pf-step-title"
-                    >
-                      General
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
             <section
               class="wizard-pf-row"
             >
@@ -78,11 +52,25 @@ exports[`Wizard Pattern renders properly 1`] = `
                 class="wizard-pf-main"
               >
                 <div
-                  class="wizard-pf-contents"
+                  class="blank-slate-pf"
                 >
-                  <p>
-                    General
-                  </p>
+                  <div
+                    class="blank-slate-pf-icon spinner spinner-lg"
+                  />
+                  <div
+                    class="blank-slate-pf-main-action"
+                  >
+                    <h3>
+                      Loading...
+                    </h3>
+                  </div>
+                  <div
+                    class="blank-slate-pf-secondary-action"
+                  >
+                    <p>
+                      This may take a minute.
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -166,32 +154,6 @@ exports[`Wizard Stateful Pattern renders properly 1`] = `
           <div
             class="wizard-pf-body clearfix modal-body"
           >
-            <div
-              class="wizard-pf-steps"
-            >
-              <ul
-                class="wizard-pf-steps-indicator"
-              >
-                <li
-                  class="wizard-pf-step active"
-                >
-                  <a
-                    href="#"
-                  >
-                    <span
-                      class="wizard-pf-step-number"
-                    >
-                      1
-                    </span>
-                    <span
-                      class="wizard-pf-step-title"
-                    >
-                      General
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
             <section
               class="wizard-pf-row"
             >
@@ -199,11 +161,25 @@ exports[`Wizard Stateful Pattern renders properly 1`] = `
                 class="wizard-pf-main"
               >
                 <div
-                  class="wizard-pf-contents"
+                  class="blank-slate-pf"
                 >
-                  <p>
-                    General
-                  </p>
+                  <div
+                    class="blank-slate-pf-icon spinner spinner-lg"
+                  />
+                  <div
+                    class="blank-slate-pf-main-action"
+                  >
+                    <h3>
+                      Loading...
+                    </h3>
+                  </div>
+                  <div
+                    class="blank-slate-pf-secondary-action"
+                  >
+                    <p>
+                      This may take a minute.
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
