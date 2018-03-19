@@ -23,18 +23,18 @@ export class WizardPatternExample extends React.Component {
     super();
     this.state = {
       showModal: false,
-      wizardLoaded: false,
+      wizardLoading: false,
       activeStepIndex: 0
     };
     bindMethods(this, ['close', 'open', 'renderStateless', 'renderStateful']);
   }
   close() {
-    this.setState({ showModal: false, wizardLoaded: false });
+    this.setState({ showModal: false, wizardLoading: false });
   }
   open() {
-    this.setState({ showModal: true });
+    this.setState({ showModal: true, wizardLoading: true });
     setTimeout(() => {
-      this.setState({ wizardLoaded: true });
+      this.setState({ wizardLoading: false });
     }, 1000);
   }
   renderStateless() {
@@ -50,11 +50,11 @@ export class WizardPatternExample extends React.Component {
           onHide={this.close}
           onExited={this.close}
           title="Modal Wizard Pattern Example"
-          shouldDisableNextStep={activeStepIndex => false}
+          nextStepDisabled={false}
           steps={wizardSteps}
           loadingTitle="Loading..."
           loadingMessage="This may take a minute."
-          loaded={this.state.wizardLoaded}
+          loading={this.state.wizardLoading}
           activeStepIndex={this.state.activeStepIndex}
           onStepChanged={activeStepIndex => this.setState({ activeStepIndex })}
         />
@@ -79,7 +79,7 @@ export class WizardPatternExample extends React.Component {
           steps={wizardSteps}
           loadingTitle="Loading..."
           loadingMessage="This may take a minute."
-          loaded={this.state.wizardLoaded}
+          loading={this.state.wizardLoading}
         />
       </div>
     );
@@ -105,18 +105,18 @@ export class WizardPatternExample extends React.Component {
     super();
     this.state = {
       showModal: false,
-      wizardLoaded: false,
+      wizardLoading: false,
       activeStepIndex: 0
     };
     bindMethods(this, ['close', 'open', 'renderStateless', 'renderStateful']);
   }
   close() {
-    this.setState({ showModal: false, wizardLoaded: false });
+    this.setState({ showModal: false, wizardLoading: false });
   }
   open() {
-    this.setState({ showModal: true });
+    this.setState({ showModal: true, wizardLoading: true });
     setTimeout(() => {
-      this.setState({ wizardLoaded: true });
+      this.setState({ wizardLoading: false });
     }, 1000);
   }
   renderStateless() {
@@ -132,11 +132,11 @@ export class WizardPatternExample extends React.Component {
           onHide={this.close}
           onExited={this.close}
           title="Modal Wizard Example"
-          shouldDisableNextStep={activeStepIndex => false}
+          nextStepDisabled={false}
           steps={wizardSteps}
           loadingTitle="Loading..."
           loadingMessage="This may take a minute."
-          loaded={this.state.wizardLoaded}
+          loading={this.state.wizardLoading}
           activeStepIndex={this.state.activeStepIndex}
           onStepChanged={activeStepIndex => this.setState({ activeStepIndex })}
         />
@@ -160,7 +160,7 @@ export class WizardPatternExample extends React.Component {
           steps={wizardSteps}
           loadingTitle="Loading..."
           loadingMessage="This may take a minute."
-          loaded={this.state.wizardLoaded}
+          loading={this.state.wizardLoading}
         />
       </div>
     );

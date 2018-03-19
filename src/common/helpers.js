@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Equivalent to calling `this.someMethod = this.someMethod.bind(this)` for every method name in the methods array.
 export const bindMethods = (context, methods) => {
   methods.forEach(method => {
     context[method] = context[method].bind(context);
@@ -33,21 +34,25 @@ export const selectKeys = (obj, keys, fn = val => val) =>
 export const filterKeys = (obj, validator) =>
   selectKeys(obj, Object.keys(obj).filter(validator));
 
+// Returns the given React children prop as a regular array of React nodes.
 export const childrenToArray = children =>
   children &&
   React.Children.count(children) > 0 &&
   React.Children.toArray(children);
 
+// Filters the given React children prop with the given validator function. Returns an array of nodes.
 export const filterChildren = (children, validator) => {
   const array = childrenToArray(children);
   return array && array.filter(validator);
 };
 
+// Given a React children prop, finds the first child node to pass the validator function.
 export const findChild = (children, validator) => {
   const array = childrenToArray(children);
   return array && array.find(validator);
 };
 
+// Returns true if there is at least one of propNames with a different value in newProps than in oldProps.
 export const propsChanged = (propNames, oldProps, newProps) =>
   propNames.some(propName => oldProps[propName] !== newProps[propName]);
 

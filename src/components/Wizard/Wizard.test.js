@@ -183,7 +183,7 @@ test('Wizard Pattern renders properly', () => {
       steps={[{ title: 'General', render: () => <p>General</p> }]}
       loadingTitle="Loading..."
       loadingMessage="This may take a minute."
-      loaded
+      loading
       activeStepIndex={0}
       onStepChanged={onStepChanged}
     />
@@ -207,7 +207,7 @@ test('Wizard Stateful Pattern renders properly', () => {
       steps={[{ title: 'General', render: () => <p>General</p> }]}
       loadingTitle="Loading..."
       loadingMessage="This may take a minute."
-      loaded
+      loading
     />
   );
 

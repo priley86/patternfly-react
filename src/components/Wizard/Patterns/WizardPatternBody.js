@@ -6,7 +6,7 @@ import { noop, EmptyState, Spinner, Wizard } from '../../../index';
  * WizardPatternBody - the Wizard Pattern Body component.
  */
 const WizardPatternBody = ({
-  loaded,
+  loading,
   steps,
   activeStepIndex,
   goToStep,
@@ -14,7 +14,7 @@ const WizardPatternBody = ({
   loadingMessage,
   activeStepStr
 }) => {
-  if (!loaded) {
+  if (loading) {
     return (
       <Wizard.Row>
         <Wizard.Main>
@@ -76,7 +76,7 @@ const WizardPatternBody = ({
 WizardPatternBody.propTypes = {
   loadingTitle: PropTypes.string,
   loadingMessage: PropTypes.string,
-  loaded: PropTypes.bool,
+  loading: PropTypes.bool,
   steps: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string,
@@ -92,7 +92,7 @@ WizardPatternBody.propTypes = {
 WizardPatternBody.defaultProps = {
   loadingTitle: 'Loading Wizard...',
   loadingMessage: 'Loading...',
-  loaded: false,
+  loading: false,
   steps: [{ title: 'General', render: () => <p>General</p> }],
   activeStepIndex: 0,
   activeStepStr: '1',

@@ -21,11 +21,11 @@ const WizardPattern = ({
   onHide,
   onExited,
   stepButtonsDisabled,
-  cancelButtonText,
-  backButtonText,
-  nextButtonText,
-  closeButtonText,
-  loaded
+  cancelText,
+  backText,
+  nextText,
+  closeText,
+  loading
 }) => {
   const onNextClick = () => {
     goToStep(Math.min(activeStepIndex + 1, steps.length - 1));
@@ -98,7 +98,7 @@ const WizardPattern = ({
           <WizardPatternBody
             loadingTitle={loadingTitle}
             loadingMessage={loadingMessage}
-            loaded={loaded}
+            loading={loading}
             steps={steps}
             activeStepIndex={activeStepIndex}
             activeStepStr={activeStepStr}
@@ -109,7 +109,7 @@ const WizardPattern = ({
         </Modal.Body>
         <Modal.Footer className="wizard-pf-footer">
           <Button bsStyle="default" className="btn-cancel" onClick={onHide}>
-            {cancelButtonText}
+            {cancelText}
           </Button>
           <Button
             bsStyle="default"
@@ -117,7 +117,7 @@ const WizardPattern = ({
             disabled={prevStepUnreachable}
           >
             <Icon type="fa" name="angle-left" />
-            {backButtonText}
+            {backText}
           </Button>
           <Button
             bsStyle="primary"
@@ -125,10 +125,10 @@ const WizardPattern = ({
             disabled={nextStepUnreachable}
           >
             {onFinalStep ? (
-              closeButtonText
+              closeText
             ) : (
                 <React.Fragment>
-                  {nextButtonText}
+                  {nextText}
                   <Icon type="fa" name="angle-right" />
                 </React.Fragment>
               )}
@@ -150,11 +150,11 @@ WizardPattern.propTypes = {
   onStepChanged: PropTypes.func,
   loadingTitle: PropTypes.string,
   loadingMessage: PropTypes.string,
-  loaded: PropTypes.bool,
-  cancelButtonText: PropTypes.string,
-  backButtonText: PropTypes.string,
-  nextButtonText: PropTypes.string,
-  closeButtonText: PropTypes.string,
+  loading: PropTypes.bool,
+  cancelText: PropTypes.string,
+  backText: PropTypes.string,
+  nextText: PropTypes.string,
+  closeText: PropTypes.string,
   steps: PropTypes.arrayOf(PropTypes.shape(wizardStepShape)),
   nextStepDisabled: PropTypes.bool,
   stepButtonsDisabled: PropTypes.bool
@@ -170,11 +170,11 @@ WizardPattern.defaultProps = {
   onStepChanged: noop,
   loadingTitle: 'Loading Wizard...',
   loadingMessage: 'Loading...',
-  loaded: false,
-  cancelButtonText: 'Cancel',
-  backButtonText: 'Back',
-  nextButtonText: 'Next',
-  closeButtonText: 'Close',
+  loading: false,
+  cancelText: 'Cancel',
+  backText: 'Back',
+  nextText: 'Next',
+  closeText: 'Close',
   steps: [{ title: 'General', render: () => <p>General</p> }],
   nextStepDisabled: false,
   stepButtonsDisabled: false
