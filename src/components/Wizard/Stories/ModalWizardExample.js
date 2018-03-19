@@ -14,7 +14,7 @@ import {
   renderWizardContents
 } from './mockWizardRenderers';
 
-export class MockModalWizardManager extends MockWizardBase {
+export class ModalWizardExample extends MockWizardBase {
   constructor(props) {
     super(props);
     bindMethods(this, ['open', 'close']);
@@ -120,7 +120,7 @@ export class MockModalWizardManager extends MockWizardBase {
   }
 }
 
-export const mockModalWizardSource = `
+export const modalWizardExampleSource = `
   <div>
     <Button bsStyle="primary" bsSize="large" onClick={this.open}>
       Launch modal wizard

@@ -7,7 +7,7 @@ import { Wizard } from '../index';
 
 import { mockLoadingContents } from './mockWizardItems';
 
-export class MockLoadingWizardManager extends React.Component {
+export class LoadingWizardExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = { showModal: false };
@@ -72,7 +72,7 @@ export class MockLoadingWizardManager extends React.Component {
   }
 }
 
-export const mockLoadingWizardSource = `
+export const loadingWizardSource = `
   <div>
     <Button bsStyle="primary" bsSize="large" onClick={this.open}>
       Launch loading wizard

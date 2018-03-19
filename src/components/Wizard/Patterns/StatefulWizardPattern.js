@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import polyfill from 'react-lifecycles-compat';
 
 import WizardPattern from './WizardPattern';
-import { stepShape } from './WizardPatternConstants';
-import { propOrState, bindMethods } from '../../index';
+import { wizardStepShape } from './WizardPatternConstants';
+import { propOrState, bindMethods } from '../../../index';
 
+/**
+ * StatefulWizardPattern - the Stateful Wizard Pattern component.
+ */
 class StatefulWizardPattern extends React.Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     return {
@@ -59,7 +62,7 @@ StatefulWizardPattern.propTypes = {
   ...WizardPattern.propTypes,
   steps: PropTypes.arrayOf(
     PropTypes.shape({
-      ...stepShape,
+      ...wizardStepShape,
       shouldPreventEnter: PropTypes.func,
       shouldPreventExit: PropTypes.func
     })
