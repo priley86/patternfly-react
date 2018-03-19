@@ -71,8 +71,9 @@ const WizardPattern = ({
   const onFirstStep = activeStepIndex === 0;
   const onFinalStep = activeStepIndex === steps.length - 1;
   const activeStepStr = (activeStepIndex + 1).toString();
-  const prevStepUnreachable = onFirstStep || getPrevStep();
-  const nextStepUnreachable = nextStepDisabled;
+  const activeStep = getActiveStep();
+  const prevStepUnreachable = onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
+  const nextStepUnreachable = nextStepDisabled || activeStep.isInvalid || activeStep.preventExit;
 
   return (
     <Modal
@@ -126,11 +127,11 @@ const WizardPattern = ({
             {onFinalStep ? (
               closeButtonText
             ) : (
-              <React.Fragment>
-                {nextButtonText}
-                <Icon type="fa" name="angle-right" />
-              </React.Fragment>
-            )}
+                <React.Fragment>
+                  {nextButtonText}
+                  <Icon type="fa" name="angle-right" />
+                </React.Fragment>
+              )}
           </Button>
         </Modal.Footer>
       </Wizard>
