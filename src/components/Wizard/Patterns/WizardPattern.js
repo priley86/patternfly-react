@@ -138,11 +138,11 @@ const WizardPattern = ({
             {onFinalStep ? (
               closeText
             ) : (
-                <React.Fragment>
-                  {nextText}
-                  <Icon type="fa" name="angle-right" />
-                </React.Fragment>
-              )}
+              <React.Fragment>
+                {nextText}
+                <Icon type="fa" name="angle-right" />
+              </React.Fragment>
+            )}
           </Button>
         </Modal.Footer>
       </Wizard>
