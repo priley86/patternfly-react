@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * WizardHeader component for Patternfly React
  */
 const WizardHeader = ({ children, className, title, ...rest }) => {
-  const classes = cx('wizard-pf-header', className);
+  const classes = classNames('wizard-pf-header', className);
   return (
     <div className={classes} {...rest}>
       <h4 className="wizard-pf-title">{title}</h4>
