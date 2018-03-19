@@ -72,7 +72,7 @@ export class LoadingWizardExample extends React.Component {
   }
 }
 
-export const loadingWizardSource = `
+export const loadingWizardExampleSource = `
   <div>
     <Button bsStyle="primary" bsSize="large" onClick={this.open}>
       Launch loading wizard
