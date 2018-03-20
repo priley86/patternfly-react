@@ -44,33 +44,36 @@ const WizardPatternBody = ({
     };
   };
 
-  const step = steps[activeStepIndex];
+  if (steps && steps.length) {
+    const step = steps[activeStepIndex];
 
-  const renderedStep =
-    step && step.render && step.render(activeStepIndex, step.title);
+    const renderedStep =
+      step && step.render && step.render(activeStepIndex, step.title);
 
-  return (
-    <React.Fragment>
-      <Wizard.Steps
-        steps={steps.map((stepObj, index) => (
-          <Wizard.Step
-            {...stepProps(index, stepObj.title)}
-            onClick={() => goToStep(index)}
-          />
-        ))}
-      />
-      <Wizard.Row>
-        <Wizard.Main>
-          <Wizard.Contents
-            stepIndex={activeStepIndex}
-            activeStepIndex={activeStepIndex}
-          >
-            {renderedStep}
-          </Wizard.Contents>
-        </Wizard.Main>
-      </Wizard.Row>
-    </React.Fragment>
-  );
+    return (
+      <React.Fragment>
+        <Wizard.Steps
+          steps={steps.map((stepObj, index) => (
+            <Wizard.Step
+              {...stepProps(index, stepObj.title)}
+              onClick={() => goToStep(index)}
+            />
+          ))}
+        />
+        <Wizard.Row>
+          <Wizard.Main>
+            <Wizard.Contents
+              stepIndex={activeStepIndex}
+              activeStepIndex={activeStepIndex}
+            >
+              {renderedStep}
+            </Wizard.Contents>
+          </Wizard.Main>
+        </Wizard.Row>
+      </React.Fragment>
+    );
+  }
+  return null;
 };
 
 WizardPatternBody.propTypes = {
@@ -93,7 +96,7 @@ WizardPatternBody.defaultProps = {
   loadingTitle: 'Loading Wizard...',
   loadingMessage: 'Loading...',
   loading: false,
-  steps: [{ title: 'General', render: () => <p>General</p> }],
+  steps: [],
   activeStepIndex: 0,
   activeStepStr: '1',
   goToStep: noop

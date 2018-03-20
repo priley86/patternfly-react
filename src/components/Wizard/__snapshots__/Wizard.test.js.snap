@@ -1,6 +1,169 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Wizard Pattern renders properly 1`] = `
+exports[`Wizard Pattern Body renders null without steps 1`] = `null`;
+
+exports[`Wizard Pattern renders properly after wizard step click 1`] = `
+<div
+  role="dialog"
+>
+  <div
+    class="modal-backdrop fade in"
+  />
+  <div
+    class="fade in modal"
+    role="dialog"
+    style="display: block; padding-right: 0px;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-lg wizard-pf modal-dialog"
+    >
+      <div
+        class="modal-content"
+        role="document"
+      >
+        <div
+          class=""
+        >
+          <div
+            class="modal-header"
+          >
+            <button
+              aria-hidden="true"
+              aria-label="Close"
+              class="close"
+            >
+              <span
+                aria-hidden="true"
+                class="pficon pficon-close"
+              />
+            </button>
+            <h4
+              class="modal-title"
+            >
+              Wizard Pattern Example
+            </h4>
+          </div>
+          <div
+            class="wizard-pf-body clearfix modal-body"
+          >
+            <div
+              class="wizard-pf-steps"
+            >
+              <ul
+                class="wizard-pf-steps-indicator"
+              >
+                <li
+                  class="wizard-pf-step active"
+                >
+                  <a
+                    href="#"
+                  >
+                    <span
+                      class="wizard-pf-step-number"
+                    >
+                      1
+                    </span>
+                    <span
+                      class="wizard-pf-step-title"
+                    >
+                      General
+                    </span>
+                  </a>
+                </li>
+                <li
+                  class="wizard-pf-step"
+                >
+                  <a
+                    href="#"
+                  >
+                    <span
+                      class="wizard-pf-step-number"
+                    >
+                      2
+                    </span>
+                    <span
+                      class="wizard-pf-step-title"
+                    >
+                      Step Two
+                    </span>
+                  </a>
+                </li>
+                <li
+                  class="wizard-pf-step"
+                >
+                  <a
+                    href="#"
+                  >
+                    <span
+                      class="wizard-pf-step-number"
+                    >
+                      3
+                    </span>
+                    <span
+                      class="wizard-pf-step-title"
+                    >
+                      Step Three
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <section
+              class="wizard-pf-row"
+            >
+              <div
+                class="wizard-pf-main"
+              >
+                <div
+                  class="wizard-pf-contents"
+                >
+                  <p>
+                    General
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div
+            class="wizard-pf-footer modal-footer"
+          >
+            <button
+              class="btn-cancel btn btn-default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="btn btn-default"
+              disabled=""
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+                class="fa fa-angle-left"
+              />
+              Back
+            </button>
+            <button
+              class="btn btn-primary"
+              type="button"
+            >
+              Next
+              <span
+                aria-hidden="true"
+                class="fa fa-angle-right"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Wizard Pattern renders properly while loading 1`] = `
 <div
   role="dialog"
 >
@@ -99,7 +262,11 @@ exports[`Wizard Pattern renders properly 1`] = `
               class="btn btn-primary"
               type="button"
             >
-              Close
+              Next
+              <span
+                aria-hidden="true"
+                class="fa fa-angle-right"
+              />
             </button>
           </div>
         </div>
@@ -109,7 +276,167 @@ exports[`Wizard Pattern renders properly 1`] = `
 </div>
 `;
 
-exports[`Wizard Stateful Pattern renders properly 1`] = `
+exports[`Wizard Stateful Pattern renders properly after wizard step click 1`] = `
+<div
+  role="dialog"
+>
+  <div
+    class="modal-backdrop fade in"
+  />
+  <div
+    class="fade in modal"
+    role="dialog"
+    style="display: block; padding-right: 0px;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-lg wizard-pf modal-dialog"
+    >
+      <div
+        class="modal-content"
+        role="document"
+      >
+        <div
+          class=""
+        >
+          <div
+            class="modal-header"
+          >
+            <button
+              aria-hidden="true"
+              aria-label="Close"
+              class="close"
+            >
+              <span
+                aria-hidden="true"
+                class="pficon pficon-close"
+              />
+            </button>
+            <h4
+              class="modal-title"
+            >
+              Wizard Pattern Stateful Example
+            </h4>
+          </div>
+          <div
+            class="wizard-pf-body clearfix modal-body"
+          >
+            <div
+              class="wizard-pf-steps"
+            >
+              <ul
+                class="wizard-pf-steps-indicator"
+              >
+                <li
+                  class="wizard-pf-step"
+                >
+                  <a
+                    href="#"
+                  >
+                    <span
+                      class="wizard-pf-step-number"
+                    >
+                      1
+                    </span>
+                    <span
+                      class="wizard-pf-step-title"
+                    >
+                      General
+                    </span>
+                  </a>
+                </li>
+                <li
+                  class="wizard-pf-step active"
+                >
+                  <a
+                    href="#"
+                  >
+                    <span
+                      class="wizard-pf-step-number"
+                    >
+                      2
+                    </span>
+                    <span
+                      class="wizard-pf-step-title"
+                    >
+                      Step Two
+                    </span>
+                  </a>
+                </li>
+                <li
+                  class="wizard-pf-step"
+                >
+                  <a
+                    href="#"
+                  >
+                    <span
+                      class="wizard-pf-step-number"
+                    >
+                      3
+                    </span>
+                    <span
+                      class="wizard-pf-step-title"
+                    >
+                      Step Three
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <section
+              class="wizard-pf-row"
+            >
+              <div
+                class="wizard-pf-main"
+              >
+                <div
+                  class="wizard-pf-contents"
+                >
+                  <p>
+                    Step Two
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div
+            class="wizard-pf-footer modal-footer"
+          >
+            <button
+              class="btn-cancel btn btn-default"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="btn btn-default"
+              type="button"
+            >
+              <span
+                aria-hidden="true"
+                class="fa fa-angle-left"
+              />
+              Back
+            </button>
+            <button
+              class="btn btn-primary"
+              type="button"
+            >
+              Next
+              <span
+                aria-hidden="true"
+                class="fa fa-angle-right"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Wizard Stateful Pattern renders properly while loading 1`] = `
 <div
   role="dialog"
 >
@@ -208,7 +535,11 @@ exports[`Wizard Stateful Pattern renders properly 1`] = `
               class="btn btn-primary"
               type="button"
             >
-              Close
+              Next
+              <span
+                aria-hidden="true"
+                class="fa fa-angle-right"
+              />
             </button>
           </div>
         </div>
@@ -449,7 +780,7 @@ exports[`Wizard sidebar renders properly 1`] = `
           class="list-group"
         >
           <li
-            class="active list-group-item"
+            class="active wizard-sidebar-group-item list-group-item"
           >
             <a
               href="#"

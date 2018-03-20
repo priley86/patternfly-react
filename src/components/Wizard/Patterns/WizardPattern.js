@@ -78,6 +78,7 @@ const WizardPattern = ({
   const onFinalStep = activeStepIndex === steps.length - 1;
   const activeStepStr = (activeStepIndex + 1).toString();
   const activeStep = getActiveStep();
+
   const prevStepUnreachable =
     onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
   const nextStepUnreachable =
@@ -186,7 +187,7 @@ WizardPattern.defaultProps = {
   backText: 'Back',
   nextText: 'Next',
   closeText: 'Close',
-  steps: [{ title: 'General', render: () => <p>General</p> }],
+  steps: [],
   nextStepDisabled: false,
   stepButtonsDisabled: false
 };

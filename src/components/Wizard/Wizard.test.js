@@ -33,8 +33,7 @@ test('Wizard loading renders properly', () => {
 });
 
 test('Wizard steps renders properly', () => {
-  const onStepClick = jest.fn();
-
+  let eventCount = 0;
   const component = mount(
     <Wizard>
       <Wizard.Header title="Wizard Title" />
@@ -47,7 +46,7 @@ test('Wizard steps renders properly', () => {
               step={0}
               label="Step 1"
               title="Step 1"
-              onClick={onStepClick}
+              onClick={() => eventCount++}
             >
               <Wizard.SubStep key={0} subStep="1.1" title="Step 1.1" />
             </Wizard.Step>
@@ -57,11 +56,18 @@ test('Wizard steps renders properly', () => {
     </Wizard>
   );
 
+  component
+    .find('.wizard-pf-step a')
+    .first()
+    .simulate('click');
+
+  expect(eventCount).toBe(1);
   expect(component.render()).toMatchSnapshot();
 });
 
 test('Wizard sidebar renders properly', () => {
-  const onSidebarItemClick = jest.fn();
+  let eventCount = 0;
+
   const component = mount(
     <Wizard>
       <Wizard.Header title="Wizard Title" />
@@ -71,6 +77,7 @@ test('Wizard sidebar renders properly', () => {
             items={[
               <Wizard.SidebarGroup key="1" step="1" activeStep="1">
                 <Wizard.SidebarGroupItem
+                  className="wizard-sidebar-group-item"
                   key="1.1"
                   stepIndex={1}
                   subStepIndex={1}
@@ -78,7 +85,7 @@ test('Wizard sidebar renders properly', () => {
                   label="1A."
                   title="Details"
                   activeSubStep="1.1"
-                  onClick={onSidebarItemClick}
+                  onClick={() => eventCount++}
                 />
               </Wizard.SidebarGroup>
             ]}
@@ -88,6 +95,12 @@ test('Wizard sidebar renders properly', () => {
     </Wizard>
   );
 
+  component
+    .find('.wizard-sidebar-group-item a')
+    .first()
+    .simulate('click');
+
+  expect(eventCount).toBe(1);
   expect(component.render()).toMatchSnapshot();
 });
 
@@ -169,47 +182,140 @@ test('Wizard review contents renders properly', () => {
   expect(component.render()).toMatchSnapshot();
 });
 
-test('Wizard Pattern renders properly', () => {
+const testWizardPattern = props => {
   const onHide = jest.fn();
   const onExited = jest.fn();
   const onStepChanged = jest.fn();
-  const component = mount(
+  return (
     <Wizard.Pattern
       show
       onHide={onHide}
       onExited={onExited}
       title="Wizard Pattern Example"
       shouldDisableNextStep={false}
-      steps={[{ title: 'General', render: () => <p>General</p> }]}
+      steps={[
+        { title: 'General', render: () => <p>General</p> },
+        { title: 'Step Two', render: () => <p>Step Two</p> },
+        { title: 'Step Three', render: () => <p>Step Three</p> }
+      ]}
       loadingTitle="Loading..."
       loadingMessage="This may take a minute."
-      loading
       activeStepIndex={0}
       onStepChanged={onStepChanged}
+      {...props}
     />
   );
+};
+
+test('Wizard Pattern renders properly while loading', () => {
+  const component = mount(testWizardPattern({ loading: true }));
+  expect(component.render()).toMatchSnapshot();
+});
+
+test('Wizard Pattern renders properly after wizard step click', () => {
+  let eventCount = 0;
+  const component = mount(
+    testWizardPattern({
+      onStepChanged: () => eventCount++
+    })
+  );
+  component
+    .find('.wizard-pf-step a')
+    .at(1)
+    .simulate('click');
+
+  expect(eventCount).toBe(1);
 
   expect(component.render()).toMatchSnapshot();
 });
 
-test('Wizard Stateful Pattern renders properly', () => {
+test('Wizard Pattern accepts next step then previous step', () => {
+  let eventCount = 0;
+  const component = mount(
+    testWizardPattern({
+      onStepChanged: () => eventCount++
+    })
+  );
+
+  // click next
+  component
+    .find('.wizard-pf-footer button')
+    .at(2)
+    .simulate('click');
+
+  component.setProps({ activeStepIndex: 1 });
+
+  // click previous
+  component
+    .find('.wizard-pf-footer button')
+    .at(1)
+    .simulate('click');
+
+  component.setProps({ activeStepIndex: 0 });
+
+  expect(eventCount).toBe(2);
+});
+
+test('Wizard Pattern Body renders null without steps', () => {
+  const component = mount(<Wizard.Pattern.Body />);
+
+  expect(component.render()).toMatchSnapshot();
+});
+
+const testStatefulWizardPattern = props => {
   const onHide = jest.fn();
   const onExited = jest.fn();
-  const component = mount(
+  const onStepChanged = jest.fn();
+  return (
     <Wizard.Pattern.Stateful
       show
-      activeStepIndex={0}
       onHide={onHide}
       onExited={onExited}
       title="Wizard Pattern Stateful Example"
       shouldDisableNextStep={() => false}
       shouldPreventStepChange={() => false}
-      steps={[{ title: 'General', render: () => <p>General</p> }]}
+      steps={[
+        { title: 'General', render: () => <p>General</p> },
+        { title: 'Step Two', render: () => <p>Step Two</p> },
+        { title: 'Step Three', render: () => <p>Step Three</p> }
+      ]}
       loadingTitle="Loading..."
       loadingMessage="This may take a minute."
-      loading
+      activeStepIndex={0}
+      onStepChanged={onStepChanged}
+      {...props}
     />
   );
+};
+
+test('Wizard Stateful Pattern renders properly while loading', () => {
+  const component = mount(testStatefulWizardPattern({ loading: true }));
+  expect(component.state().activeStepIndex).toBe(0);
+  expect(component.render()).toMatchSnapshot();
+});
+
+test('Wizard Stateful Pattern renders properly after wizard step click', () => {
+  const component = mount(testStatefulWizardPattern());
+  component
+    .find('.wizard-pf-step a')
+    .at(1)
+    .simulate('click');
+
+  expect(component.state().activeStepIndex).toBe(1);
 
   expect(component.render()).toMatchSnapshot();
+});
+
+test('Wizard Stateful Pattern should return on shouldPreventStepChange', () => {
+  const component = mount(
+    testStatefulWizardPattern({
+      shouldPreventStepChange: (activeStepIndex, newStepIndex) => true
+    })
+  );
+  component
+    .find('.wizard-pf-step a')
+    .at(1)
+    .simulate('click');
+
+  expect(component.state().activeStepIndex).toBe(0);
 });

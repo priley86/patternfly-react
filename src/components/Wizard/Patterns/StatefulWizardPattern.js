@@ -4,7 +4,7 @@ import polyfill from 'react-lifecycles-compat';
 
 import WizardPattern from './WizardPattern';
 import { wizardStepShape } from './WizardPatternConstants';
-import { propOrState, bindMethods } from '../../../index';
+import { noop, propOrState, bindMethods } from '../../../index';
 
 /**
  * StatefulWizardPattern - the Stateful Wizard Pattern component.
@@ -31,8 +31,9 @@ class StatefulWizardPattern extends React.Component {
       shouldPreventStepChange(activeStepIndex, newStepIndex) ||
       (shouldPreventExit && shouldPreventExit(newStepIndex)) ||
       (shouldPreventEnter && shouldPreventEnter(activeStepIndex))
-    )
+    ) {
       return;
+    }
     this.setState({ activeStepIndex: newStepIndex });
   }
 
@@ -73,8 +74,8 @@ StatefulWizardPattern.propTypes = {
 
 StatefulWizardPattern.defaultProps = {
   ...WizardPattern.defaultProps,
-  shouldDisableNextStep: () => false,
-  shouldPreventStepChange: () => false
+  shouldDisableNextStep: noop,
+  shouldPreventStepChange: noop
 };
 
 polyfill(StatefulWizardPattern);
