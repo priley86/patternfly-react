@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { noop, propExists, Wizard, Icon, Button } from '../../../index';
+import { noop, Wizard, Icon, Button } from '../../../index';
 import WizardPatternBody from './WizardPatternBody';
 import { wizardStepShape } from './WizardPatternConstants';
 
@@ -123,11 +123,11 @@ const WizardPattern = ({
           {onFinalStep ? (
             closeText
           ) : (
-            <React.Fragment>
-              {nextText}
-              <Icon type="fa" name="angle-right" />
-            </React.Fragment>
-          )}
+              <React.Fragment>
+                {nextText}
+                <Icon type="fa" name="angle-right" />
+              </React.Fragment>
+            )}
         </Button>
       </Wizard.Footer>
     </Wizard>
