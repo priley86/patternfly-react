@@ -35,8 +35,7 @@ const WizardPattern = ({
     goToStep(Math.min(activeStepIndex + 1, steps.length - 1));
   };
 
-  const getActiveStep = (relativeToIndex = activeStepIndex) =>
-    steps[relativeToIndex];
+  const getStep = (index = activeStepIndex) => steps[index];
 
   const getPrevStep = (relativeToIndex = activeStepIndex) =>
     relativeToIndex > 0 && steps[relativeToIndex - 1];
@@ -44,12 +43,13 @@ const WizardPattern = ({
   const getNextStep = (relativeToIndex = activeStepIndex) =>
     relativeToIndex < steps.length - 1 && steps[relativeToIndex + 1];
 
+  const activeStep = getStep();
+
   const goToStep = newStepIndex => {
-    const currentStep = steps[activeStepIndex];
     if (shouldPreventGoToStep(newStepIndex)) return;
     if (onStepChanged) onStepChanged(newStepIndex);
     if (newStepIndex === activeStepIndex + 1) {
-      if (currentStep.onNext) currentStep.onNext();
+      if (activeStep.onNext) activeStep.onNext();
       if (onNext) onNext(newStepIndex);
     }
     if (newStepIndex === activeStepIndex - 1) {
@@ -58,13 +58,13 @@ const WizardPattern = ({
   };
 
   const shouldPreventGoToStep = newStepIndex => {
-    const targetStep = steps[newStepIndex];
+    const targetStep = getStep(newStepIndex);
     const stepBeforeTarget = getPrevStep(newStepIndex);
 
-    const preventExitActive = steps[activeStepIndex].preventExit;
-    const preventEnterTarget = propExists(targetStep, 'preventEnter')
-      ? targetStep.preventEnter
-      : stepBeforeTarget && stepBeforeTarget.isInvalid;
+    const preventExitActive = activeStep.preventExit;
+    const preventEnterTarget =
+      targetStep.preventEnter ||
+      (stepBeforeTarget && stepBeforeTarget.isInvalid);
     const nextStepClicked = newStepIndex === activeStepIndex + 1;
 
     return (
@@ -77,7 +77,6 @@ const WizardPattern = ({
   const onFirstStep = activeStepIndex === 0;
   const onFinalStep = activeStepIndex === steps.length - 1;
   const activeStepStr = (activeStepIndex + 1).toString();
-  const activeStep = getActiveStep();
 
   const prevStepUnreachable =
     onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
