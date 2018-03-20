@@ -17,7 +17,7 @@ import {
 const wizardPatternExampleAddWithInfo = stories => {
   stories.addDecorator(withKnobs);
   stories.add(
-    'Modal wizard pattern example',
+    'Wizard pattern example',
     withInfo({
       source: false,
       propTablesExclude: [Row, Col, WizardPatternExample],
@@ -28,20 +28,39 @@ const wizardPatternExampleAddWithInfo = stories => {
         </div>
       )
     })(() => {
+      const stateful = boolean('Stateful', false);
       const story = (
         <Row>
           <Col sm={12}>
             <WizardPatternExample
-              stateful={boolean('Stateful', false)}
-              activeStepIndex={number('Stateful Active Step Index', 0)}
+              stateful={stateful}
+              activeStepIndex={
+                stateful && number('Stateful Active Step Index', 0)
+              }
             />
           </Col>
         </Row>
       );
       return inlineTemplate({
-        title: 'Modal Wizard Pattern Example',
-        description:
-          'The modal wizard pattern example contains WizardPattern and StatefulWizardPattern components.',
+        title: 'Wizard Pattern Example',
+        description: (
+          <div>
+            The wizard pattern example contains <i>WizardPattern</i> and{' '}
+            <i>StatefulWizardPattern</i> pattern components.
+            <br />
+            <br />
+            The <i>WizardPattern</i> is a <b>stateless</b> wizard pattern which
+            provides loading contents and some common step handling logic for
+            the provided steps.
+            <br />
+            <br />
+            The <i>StatefulWizardPattern</i> is a <b>stateful</b> wizard pattern
+            which provides loading contents, step handling logic, and will
+            automatically manage the <i>activeStepIndex</i> for the provided
+            steps. This can be overriden by passing <i>activeStepIndex</i> as a
+            prop.
+          </div>
+        ),
         documentationLink: `${
           DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
         }wizard/#overview`,

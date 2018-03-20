@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import {
   loadingWizardExampleWithInfo,
-  modalWizardExampleWithInfo,
+  wizardExampleWithInfo,
   wizardPatternExampleAddWithInfo
 } from './Stories';
 
@@ -10,7 +10,7 @@ import {
  */
 const componentStories = storiesOf('Wizard/Components', module);
 loadingWizardExampleWithInfo(componentStories);
-modalWizardExampleWithInfo(componentStories);
+wizardExampleWithInfo(componentStories);
 
 /**
  * Wizard Pattern stories

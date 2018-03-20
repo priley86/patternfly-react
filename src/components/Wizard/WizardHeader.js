@@ -1,29 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { noop, Modal, Icon } from '../../index';
 
 /**
  * WizardHeader component for Patternfly React
  */
-const WizardHeader = ({ children, className, title, ...rest }) => {
-  const classes = classNames('wizard-pf-header', className);
-  return (
-    <div className={classes} {...rest}>
-      <h4 className="wizard-pf-title">{title}</h4>
-    </div>
-  );
-};
+const WizardHeader = ({ onClose, title, ...props }) => (
+  <Modal.Header {...props}>
+    <button
+      className="close"
+      onClick={onClose}
+      aria-hidden="true"
+      aria-label="Close"
+    >
+      <Icon type="pf" name="close" />
+    </button>
+    <Modal.Title>{title}</Modal.Title>
+  </Modal.Header>
+);
 WizardHeader.propTypes = {
-  /** Children nodes  */
-  children: PropTypes.node,
-  /** Additional css classes */
-  className: PropTypes.string,
+  /** onClose callback */
+  onClose: PropTypes.func,
   /** The wizard title */
-  title: PropTypes.string
+  title: PropTypes.node
 };
 WizardHeader.defaultProps = {
-  children: null,
-  className: '',
-  title: ''
+  onClose: noop,
+  title: null
 };
 export default WizardHeader;

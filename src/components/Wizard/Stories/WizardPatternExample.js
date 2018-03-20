@@ -41,15 +41,14 @@ export class WizardPatternExample extends React.Component {
     return (
       <div>
         <Button bsStyle="primary" bsSize="large" onClick={this.open}>
-          Launch Stateless Modal Wizard <br />
-          (WizardPattern)
+          Launch Stateless Wizard
         </Button>
 
         <Wizard.Pattern
           show={this.state.showModal}
           onHide={this.close}
           onExited={this.close}
-          title="Modal Wizard Pattern Example"
+          title="Statless Wizard Pattern Example"
           nextStepDisabled={false}
           steps={wizardSteps}
           loadingTitle="Loading..."
@@ -65,8 +64,7 @@ export class WizardPatternExample extends React.Component {
     return (
       <div>
         <Button bsStyle="primary" bsSize="large" onClick={this.open}>
-          Launch Stateful Modal Wizard <br />
-          (StatefulWizardPattern or WizardPattern.Stateful)
+          Launch Stateful Wizard
         </Button>
 
         <Wizard.Pattern.Stateful
@@ -74,7 +72,7 @@ export class WizardPatternExample extends React.Component {
           show={this.state.showModal}
           onHide={this.close}
           onExited={this.close}
-          title="Stateful Modal Wizard Pattern Example"
+          title="Stateful Wizard Pattern Example"
           shouldDisableNextStep={activeStepIndex => false}
           steps={wizardSteps}
           loadingTitle="Loading..."
@@ -100,6 +98,21 @@ WizardPatternExample.defaultProps = {
 };
 
 export const wizardPatternExampleSource = `
+const wizardSteps = [
+  {
+    title: 'General',
+    render: () => <p>(Step 1 Contents Here)</p>
+  },
+  {
+    title: 'Details',
+    render: () => <p>(Step 2 Contents Here)</p>
+  },
+  {
+    title: 'Results',
+    render: () => <p>(Step 3 Contents Here)</p>
+  }
+];
+
 export class WizardPatternExample extends React.Component {
   constructor() {
     super();
@@ -123,15 +136,14 @@ export class WizardPatternExample extends React.Component {
     return (
       <div>
         <Button bsStyle="primary" bsSize="large" onClick={this.open}>
-          Launch Stateless Modal Wizard <br />
-          (WizardPattern)
+          Launch Stateless Wizard
         </Button>
 
-        <WizardPattern
+        <Wizard.Pattern
           show={this.state.showModal}
           onHide={this.close}
           onExited={this.close}
-          title="Modal Wizard Example"
+          title="Statless Wizard Pattern Example"
           nextStepDisabled={false}
           steps={wizardSteps}
           loadingTitle="Loading..."
@@ -147,15 +159,15 @@ export class WizardPatternExample extends React.Component {
     return (
       <div>
         <Button bsStyle="primary" bsSize="large" onClick={this.open}>
-          Launch Stateful Modal Wizard <br />
-          (StatefulWizardPattern or WizardPattern.Stateful)
+          Launch Stateful Wizard
         </Button>
 
-        <WizardPattern.Stateful
+        <Wizard.Pattern.Stateful
+          activeStepIndex={this.props.activeStepIndex}
           show={this.state.showModal}
           onHide={this.close}
           onExited={this.close}
-          title="Modal Wizard Stateful Example"
+          title="Stateful Wizard Pattern Example"
           shouldDisableNextStep={activeStepIndex => false}
           steps={wizardSteps}
           loadingTitle="Loading..."

@@ -4,41 +4,38 @@ import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates'
 import { Row, Col } from '../../../index';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
 
-import {
-  ModalWizardExample,
-  modalWizardExampleSource
-} from './ModalWizardExample';
+import { WizardExample, wizardExampleSource } from './WizardExample';
 
 import { mockWizardItems } from './mockWizardItems';
 
 /**
- * ModalWizardExample stories
+ * WizardExample stories
  */
 
-const modalWizardExampleWithInfo = stories => {
+const wizardExampleWithInfo = stories => {
   stories.add(
-    'Modal wizard example',
+    'Wizard',
     withInfo({
       source: false,
-      propTablesExclude: [Row, Col, ModalWizardExample],
+      propTablesExclude: [Row, Col, WizardExample],
       text: (
         <div>
           <h1>Story Source</h1>
-          <pre>{modalWizardExampleSource}</pre>
+          <pre>{wizardExampleSource}</pre>
         </div>
       )
     })(() => {
       const story = (
         <Row>
           <Col sm={12}>
-            <ModalWizardExample steps={mockWizardItems} />
+            <WizardExample steps={mockWizardItems} />
           </Col>
         </Row>
       );
       return inlineTemplate({
-        title: 'Modal Wizard Example',
+        title: 'Wizard',
         description:
-          'The modal wizard example contains base wizard components within a modal wizard.',
+          'The wizard example contains all base wizard components within a modal wizard.',
         documentationLink: `${
           DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
         }wizard/#overview`,
@@ -48,4 +45,4 @@ const modalWizardExampleWithInfo = stories => {
   );
 };
 
-export default modalWizardExampleWithInfo;
+export default wizardExampleWithInfo;

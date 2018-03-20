@@ -17,7 +17,7 @@ import { mockWizardItems } from './mockWizardItems';
 
 const loadingWizardExampleWithInfo = stories => {
   stories.add(
-    'Loading wizard example',
+    'Loading wizard',
     withInfo({
       source: false,
       propTablesExclude: [Row, Col, LoadingWizardExample],
@@ -36,9 +36,9 @@ const loadingWizardExampleWithInfo = stories => {
         </Row>
       );
       return inlineTemplate({
-        title: 'Loading Wizard Example',
+        title: 'Loading Wizard',
         description:
-          'The loading wizard example contains loading wizard components within a modal wizard.',
+          'The loading wizard shows loading wizard contents within a wizard.',
         documentationLink: `${
           DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
         }wizard/#design`,

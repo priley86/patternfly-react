@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { noop, propExists, Modal, Wizard, Icon, Button } from '../../../index';
+import { noop, propExists, Wizard, Icon, Button } from '../../../index';
 import WizardPatternBody from './WizardPatternBody';
 import { wizardStepShape } from './WizardPatternConstants';
 
@@ -88,66 +88,49 @@ const WizardPattern = ({
     getNextStep().preventEnter;
 
   return (
-    <Modal
-      show={show}
-      onHide={onHide}
-      onExited={onExited}
-      dialogClassName="modal-lg wizard-pf"
-    >
-      <Wizard>
-        <Modal.Header>
-          <button
-            className="close"
-            onClick={onHide}
-            aria-hidden="true"
-            aria-label="Close"
-          >
-            <Icon type="pf" name="close" />
-          </button>
-          <Modal.Title>{title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="wizard-pf-body clearfix">
-          <WizardPatternBody
-            loadingTitle={loadingTitle}
-            loadingMessage={loadingMessage}
-            loading={loading}
-            steps={steps}
-            activeStepIndex={activeStepIndex}
-            activeStepStr={activeStepStr}
-            goToStep={goToStep}
-            nextStepDisabled={nextStepDisabled}
-            stepButtonsDisabled={stepButtonsDisabled}
-          />
-        </Modal.Body>
-        <Modal.Footer className="wizard-pf-footer">
-          <Button bsStyle="default" className="btn-cancel" onClick={onHide}>
-            {cancelText}
-          </Button>
-          <Button
-            bsStyle="default"
-            onClick={onBackClick}
-            disabled={prevStepUnreachable}
-          >
-            <Icon type="fa" name="angle-left" />
-            {backText}
-          </Button>
-          <Button
-            bsStyle="primary"
-            onClick={onFinalStep ? onHide : onNextClick}
-            disabled={nextStepUnreachable}
-          >
-            {onFinalStep ? (
-              closeText
-            ) : (
-              <React.Fragment>
-                {nextText}
-                <Icon type="fa" name="angle-right" />
-              </React.Fragment>
-            )}
-          </Button>
-        </Modal.Footer>
-      </Wizard>
-    </Modal>
+    <Wizard show={show} onHide={onHide} onExited={onExited}>
+      <Wizard.Header onClose={onHide} title={title} />
+      <Wizard.Body>
+        <WizardPatternBody
+          loadingTitle={loadingTitle}
+          loadingMessage={loadingMessage}
+          loading={loading}
+          steps={steps}
+          activeStepIndex={activeStepIndex}
+          activeStepStr={activeStepStr}
+          goToStep={goToStep}
+          nextStepDisabled={nextStepDisabled}
+          stepButtonsDisabled={stepButtonsDisabled}
+        />
+      </Wizard.Body>
+      <Wizard.Footer>
+        <Button bsStyle="default" className="btn-cancel" onClick={onHide}>
+          {cancelText}
+        </Button>
+        <Button
+          bsStyle="default"
+          onClick={onBackClick}
+          disabled={prevStepUnreachable}
+        >
+          <Icon type="fa" name="angle-left" />
+          {backText}
+        </Button>
+        <Button
+          bsStyle="primary"
+          onClick={onFinalStep ? onHide : onNextClick}
+          disabled={nextStepUnreachable}
+        >
+          {onFinalStep ? (
+            closeText
+          ) : (
+            <React.Fragment>
+              {nextText}
+              <Icon type="fa" name="angle-right" />
+            </React.Fragment>
+          )}
+        </Button>
+      </Wizard.Footer>
+    </Wizard>
   );
 };
 

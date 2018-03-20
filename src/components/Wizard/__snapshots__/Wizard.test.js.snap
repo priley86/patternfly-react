@@ -555,301 +555,376 @@ exports[`Wizard loading renders properly 1`] = `
 >
   <div
     class="col-sm-12"
+  />
+</div>
+`;
+
+exports[`Wizard main contents renders properly 1`] = `
+<div
+  role="dialog"
+>
+  <div
+    class="modal-backdrop fade in"
+  />
+  <div
+    class="fade in modal"
+    role="dialog"
+    style="display: block; padding-right: 0px;"
+    tabindex="-1"
   >
     <div
-      class=""
+      class="modal-lg wizard-pf modal-dialog"
     >
       <div
-        class="wizard-pf-header"
+        class="modal-content"
+        role="document"
       >
-        <h4
-          class="wizard-pf-title"
-        >
-          Wizard Title
-        </h4>
-      </div>
-      <div
-        class="wizard-pf-body"
-      >
-        <section
-          class="wizard-pf-row"
+        <div
+          class=""
         >
           <div
-            class="wizard-pf-main"
+            class="modal-header"
           >
-            Contents
+            <button
+              aria-hidden="true"
+              aria-label="Close"
+              class="close"
+            >
+              <span
+                aria-hidden="true"
+                class="pficon pficon-close"
+              />
+            </button>
+            <h4
+              class="modal-title"
+            >
+              Wizard Title
+            </h4>
           </div>
-        </section>
-      </div>
-      <div
-        class="wizard-pf-footer"
-      >
-        <button
-          class="btn-cancel btn btn-default"
-          type="button"
-        >
-          Cancel
-        </button>
-        <button
-          class="btn btn-default"
-          disabled=""
-          type="button"
-        >
-          <span
-            class="i fa fa-angle-left"
-          />
-          Back
-        </button>
-        <button
-          class="btn btn-primary"
-          disabled=""
-          type="button"
-        >
-          Next
-          <span
-            class="i fa fa-angle-right"
-          />
-        </button>
+          <div
+            class="wizard-pf-body clearfix modal-body"
+          >
+            <section
+              class="wizard-pf-row"
+            >
+              <div
+                class="wizard-pf-main"
+              >
+                <div
+                  class="wizard-pf-contents"
+                >
+                  Content
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Wizard main contents renders properly 1`] = `
-<div
-  class=""
->
-  <div
-    class="wizard-pf-header"
-  >
-    <h4
-      class="wizard-pf-title"
-    >
-      Wizard Title
-    </h4>
-  </div>
-  <div
-    class="wizard-pf-body"
-  >
-    <section
-      class="wizard-pf-row"
-    >
-      <div
-        class="wizard-pf-main"
-      >
-        <div
-          class="wizard-pf-contents"
-        >
-          Content
-        </div>
-      </div>
-    </section>
-  </div>
-</div>
-`;
-
 exports[`Wizard review contents renders properly 1`] = `
 <div
-  class=""
+  role="dialog"
 >
   <div
-    class="wizard-pf-header"
-  >
-    <h4
-      class="wizard-pf-title"
-    >
-      Wizard Title
-    </h4>
-  </div>
+    class="modal-backdrop fade in"
+  />
   <div
-    class="wizard-pf-body"
+    class="fade in modal"
+    role="dialog"
+    style="display: block; padding-right: 0px;"
+    tabindex="-1"
   >
-    <section
-      class="wizard-pf-row"
+    <div
+      class="modal-lg wizard-pf modal-dialog"
     >
       <div
-        class="wizard-pf-main"
+        class="modal-content"
+        role="document"
       >
         <div
-          class="wizard-pf-review-steps"
+          class=""
         >
-          <ul
-            class="list-group"
+          <div
+            class="modal-header"
           >
-            <li
-              class="list-group-item"
+            <button
+              aria-hidden="true"
+              aria-label="Close"
+              class="close"
             >
-              <a
-                class="collapsed"
-                href="#"
-              >
-                Step 1 Review
-              </a>
+              <span
+                aria-hidden="true"
+                class="pficon pficon-close"
+              />
+            </button>
+            <h4
+              class="modal-title"
+            >
+              Wizard Title
+            </h4>
+          </div>
+          <div
+            class="wizard-pf-body clearfix modal-body"
+          >
+            <section
+              class="wizard-pf-row"
+            >
               <div
-                class="wizard-pf-review-substeps collapse"
+                class="wizard-pf-main"
               >
-                <ul
-                  class="list-group"
+                <div
+                  class="wizard-pf-review-steps"
                 >
-                  <li
-                    class="list-group-item"
+                  <ul
+                    class="list-group"
                   >
-                    <a
-                      class="collapsed"
-                      href="#"
+                    <li
+                      class="list-group-item"
                     >
-                      <span
-                        class="wizard-pf-substep-number"
+                      <a
+                        class="collapsed"
+                        href="#"
                       >
-                        Review 1.1
-                      </span>
-                      <span
-                        class="wizard-pf-substep-title"
-                      >
-                        Review 1.1
-                      </span>
-                    </a>
-                    <div
-                      class="wizard-pf-review-content collapse"
-                    >
+                        Step 1 Review
+                      </a>
                       <div
-                        class="wizard-pf-review-item"
+                        class="wizard-pf-review-substeps collapse"
                       >
-                        <span
-                          class="wizard-pf-review-item-label"
+                        <ul
+                          class="list-group"
                         >
-                          Step 1.1 Label:
-                        </span>
-                        <span
-                          class="wizard-pf-review-item-value"
-                        >
-                          Brian Johnson
-                        </span>
+                          <li
+                            class="list-group-item"
+                          >
+                            <a
+                              class="collapsed"
+                              href="#"
+                            >
+                              <span
+                                class="wizard-pf-substep-number"
+                              >
+                                Review 1.1
+                              </span>
+                              <span
+                                class="wizard-pf-substep-title"
+                              >
+                                Review 1.1
+                              </span>
+                            </a>
+                            <div
+                              class="wizard-pf-review-content collapse"
+                            >
+                              <div
+                                class="wizard-pf-review-item"
+                              >
+                                <span
+                                  class="wizard-pf-review-item-label"
+                                >
+                                  Step 1.1 Label:
+                                </span>
+                                <span
+                                  class="wizard-pf-review-item-value"
+                                >
+                                  Brian Johnson
+                                </span>
+                              </div>
+                              <div
+                                class="wizard-pf-review-item"
+                              >
+                                <span
+                                  class="wizard-pf-review-item-label"
+                                >
+                                  Step 1.2 Label:
+                                </span>
+                                <span
+                                  class="wizard-pf-review-item-value"
+                                >
+                                  This is the description.
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
                       </div>
-                      <div
-                        class="wizard-pf-review-item"
-                      >
-                        <span
-                          class="wizard-pf-review-item-label"
-                        >
-                          Step 1.2 Label:
-                        </span>
-                        <span
-                          class="wizard-pf-review-item-value"
-                        >
-                          This is the description.
-                        </span>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </li>
-          </ul>
+            </section>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Wizard sidebar renders properly 1`] = `
 <div
-  class=""
+  role="dialog"
 >
   <div
-    class="wizard-pf-header"
-  >
-    <h4
-      class="wizard-pf-title"
-    >
-      Wizard Title
-    </h4>
-  </div>
+    class="modal-backdrop fade in"
+  />
   <div
-    class="wizard-pf-body"
+    class="fade in modal"
+    role="dialog"
+    style="display: block; padding-right: 0px;"
+    tabindex="-1"
   >
-    <section
-      class="wizard-pf-row"
+    <div
+      class="modal-lg wizard-pf modal-dialog"
     >
       <div
-        class="wizard-pf-sidebar"
+        class="modal-content"
+        role="document"
       >
-        <ul
-          class="list-group"
+        <div
+          class=""
         >
-          <li
-            class="active wizard-sidebar-group-item list-group-item"
+          <div
+            class="modal-header"
           >
-            <a
-              href="#"
+            <button
+              aria-hidden="true"
+              aria-label="Close"
+              class="close"
             >
               <span
-                class="wizard-pf-substep-number"
+                aria-hidden="true"
+                class="pficon pficon-close"
+              />
+            </button>
+            <h4
+              class="modal-title"
+            >
+              Wizard Title
+            </h4>
+          </div>
+          <div
+            class="wizard-pf-body clearfix modal-body"
+          >
+            <section
+              class="wizard-pf-row"
+            >
+              <div
+                class="wizard-pf-sidebar"
               >
-                1A.
-              </span>
-              <span
-                class="wizard-pf-substep-title"
-              >
-                Details
-              </span>
-            </a>
-          </li>
-        </ul>
+                <ul
+                  class="list-group"
+                >
+                  <li
+                    class="active wizard-sidebar-group-item list-group-item"
+                  >
+                    <a
+                      href="#"
+                    >
+                      <span
+                        class="wizard-pf-substep-number"
+                      >
+                        1A.
+                      </span>
+                      <span
+                        class="wizard-pf-substep-title"
+                      >
+                        Details
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Wizard steps renders properly 1`] = `
 <div
-  class=""
+  role="dialog"
 >
   <div
-    class="wizard-pf-header"
-  >
-    <h4
-      class="wizard-pf-title"
-    >
-      Wizard Title
-    </h4>
-  </div>
+    class="modal-backdrop fade in"
+  />
   <div
-    class="wizard-pf-body"
+    class="fade in modal"
+    role="dialog"
+    style="display: block; padding-right: 0px;"
+    tabindex="-1"
   >
     <div
-      class="wizard-pf-steps"
+      class="modal-lg wizard-pf modal-dialog"
     >
-      <ul
-        class="wizard-pf-steps-indicator"
+      <div
+        class="modal-content"
+        role="document"
       >
-        <li
-          class="wizard-pf-step"
+        <div
+          class=""
         >
-          <a
-            href="#"
+          <div
+            class="modal-header"
           >
-            <span
-              class="wizard-pf-step-number"
+            <button
+              aria-hidden="true"
+              aria-label="Close"
+              class="close"
             >
-              Step 1
-            </span>
-            <span
-              class="wizard-pf-step-title"
+              <span
+                aria-hidden="true"
+                class="pficon pficon-close"
+              />
+            </button>
+            <h4
+              class="modal-title"
             >
-              Step 1
-            </span>
-            <span
-              class="wizard-pf-step-title-substep"
+              Wizard Title
+            </h4>
+          </div>
+          <div
+            class="wizard-pf-body clearfix modal-body"
+          >
+            <div
+              class="wizard-pf-steps"
             >
-              Step 1.1
-            </span>
-          </a>
-        </li>
-      </ul>
+              <ul
+                class="wizard-pf-steps-indicator"
+              >
+                <li
+                  class="wizard-pf-step"
+                >
+                  <a
+                    href="#"
+                  >
+                    <span
+                      class="wizard-pf-step-number"
+                    >
+                      Step 1
+                    </span>
+                    <span
+                      class="wizard-pf-step-title"
+                    >
+                      Step 1
+                    </span>
+                    <span
+                      class="wizard-pf-step-title-substep"
+                    >
+                      Step 1.1
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

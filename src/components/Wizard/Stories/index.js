@@ -2,9 +2,7 @@ export {
   default as loadingWizardExampleWithInfo
 } from './LoadingWizardExampleStory';
 
-export {
-  default as modalWizardExampleWithInfo
-} from './ModalWizardExampleStory';
+export { default as wizardExampleWithInfo } from './WizardExampleStory';
 
 export {
   default as wizardPatternExampleAddWithInfo

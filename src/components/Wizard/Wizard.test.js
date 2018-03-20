@@ -6,7 +6,7 @@ test('Wizard loading renders properly', () => {
   const component = mount(
     <Row>
       <Col sm={12}>
-        <Wizard>
+        <Wizard show>
           <Wizard.Header title="Wizard Title" />
           <Wizard.Body>
             <Wizard.Row>
@@ -35,7 +35,7 @@ test('Wizard loading renders properly', () => {
 test('Wizard steps renders properly', () => {
   let eventCount = 0;
   const component = mount(
-    <Wizard>
+    <Wizard show>
       <Wizard.Header title="Wizard Title" />
       <Wizard.Body>
         <Wizard.Steps
@@ -69,7 +69,7 @@ test('Wizard sidebar renders properly', () => {
   let eventCount = 0;
 
   const component = mount(
-    <Wizard>
+    <Wizard show>
       <Wizard.Header title="Wizard Title" />
       <Wizard.Body>
         <Wizard.Row>
@@ -106,7 +106,7 @@ test('Wizard sidebar renders properly', () => {
 
 test('Wizard main contents renders properly', () => {
   const component = mount(
-    <Wizard>
+    <Wizard show>
       <Wizard.Header title="Wizard Title" />
       <Wizard.Body>
         <Wizard.Row>
@@ -133,7 +133,7 @@ test('Wizard review contents renders properly', () => {
   const onStepClicked = jest.fn();
   const onSubStepClicked = jest.fn();
   const component = mount(
-    <Wizard>
+    <Wizard show>
       <Wizard.Header title="Wizard Title" />
       <Wizard.Body>
         <Wizard.Row>
