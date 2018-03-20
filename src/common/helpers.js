@@ -18,9 +18,9 @@ export const debounce = (func, wait) => {
   return innerFunc;
 };
 
-/** Returns true if propName is a non-null property of the props object (can be any object, not just React props). */
+/** Returns true if propName is a non-null, defined property of the props object (can be any object, not just React props). */
 export const propExists = (props, propName) =>
-  props && props.hasOwnProperty(propName) && props[propName] !== null;
+  props && props.hasOwnProperty(propName) && props[propName] != null;
 
 /** Given two objects (props and state), returns the value of propName from props if present, or from state otherwise. */
 export const propOrState = (props, state, propName) =>
