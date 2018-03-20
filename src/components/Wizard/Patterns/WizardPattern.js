@@ -80,6 +80,7 @@ const WizardPattern = ({
 
   const prevStepUnreachable =
     onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
+  // nextStepUnreachable is still true onFinalStep, because the Next button turns into a Close button
   const nextStepUnreachable =
     nextStepDisabled ||
     activeStep.isInvalid ||
