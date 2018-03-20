@@ -38,20 +38,14 @@ class StatefulWizardPattern extends React.Component {
   }
 
   render() {
-    const { shouldDisableNextStep, steps, ...otherProps } = this.props;
+    const { shouldDisableNextStep, ...otherProps } = this.props;
     const { activeStepIndex } = this.state;
+    // NOTE: the steps array is passed down with ...otherProps, including any shouldPreventEnter or shouldPreventExit functions inside it.
+    // These functions are for StatefulWizardPattern only and should not be used in WizardPattern despite being passed down here.
     return (
       <WizardPattern
         nextStepDisabled={shouldDisableNextStep(activeStepIndex)}
         {...otherProps}
-        steps={steps.map(step => {
-          const {
-            shouldPreventEnter,
-            shouldPreventExit,
-            ...otherStepProps
-          } = step;
-          return otherStepProps;
-        })}
         activeStepIndex={activeStepIndex} // Value from state, as set by getDerivedStateFromProps
         onStepChanged={this.onStepChanged}
       />
