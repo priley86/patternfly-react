@@ -47,14 +47,18 @@ const WizardPattern = ({
 
   const goToStep = newStepIndex => {
     if (shouldPreventGoToStep(newStepIndex)) return;
-    if (onStepChanged) onStepChanged(newStepIndex);
     if (newStepIndex === activeStepIndex + 1) {
-      if (activeStep.onNext) activeStep.onNext();
-      if (onNext) onNext(newStepIndex);
+      const stepOnNextResult = activeStep.onNext && activeStep.onNext();
+      const propOnNextResult = onNext && onNext(newStepIndex);
+      const stepFailed =
+        stepOnNextResult === false || propOnNextResult === false;
+      if (stepFailed) return;
     }
     if (newStepIndex === activeStepIndex - 1) {
-      if (onBack) onBack(newStepIndex);
+      const stepFailed = (onBack && onBack(newStepIndex)) === false;
+      if (stepFailed) return;
     }
+    if (onStepChanged) onStepChanged(newStepIndex);
   };
 
   const shouldPreventGoToStep = newStepIndex => {
@@ -123,11 +127,11 @@ const WizardPattern = ({
           {onFinalStep ? (
             closeText
           ) : (
-              <React.Fragment>
-                {nextText}
-                <Icon type="fa" name="angle-right" />
-              </React.Fragment>
-            )}
+            <React.Fragment>
+              {nextText}
+              <Icon type="fa" name="angle-right" />
+            </React.Fragment>
+          )}
         </Button>
       </Wizard.Footer>
     </Wizard>
