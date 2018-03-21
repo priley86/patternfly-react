@@ -28,6 +28,13 @@ const WizardPattern = ({
   loading,
   children
 }) => {
+  const onFirstStep = activeStepIndex === 0;
+  const onFinalStep = activeStepIndex === steps.length - 1;
+
+  const onHideClick = () => {
+    onHide(onFinalStep);
+  };
+
   const onBackClick = () => {
     goToStep(Math.max(activeStepIndex - 1, 0));
   };
@@ -79,8 +86,6 @@ const WizardPattern = ({
     );
   };
 
-  const onFirstStep = activeStepIndex === 0;
-  const onFinalStep = activeStepIndex === steps.length - 1;
   const activeStepStr = (activeStepIndex + 1).toString();
 
   const prevStepUnreachable =
@@ -93,8 +98,8 @@ const WizardPattern = ({
     getNextStep().preventEnter;
 
   return (
-    <Wizard show={show} onHide={onHide} onExited={onExited}>
-      <Wizard.Header onClose={onHide} title={title} />
+    <Wizard show={show} onHide={onHideClick} onExited={onExited}>
+      <Wizard.Header onClose={onHideClick} title={title} />
       <Wizard.Body>
         <WizardPatternBody
           loadingTitle={loadingTitle}
@@ -109,7 +114,7 @@ const WizardPattern = ({
         />
       </Wizard.Body>
       <Wizard.Footer>
-        <Button bsStyle="default" className="btn-cancel" onClick={onHide}>
+        <Button bsStyle="default" className="btn-cancel" onClick={onHideClick}>
           {cancelText}
         </Button>
         <Button
@@ -122,7 +127,7 @@ const WizardPattern = ({
         </Button>
         <Button
           bsStyle="primary"
-          onClick={onFinalStep ? onHide : onNextClick}
+          onClick={onFinalStep ? onHideClick : onNextClick}
           disabled={nextStepUnreachable}
         >
           {onFinalStep ? (
