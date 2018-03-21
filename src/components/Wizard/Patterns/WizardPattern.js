@@ -26,6 +26,8 @@ const WizardPattern = ({
   nextText,
   closeText,
   loading,
+  nextButtonRef,
+  bodyHeader,
   children
 }) => {
   const onFirstStep = activeStepIndex === 0;
@@ -101,6 +103,7 @@ const WizardPattern = ({
     <Wizard show={show} onHide={onHideClick} onExited={onExited}>
       <Wizard.Header onClose={onHideClick} title={title} />
       <Wizard.Body>
+        {bodyHeader}
         <WizardPatternBody
           loadingTitle={loadingTitle}
           loadingMessage={loadingMessage}
@@ -134,11 +137,11 @@ const WizardPattern = ({
           {onFinalStep ? (
             closeText
           ) : (
-              <React.Fragment>
-                {nextText}
-                <Icon type="fa" name="angle-right" />
-              </React.Fragment>
-            )}
+            <React.Fragment>
+              {nextText}
+              <Icon type="fa" name="angle-right" />
+            </React.Fragment>
+          )}
         </Button>
       </Wizard.Footer>
       {children}
@@ -166,6 +169,7 @@ WizardPattern.propTypes = {
   nextStepDisabled: PropTypes.bool,
   stepButtonsDisabled: PropTypes.bool,
   nextButtonRef: PropTypes.func,
+  bodyHeader: PropTypes.node,
   children: PropTypes.node
 };
 
@@ -188,6 +192,7 @@ WizardPattern.defaultProps = {
   nextStepDisabled: false,
   stepButtonsDisabled: false,
   nextButtonRef: noop,
+  bodyHeader: null,
   children: null
 };
 
