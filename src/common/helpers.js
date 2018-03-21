@@ -34,6 +34,10 @@ export const selectKeys = (obj, keys, fn = val => val) =>
 export const filterKeys = (obj, validator) =>
   selectKeys(obj, Object.keys(obj).filter(validator));
 
+/** Returns a subset of the given object with the given keys left out, with values optionally replaced by a fn. */
+export const excludeKeys = (obj, keys, fn = val => val) =>
+  filterKeys(obj, key => !keys.includes(key));
+
 /** Returns the given React children prop as a regular array of React nodes. */
 export const childrenToArray = children =>
   children &&
