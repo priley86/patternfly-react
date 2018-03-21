@@ -25,7 +25,8 @@ const WizardPattern = ({
   backText,
   nextText,
   closeText,
-  loading
+  loading,
+  children
 }) => {
   const onBackClick = () => {
     goToStep(Math.max(activeStepIndex - 1, 0));
@@ -134,6 +135,7 @@ const WizardPattern = ({
           )}
         </Button>
       </Wizard.Footer>
+      {children}
     </Wizard>
   );
 };
@@ -156,7 +158,8 @@ WizardPattern.propTypes = {
   closeText: PropTypes.string,
   steps: PropTypes.arrayOf(PropTypes.shape(wizardStepShape)),
   nextStepDisabled: PropTypes.bool,
-  stepButtonsDisabled: PropTypes.bool
+  stepButtonsDisabled: PropTypes.bool,
+  children: PropTypes.node
 };
 
 WizardPattern.defaultProps = {
@@ -176,7 +179,8 @@ WizardPattern.defaultProps = {
   closeText: 'Close',
   steps: [],
   nextStepDisabled: false,
-  stepButtonsDisabled: false
+  stepButtonsDisabled: false,
+  children: null
 };
 
 WizardPattern.displayName = 'WizardPattern';
