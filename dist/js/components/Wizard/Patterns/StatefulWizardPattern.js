@@ -83,21 +83,15 @@ var StatefulWizardPattern = function (_React$Component) {
     value: function render() {
       var _props2 = this.props,
           shouldDisableNextStep = _props2.shouldDisableNextStep,
-          steps = _props2.steps,
-          otherProps = _objectWithoutProperties(_props2, ['shouldDisableNextStep', 'steps']);
+          otherProps = _objectWithoutProperties(_props2, ['shouldDisableNextStep']);
 
       var activeStepIndex = this.state.activeStepIndex;
+      // NOTE: the steps array is passed down with ...otherProps, including any shouldPreventEnter or shouldPreventExit functions inside it.
+      // These functions are for StatefulWizardPattern only and should not be used in WizardPattern despite being passed down here.
 
       return _react2.default.createElement(_WizardPattern2.default, _extends({
         nextStepDisabled: shouldDisableNextStep(activeStepIndex)
       }, otherProps, {
-        steps: steps.map(function (step) {
-          var shouldPreventEnter = step.shouldPreventEnter,
-              shouldPreventExit = step.shouldPreventExit,
-              otherStepProps = _objectWithoutProperties(step, ['shouldPreventEnter', 'shouldPreventExit']);
-
-          return otherStepProps;
-        }),
         activeStepIndex: activeStepIndex // Value from state, as set by getDerivedStateFromProps
         , onStepChanged: this.onStepChanged
       }));
@@ -107,7 +101,7 @@ var StatefulWizardPattern = function (_React$Component) {
   return StatefulWizardPattern;
 }(_react2.default.Component);
 
-StatefulWizardPattern.propTypes = _extends({}, _WizardPattern2.default.propTypes, {
+StatefulWizardPattern.propTypes = _extends({}, (0, _index.excludeKeys)(_WizardPattern2.default.propTypes, ['activeStepIndex']), {
   steps: _propTypes2.default.arrayOf(_propTypes2.default.shape(_extends({}, _WizardPatternConstants.wizardStepShape, {
     shouldPreventEnter: _propTypes2.default.func,
     shouldPreventExit: _propTypes2.default.func
@@ -116,7 +110,7 @@ StatefulWizardPattern.propTypes = _extends({}, _WizardPattern2.default.propTypes
   shouldPreventStepChange: _propTypes2.default.func
 });
 
-StatefulWizardPattern.defaultProps = _extends({}, _WizardPattern2.default.defaultProps, {
+StatefulWizardPattern.defaultProps = _extends({}, (0, _index.excludeKeys)(_WizardPattern2.default.defaultProps, ['activeStepIndex']), {
   shouldDisableNextStep: _index.noop,
   shouldPreventStepChange: _index.noop
 });

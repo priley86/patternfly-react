@@ -43,7 +43,17 @@ var WizardPattern = function WizardPattern(_ref) {
       backText = _ref.backText,
       nextText = _ref.nextText,
       closeText = _ref.closeText,
-      loading = _ref.loading;
+      loading = _ref.loading,
+      nextButtonRef = _ref.nextButtonRef,
+      bodyHeader = _ref.bodyHeader,
+      children = _ref.children;
+
+  var onFirstStep = activeStepIndex === 0;
+  var onFinalStep = activeStepIndex === steps.length - 1;
+
+  var onHideClick = function onHideClick() {
+    onHide(onFinalStep);
+  };
 
   var onBackClick = function onBackClick() {
     goToStep(Math.max(activeStepIndex - 1, 0));
@@ -53,9 +63,9 @@ var WizardPattern = function WizardPattern(_ref) {
     goToStep(Math.min(activeStepIndex + 1, steps.length - 1));
   };
 
-  var getActiveStep = function getActiveStep() {
-    var relativeToIndex = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : activeStepIndex;
-    return steps[relativeToIndex];
+  var getStep = function getStep() {
+    var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : activeStepIndex;
+    return steps[index];
   };
 
   var getPrevStep = function getPrevStep() {
@@ -68,45 +78,48 @@ var WizardPattern = function WizardPattern(_ref) {
     return relativeToIndex < steps.length - 1 && steps[relativeToIndex + 1];
   };
 
+  var activeStep = getStep();
+
   var goToStep = function goToStep(newStepIndex) {
-    var currentStep = steps[activeStepIndex];
     if (shouldPreventGoToStep(newStepIndex)) return;
-    if (onStepChanged) onStepChanged(newStepIndex);
     if (newStepIndex === activeStepIndex + 1) {
-      if (currentStep.onNext) currentStep.onNext();
-      if (onNext) onNext(newStepIndex);
+      var stepOnNextResult = activeStep.onNext && activeStep.onNext();
+      var propOnNextResult = onNext && onNext(newStepIndex);
+      var stepFailed = stepOnNextResult === false || propOnNextResult === false;
+      if (stepFailed) return;
     }
     if (newStepIndex === activeStepIndex - 1) {
-      if (onBack) onBack(newStepIndex);
+      var _stepFailed = (onBack && onBack(newStepIndex)) === false;
+      if (_stepFailed) return;
     }
+    if (onStepChanged) onStepChanged(newStepIndex);
   };
 
   var shouldPreventGoToStep = function shouldPreventGoToStep(newStepIndex) {
-    var targetStep = steps[newStepIndex];
+    var targetStep = getStep(newStepIndex);
     var stepBeforeTarget = getPrevStep(newStepIndex);
 
-    var preventExitActive = steps[activeStepIndex].preventExit;
-    var preventEnterTarget = (0, _index.propExists)(targetStep, 'preventEnter') ? targetStep.preventEnter : stepBeforeTarget && stepBeforeTarget.isInvalid;
+    var preventExitActive = activeStep.preventExit;
+    var preventEnterTarget = targetStep.preventEnter || stepBeforeTarget && stepBeforeTarget.isInvalid;
     var nextStepClicked = newStepIndex === activeStepIndex + 1;
 
     return preventExitActive || preventEnterTarget || nextStepClicked && nextStepDisabled;
   };
 
-  var onFirstStep = activeStepIndex === 0;
-  var onFinalStep = activeStepIndex === steps.length - 1;
   var activeStepStr = (activeStepIndex + 1).toString();
-  var activeStep = getActiveStep();
 
   var prevStepUnreachable = onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
+  // nextStepUnreachable is still true onFinalStep, because the Next button turns into a Close button
   var nextStepUnreachable = nextStepDisabled || activeStep.isInvalid || activeStep.preventExit || getNextStep().preventEnter;
 
   return _react2.default.createElement(
     _index.Wizard,
-    { show: show, onHide: onHide, onExited: onExited },
-    _react2.default.createElement(_index.Wizard.Header, { onClose: onHide, title: title }),
+    { show: show, onHide: onHideClick, onExited: onExited },
+    _react2.default.createElement(_index.Wizard.Header, { onClose: onHideClick, title: title }),
     _react2.default.createElement(
       _index.Wizard.Body,
       null,
+      bodyHeader,
       _react2.default.createElement(_WizardPatternBody2.default, {
         loadingTitle: loadingTitle,
         loadingMessage: loadingMessage,
@@ -124,7 +137,7 @@ var WizardPattern = function WizardPattern(_ref) {
       null,
       _react2.default.createElement(
         _index.Button,
-        { bsStyle: 'default', className: 'btn-cancel', onClick: onHide },
+        { bsStyle: 'default', className: 'btn-cancel', onClick: onHideClick },
         cancelText
       ),
       _react2.default.createElement(
@@ -141,8 +154,9 @@ var WizardPattern = function WizardPattern(_ref) {
         _index.Button,
         {
           bsStyle: 'primary',
-          onClick: onFinalStep ? onHide : onNextClick,
-          disabled: nextStepUnreachable
+          onClick: onFinalStep ? onHideClick : onNextClick,
+          disabled: nextStepUnreachable,
+          ref: nextButtonRef
         },
         onFinalStep ? closeText : _react2.default.createElement(
           _react2.default.Fragment,
@@ -151,7 +165,8 @@ var WizardPattern = function WizardPattern(_ref) {
           _react2.default.createElement(_index.Icon, { type: 'fa', name: 'angle-right' })
         )
       )
-    )
+    ),
+    children
   );
 };
 
@@ -173,7 +188,10 @@ WizardPattern.propTypes = {
   closeText: _propTypes2.default.string,
   steps: _propTypes2.default.arrayOf(_propTypes2.default.shape(_WizardPatternConstants.wizardStepShape)),
   nextStepDisabled: _propTypes2.default.bool,
-  stepButtonsDisabled: _propTypes2.default.bool
+  stepButtonsDisabled: _propTypes2.default.bool,
+  nextButtonRef: _propTypes2.default.func,
+  bodyHeader: _propTypes2.default.node,
+  children: _propTypes2.default.node
 };
 
 WizardPattern.defaultProps = {
@@ -193,7 +211,10 @@ WizardPattern.defaultProps = {
   closeText: 'Close',
   steps: [],
   nextStepDisabled: false,
-  stepButtonsDisabled: false
+  stepButtonsDisabled: false,
+  nextButtonRef: _index.noop,
+  bodyHeader: null,
+  children: null
 };
 
 WizardPattern.displayName = 'WizardPattern';
