@@ -129,15 +129,16 @@ const WizardPattern = ({
           bsStyle="primary"
           onClick={onFinalStep ? onHideClick : onNextClick}
           disabled={nextStepUnreachable}
+          ref={nextButtonRef}
         >
           {onFinalStep ? (
             closeText
           ) : (
-            <React.Fragment>
-              {nextText}
-              <Icon type="fa" name="angle-right" />
-            </React.Fragment>
-          )}
+              <React.Fragment>
+                {nextText}
+                <Icon type="fa" name="angle-right" />
+              </React.Fragment>
+            )}
         </Button>
       </Wizard.Footer>
       {children}
@@ -164,6 +165,7 @@ WizardPattern.propTypes = {
   steps: PropTypes.arrayOf(PropTypes.shape(wizardStepShape)),
   nextStepDisabled: PropTypes.bool,
   stepButtonsDisabled: PropTypes.bool,
+  nextButtonRef: PropTypes.func,
   children: PropTypes.node
 };
 
@@ -185,6 +187,7 @@ WizardPattern.defaultProps = {
   steps: [],
   nextStepDisabled: false,
   stepButtonsDisabled: false,
+  nextButtonRef: noop,
   children: null
 };
 
