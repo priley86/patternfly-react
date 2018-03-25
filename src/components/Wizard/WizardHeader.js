@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { noop, Modal, Icon } from '../../index';
+import { Modal, Icon } from '../../index';
 
 /**
  * WizardHeader component for Patternfly React
@@ -20,12 +20,11 @@ const WizardHeader = ({ onClose, title, ...props }) => (
 );
 WizardHeader.propTypes = {
   /** onClose callback */
-  onClose: PropTypes.func,
+  onClose: PropTypes.func.isRequired,
   /** The wizard title */
   title: PropTypes.node
 };
 WizardHeader.defaultProps = {
-  onClose: noop,
   title: null
 };
 export default WizardHeader;

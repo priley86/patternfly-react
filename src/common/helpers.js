@@ -30,16 +30,12 @@ export const propOrState = (props, state, propName) =>
 export const selectKeys = (obj, keys, fn = val => val) =>
   keys.reduce((values, key) => ({ ...values, [key]: fn(obj[key]) }), {});
 
-/** Returns a copy of the object with all its values replaced by the given function which takes a key.  */
-export const mapKeys = (obj, fn = key => obj[key]) =>
-  Object.keys(obj).reduce((values, key) => ({ ...values, [key]: fn(key) }), {});
-
 /** Returns a subset of the given object with a validator function applied to its keys. */
 export const filterKeys = (obj, validator) =>
   selectKeys(obj, Object.keys(obj).filter(validator));
 
-/** Returns a subset of the given object with the given keys left out, with values optionally replaced by a fn. */
-export const excludeKeys = (obj, keys, fn = val => val) =>
+/** Returns a subset of the given object with the given keys left out. */
+export const excludeKeys = (obj, keys) =>
   filterKeys(obj, key => !keys.includes(key));
 
 /** Returns the given React children prop as a regular array of React nodes. */

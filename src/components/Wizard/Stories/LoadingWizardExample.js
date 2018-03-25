@@ -1,5 +1,4 @@
 import React from 'react';
-import { bindMethods } from '../../../common/helpers';
 import { Button } from '../../Button';
 import { Icon } from '../../Icon';
 import { Wizard } from '../index';
@@ -10,14 +9,13 @@ export class LoadingWizardExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = { showModal: false };
-    bindMethods(this, ['open', 'close']);
   }
-  close() {
+  close = () => {
     this.setState({ showModal: false });
-  }
-  open() {
+  };
+  open = () => {
     this.setState({ showModal: true });
-  }
+  };
   render() {
     const { showModal } = this.state;
 

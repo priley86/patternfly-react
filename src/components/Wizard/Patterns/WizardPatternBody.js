@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { noop, EmptyState, Spinner, Wizard } from '../../../index';
+import { wizardStepShape } from './WizardPatternConstants';
 
 /**
  * WizardPatternBody - the Wizard Pattern Body component.
@@ -80,13 +81,7 @@ WizardPatternBody.propTypes = {
   loadingTitle: PropTypes.string,
   loadingMessage: PropTypes.string,
   loading: PropTypes.bool,
-  steps: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      render: PropTypes.func,
-      onNext: PropTypes.func
-    })
-  ),
+  steps: PropTypes.arrayOf(PropTypes.shape(wizardStepShape)),
   activeStepIndex: PropTypes.number,
   activeStepStr: PropTypes.string,
   goToStep: PropTypes.func
