@@ -59,13 +59,13 @@ const WizardPattern = ({
     if (shouldPreventGoToStep(newStepIndex)) return;
     if (newStepIndex === activeStepIndex + 1) {
       const stepOnNextResult = activeStep.onNext && activeStep.onNext();
-      const propOnNextResult = onNext && onNext(newStepIndex);
+      const propOnNextResult = onNext(newStepIndex);
       const stepFailed =
         stepOnNextResult === false || propOnNextResult === false;
       if (stepFailed) return;
     }
     if (newStepIndex === activeStepIndex - 1) {
-      const stepFailed = (onBack && onBack(newStepIndex)) === false;
+      const stepFailed = onBack(newStepIndex) === false;
       if (stepFailed) return;
     }
     if (onStepChanged) onStepChanged(newStepIndex);
