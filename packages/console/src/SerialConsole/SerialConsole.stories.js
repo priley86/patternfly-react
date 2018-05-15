@@ -2,13 +2,17 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
+import { storybookPackageName } from 'storybook/constants';
 
 import { SerialConsole } from './index';
 import { CONNECTED, DISCONNECTED, LOADING } from './constants';
 
 import { name } from '../../package.json';
 
-const stories = storiesOf(`${name}/SerialConsole`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/SerialConsole`,
+  module
+);
 stories.addDecorator(
   defaultTemplate({
     title: 'SerialConsole',

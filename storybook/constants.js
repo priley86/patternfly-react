@@ -29,3 +29,5 @@ export const DESCRIPTION = {
   C3JS_TEXT:
     'This component is based on c3js graph, to see full documentation follow'
 };
+
+export const storybookPackageName = pkg => pkg.replace(/\//g, '\\');
