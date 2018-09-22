@@ -2,12 +2,13 @@ const babelENV = process.env.BABEL_ENV || 'development';
 const modules = babelENV !== 'production:esm' ? 'commonjs' : false;
 
 module.exports = {
-  presets: [['env', { modules }], 'react'],
+  presets: [['@babel/preset-env', { modules }], '@babel/preset-react'],
   plugins: [
-    'transform-class-properties',
-    'transform-export-extensions',
-    'transform-object-rest-spread',
-    'transform-object-assign',
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-export-default-from',
+    '@babel/plugin-proposal-export-namespace-from',
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-transform-object-assign',
     babelENV !== 'development' && [
       'transform-imports',
       {

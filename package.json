@@ -142,6 +142,7 @@
     ]
   },
   "resolutions": {
-    "cssom": "0.3.4"
+    "cssom": "0.3.4",
+    "babel-core": "7.0.0-bridge.0"
   }
 }
