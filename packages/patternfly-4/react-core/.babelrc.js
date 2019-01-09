@@ -1,5 +1,5 @@
 const babelENV = process.env.BABEL_ENV || 'development';
-const modules = babelENV !== 'production:esm' ? 'commonjs' : false;
+const modules = ['production:esm', 'production:umd'].includes(babelENV) ? false : 'commonjs';
 
 module.exports = {
   presets: [['@babel/env', { modules }], '@babel/preset-typescript', '@babel/react'],
@@ -16,7 +16,7 @@ module.exports = {
       plugins: [
         'babel-plugin-typescript-to-proptypes',
         '@babel/plugin-proposal-export-default-from',
-        '@babel/proposal-class-properties',
+        '@babel/plugin-proposal-class-properties',
         '@babel/proposal-object-rest-spread',
         [
           '@patternfly/react-styles/babel',
@@ -32,13 +32,29 @@ module.exports = {
       plugins: [
         'babel-plugin-typescript-to-proptypes',
         '@babel/plugin-proposal-export-default-from',
-        '@babel/proposal-class-properties',
+        '@babel/plugin-proposal-class-properties',
         '@babel/proposal-object-rest-spread',
         [
           '@patternfly/react-styles/babel',
           {
             srcDir: './src',
             outDir: './dist/js',
+            useModules: false
+          }
+        ]
+      ]
+    },
+    'production:umd': {
+      plugins: [
+        'babel-plugin-typescript-to-proptypes',
+        '@babel/plugin-proposal-export-default-from',
+        '@babel/plugin-proposal-class-properties',
+        '@babel/proposal-object-rest-spread',
+        [
+          '@patternfly/react-styles/babel',
+          {
+            srcDir: './src',
+            outDir: './dist/umd',
             useModules: false
           }
         ]
