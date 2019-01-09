@@ -11,10 +11,15 @@ const globals = {
   react: 'React',
   'react-dom': 'ReactDOM'
 };
-const babelOptions = {
-  exclude: /node_modules/,
-  configFile: '../.babelrc.js'
-};
+const babelOptions = Object.assign(
+  {
+    exclude: /node_modules/,
+    babelrc: false,
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+  },
+  require('../.babelrc.js')
+);
+
 const commonjsOptions = {
   ignoreGlobal: true,
   include: /node_modules/
