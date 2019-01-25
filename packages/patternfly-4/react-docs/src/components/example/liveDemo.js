@@ -5,6 +5,7 @@ import styles from './liveDemo.styles';
 import PropTypes from 'prop-types';
 import * as TableComponents from '@patternfly/react-table';
 import * as TableInlineEditingComponents from '@patternfly/react-inline-edit-extension';
+import * as VirtualizedComponents from '@patternfly/react-virtualized-extension';
 import * as ChartComponents from '@patternfly/react-charts';
 import * as CoreComponents from '@patternfly/react-core';
 import * as CoreIcons from '@patternfly/react-icons';
@@ -37,6 +38,7 @@ const scopePlayground = {
   ...ChartComponents,
   ...TableComponents,
   ...TableInlineEditingComponents,
+  ...VirtualizedComponents,
   ...StyledSystemComponents,
   ...CoreComponents,
   ...CoreIcons,
@@ -163,14 +165,13 @@ class LiveDemo extends React.Component {
                 Copied to clipboard
               </CoreComponents.Text>
             </CoreComponents.TextContent>
-            {codeOpen &&
-              !live && (
-                <CoreComponents.TextContent className={css(styles.messageShow)}>
-                  <CoreComponents.Text component="pre" className={css(styles.messageText)}>
-                    Live edititing disabled
-                  </CoreComponents.Text>
-                </CoreComponents.TextContent>
-              )}
+            {codeOpen && !live && (
+              <CoreComponents.TextContent className={css(styles.messageShow)}>
+                <CoreComponents.Text component="pre" className={css(styles.messageText)}>
+                  Live edititing disabled
+                </CoreComponents.Text>
+              </CoreComponents.TextContent>
+            )}
           </div>
           {codeOpen && <LiveEditor className={styles.code} ignoreTabKey contentEditable={live} />}
           {live && <LiveError />}

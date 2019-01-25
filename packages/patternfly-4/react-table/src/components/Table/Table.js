@@ -226,7 +226,7 @@ class Table extends React.Component {
           {...props}
           renderers={{
             body: {
-              wrapper: bodyWrapper || BodyWrapper,
+              wrapper: bodyWrapper(rows) || BodyWrapper,
               row: rowWrapper || RowWrapper,
               cell: BodyCell
             },
@@ -236,7 +236,12 @@ class Table extends React.Component {
           }}
           columns={headerData}
           role="grid"
-          className={css(styles.table, getModifier(stylesGrid, gridBreakPoint), getModifier(styles, variant), className)}
+          className={css(
+            styles.table,
+            getModifier(stylesGrid, gridBreakPoint),
+            getModifier(styles, variant),
+            className
+          )}
         >
           {caption && <caption>{caption}</caption>}
           {children}

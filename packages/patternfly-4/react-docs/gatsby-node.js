@@ -1,6 +1,13 @@
 const path = require(`path`);
 const fs = require('fs-extra'); //eslint-disable-line
-const packageDirs = ['react-core', 'react-charts', 'react-styled-system', 'react-table', 'react-inline-edit-extension'];
+const packageDirs = [
+  'react-core',
+  'react-charts',
+  'react-styled-system',
+  'react-table',
+  'react-inline-edit-extension',
+  'react-virtualized-extension'
+];
 
 // Escape single quotes and backslashes in a file path
 const escapeFilePath = filePath => filePath.replace(/[\\']/g, '\\$&');
@@ -30,6 +37,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins, getConfig }
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles/src'),
         '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system/src'),
         '@patternfly/react-inline-edit-extension': path.resolve(__dirname, '../react-inline-edit-extension/src'),
+        '@patternfly/react-virtualized-extension': path.resolve(__dirname, '../react-virtualized-extension/src')
       }
     }
   });

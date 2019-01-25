@@ -16,6 +16,7 @@
     "@patternfly/react-styles": "^2.4.0",
     "@patternfly/react-table": "^1.4.2",
     "@patternfly/react-tokens": "^2.2.1",
+    "@patternfly/react-virtualized-extension": "file:../react-virtualized-extension",
     "babel-standalone": "^6.26.0",
     "clipboard-copy": "^2.0.1",
     "css-loader": "^2.1.1",

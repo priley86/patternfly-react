@@ -5,7 +5,14 @@ const fs = require('fs-extra');
 
 const dest = path.resolve(__dirname, '../dist');
 
-const packageDirs = ['react-core', 'react-charts', 'react-table', 'react-inline-edit-extension', 'react-styled-system'];
+const packageDirs = [
+  'react-core',
+  'react-charts',
+  'react-table',
+  'react-inline-edit-extension',
+  'react-styled-system',
+  'react-virtualized-extension'
+];
 const moduleTypes = ['js', 'esm'];
 
 moduleTypes.forEach(moduleType => {
