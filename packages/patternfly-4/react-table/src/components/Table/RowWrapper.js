@@ -77,7 +77,7 @@ class RowWrapper extends React.Component {
 }
 
 RowWrapper.propTypes = {
-  trRef: PropTypes.func,
+  trRef: PropTypes.object,
   className: PropTypes.string,
   onScroll: PropTypes.func,
   onResize: PropTypes.func,

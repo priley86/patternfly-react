@@ -3012,6 +3012,7 @@ exports[`Actions table 1`] = `
                   rowKey="0-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -3067,6 +3068,11 @@ exports[`Actions table 1`] = `
                         "rowKey": "0-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -3738,6 +3744,7 @@ exports[`Actions table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -3793,6 +3800,11 @@ exports[`Actions table 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -4464,6 +4476,7 @@ exports[`Actions table 1`] = `
                   rowKey="2-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -4519,6 +4532,11 @@ exports[`Actions table 1`] = `
                         "rowKey": "2-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -5190,6 +5208,7 @@ exports[`Actions table 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -5245,6 +5264,11 @@ exports[`Actions table 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -5916,6 +5940,7 @@ exports[`Actions table 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -5971,6 +5996,11 @@ exports[`Actions table 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -6642,6 +6672,7 @@ exports[`Actions table 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -6697,6 +6728,11 @@ exports[`Actions table 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -7368,6 +7404,7 @@ exports[`Actions table 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -7423,6 +7460,11 @@ exports[`Actions table 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -8094,6 +8136,7 @@ exports[`Actions table 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -8149,6 +8192,11 @@ exports[`Actions table 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -8820,6 +8868,7 @@ exports[`Actions table 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -8875,6 +8924,11 @@ exports[`Actions table 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -11807,6 +11861,7 @@ exports[`Cell header table 1`] = `
                   rowKey="0-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -11862,6 +11917,11 @@ exports[`Cell header table 1`] = `
                         "rowKey": "0-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -12208,6 +12268,7 @@ exports[`Cell header table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -12263,6 +12324,11 @@ exports[`Cell header table 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -12609,6 +12675,7 @@ exports[`Cell header table 1`] = `
                   rowKey="2-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -12664,6 +12731,11 @@ exports[`Cell header table 1`] = `
                         "rowKey": "2-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -13010,6 +13082,7 @@ exports[`Cell header table 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -13065,6 +13138,11 @@ exports[`Cell header table 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -13411,9 +13489,234 @@ exports[`Cell header table 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Pull requests",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "pull-requests",
+                        "props": Object {
+                          "data-key": 2,
+                          "data-label": "Pull requests",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Workspaces",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "workspaces",
+                        "props": Object {
+                          "data-key": 3,
+                          "data-label": "Workspaces",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -13466,6 +13769,17 @@ exports[`Cell header table 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={5}
+                  rowKey="5-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -14213,6 +14527,7 @@ exports[`Cell header table 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -14268,6 +14583,11 @@ exports[`Cell header table 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -14614,6 +14934,7 @@ exports[`Cell header table 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -14669,6 +14990,11 @@ exports[`Cell header table 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -15015,6 +15341,7 @@ exports[`Cell header table 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -15070,6 +15397,11 @@ exports[`Cell header table 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -18110,6 +18442,7 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="0-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -18166,6 +18499,12 @@ exports[`Collapsible nested table 1`] = `
                         "rowKey": "0-row",
                       }
                     }
+=======
+                    isOpen={false}
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -18639,6 +18978,7 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -18696,6 +19036,12 @@ exports[`Collapsible nested table 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    isOpen={true}
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className="pf-c-table__expandable-row"
@@ -19155,6 +19501,7 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="2-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -19211,6 +19558,12 @@ exports[`Collapsible nested table 1`] = `
                         "rowKey": "2-row",
                       }
                     }
+=======
+                    isExpanded={false}
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className="pf-c-table__expandable-row"
@@ -19619,6 +19972,7 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -19675,6 +20029,12 @@ exports[`Collapsible nested table 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    isOpen={false}
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -20147,6 +20507,7 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -20203,6 +20564,12 @@ exports[`Collapsible nested table 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+=======
+                    isExpanded={false}
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className="pf-c-table__expandable-row"
@@ -20610,6 +20977,7 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -20665,6 +21033,11 @@ exports[`Collapsible nested table 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -21085,6 +21458,7 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -21140,6 +21514,11 @@ exports[`Collapsible nested table 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -21560,6 +21939,7 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -21615,6 +21995,11 @@ exports[`Collapsible nested table 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -22035,6 +22420,7 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -22090,6 +22476,11 @@ exports[`Collapsible nested table 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -25118,6 +25509,7 @@ exports[`Collapsible table 1`] = `
                   rowKey="0-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -25174,6 +25566,12 @@ exports[`Collapsible table 1`] = `
                         "rowKey": "0-row",
                       }
                     }
+=======
+                    isOpen={true}
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -25646,6 +26044,7 @@ exports[`Collapsible table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -25702,6 +26101,11 @@ exports[`Collapsible table 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className="pf-c-table__expandable-row pf-m-expanded"
@@ -26109,6 +26513,7 @@ exports[`Collapsible table 1`] = `
                   rowKey="2-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -26164,6 +26569,11 @@ exports[`Collapsible table 1`] = `
                         "rowKey": "2-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -26585,6 +26995,7 @@ exports[`Collapsible table 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -26641,6 +27052,12 @@ exports[`Collapsible table 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    isOpen={false}
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -27113,6 +27530,7 @@ exports[`Collapsible table 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -27169,6 +27587,12 @@ exports[`Collapsible table 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+=======
+                    isExpanded={false}
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className="pf-c-table__expandable-row"
@@ -27576,6 +28000,7 @@ exports[`Collapsible table 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -27631,6 +28056,11 @@ exports[`Collapsible table 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -28051,6 +28481,7 @@ exports[`Collapsible table 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -28106,6 +28537,11 @@ exports[`Collapsible table 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -28526,6 +28962,7 @@ exports[`Collapsible table 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -28581,6 +29018,11 @@ exports[`Collapsible table 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -29001,6 +29443,7 @@ exports[`Collapsible table 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -29056,6 +29499,11 @@ exports[`Collapsible table 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -31747,6 +32195,7 @@ exports[`Header width table 1`] = `
                   rowKey="0-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -31803,6 +32252,12 @@ exports[`Header width table 1`] = `
                         "rowKey": "0-row",
                       }
                     }
+=======
+                    isOpen={false}
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -32154,6 +32609,7 @@ exports[`Header width table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -32211,6 +32667,12 @@ exports[`Header width table 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    isOpen={true}
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className="pf-c-table__expandable-row"
@@ -32567,6 +33029,7 @@ exports[`Header width table 1`] = `
                   rowKey="2-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -32623,6 +33086,12 @@ exports[`Header width table 1`] = `
                         "rowKey": "2-row",
                       }
                     }
+=======
+                    isExpanded={false}
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className="pf-c-table__expandable-row"
@@ -32985,6 +33454,7 @@ exports[`Header width table 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -33041,6 +33511,12 @@ exports[`Header width table 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    isOpen={false}
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -33391,6 +33867,7 @@ exports[`Header width table 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -33447,6 +33924,12 @@ exports[`Header width table 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+=======
+                    isExpanded={false}
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className="pf-c-table__expandable-row"
@@ -33808,6 +34291,7 @@ exports[`Header width table 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -33863,6 +34347,11 @@ exports[`Header width table 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -34218,6 +34707,7 @@ exports[`Header width table 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -34273,6 +34763,11 @@ exports[`Header width table 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -34628,6 +35123,7 @@ exports[`Header width table 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -34683,6 +35179,11 @@ exports[`Header width table 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -35038,6 +35539,7 @@ exports[`Header width table 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -35093,6 +35595,11 @@ exports[`Header width table 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -46553,6 +47060,7 @@ exports[`Simple Actions table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -46608,6 +47116,12 @@ exports[`Simple Actions table 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    isOpen={false}
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -47405,6 +47919,7 @@ exports[`Simple Actions table 1`] = `
                   rowKey="2-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -47460,6 +47975,12 @@ exports[`Simple Actions table 1`] = `
                         "rowKey": "2-row",
                       }
                     }
+=======
+                    isOpen={true}
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -48257,6 +48778,7 @@ exports[`Simple Actions table 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -48312,6 +48834,12 @@ exports[`Simple Actions table 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    isExpanded={false}
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -49109,6 +49637,7 @@ exports[`Simple Actions table 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -49164,6 +49693,12 @@ exports[`Simple Actions table 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+=======
+                    isOpen={false}
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -49961,6 +50496,7 @@ exports[`Simple Actions table 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -50016,6 +50552,12 @@ exports[`Simple Actions table 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    isExpanded={false}
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -50813,6 +51355,7 @@ exports[`Simple Actions table 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -50868,6 +51411,11 @@ exports[`Simple Actions table 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -51665,6 +52213,7 @@ exports[`Simple Actions table 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -51720,6 +52269,11 @@ exports[`Simple Actions table 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -52517,6 +53071,7 @@ exports[`Simple Actions table 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -52572,6 +53127,11 @@ exports[`Simple Actions table 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -53370,6 +53930,7 @@ exports[`Simple Actions table 1`] = `
                   rowKey="9-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -53426,6 +53987,11 @@ exports[`Simple Actions table 1`] = `
                         "rowKey": "9-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -57075,6 +57641,7 @@ exports[`Simple table aria-label 1`] = `
                   rowKey="2-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -57130,6 +57697,11 @@ exports[`Simple table aria-label 1`] = `
                         "rowKey": "2-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -57474,9 +58046,232 @@ exports[`Simple table aria-label 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Pull requests",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "pull-requests",
+                        "props": Object {
+                          "data-key": 2,
+                          "data-label": "Pull requests",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Workspaces",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "workspaces",
+                        "props": Object {
+                          "data-key": 3,
+                          "data-label": "Workspaces",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -57529,6 +58324,17 @@ exports[`Simple table aria-label 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={2}
+                  rowKey="2-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -57873,6 +58679,7 @@ exports[`Simple table aria-label 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -57928,6 +58735,11 @@ exports[`Simple table aria-label 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -58272,6 +59084,7 @@ exports[`Simple table aria-label 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -58327,6 +59140,11 @@ exports[`Simple table aria-label 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -58671,9 +59489,232 @@ exports[`Simple table aria-label 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Pull requests",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "pull-requests",
+                        "props": Object {
+                          "data-key": 2,
+                          "data-label": "Pull requests",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Workspaces",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "workspaces",
+                        "props": Object {
+                          "data-key": 3,
+                          "data-label": "Workspaces",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -58726,6 +59767,17 @@ exports[`Simple table aria-label 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={6}
+                  rowKey="6-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -59070,6 +60122,7 @@ exports[`Simple table aria-label 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -59125,6 +60178,11 @@ exports[`Simple table aria-label 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -59469,6 +60527,7 @@ exports[`Simple table aria-label 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -59524,6 +60583,11 @@ exports[`Simple table aria-label 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -62871,6 +63935,7 @@ exports[`Simple table caption 1`] = `
                   rowKey="2-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -62926,6 +63991,11 @@ exports[`Simple table caption 1`] = `
                         "rowKey": "2-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -63270,9 +64340,232 @@ exports[`Simple table caption 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Pull requests",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "pull-requests",
+                        "props": Object {
+                          "data-key": 2,
+                          "data-label": "Pull requests",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Workspaces",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "workspaces",
+                        "props": Object {
+                          "data-key": 3,
+                          "data-label": "Workspaces",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -63325,6 +64618,17 @@ exports[`Simple table caption 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={2}
+                  rowKey="2-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -63669,6 +64973,7 @@ exports[`Simple table caption 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -63724,6 +65029,11 @@ exports[`Simple table caption 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -64068,6 +65378,7 @@ exports[`Simple table caption 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -64123,6 +65434,11 @@ exports[`Simple table caption 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -64467,9 +65783,232 @@ exports[`Simple table caption 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Pull requests",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "pull-requests",
+                        "props": Object {
+                          "data-key": 2,
+                          "data-label": "Pull requests",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Workspaces",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "workspaces",
+                        "props": Object {
+                          "data-key": 3,
+                          "data-label": "Workspaces",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -64522,6 +66061,17 @@ exports[`Simple table caption 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={6}
+                  rowKey="6-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -64866,6 +66416,7 @@ exports[`Simple table caption 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -64921,6 +66472,11 @@ exports[`Simple table caption 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -65265,6 +66821,7 @@ exports[`Simple table caption 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -65320,6 +66877,11 @@ exports[`Simple table caption 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -68272,6 +69834,7 @@ exports[`Simple table header 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -68327,6 +69890,11 @@ exports[`Simple table header 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -69070,6 +70638,7 @@ exports[`Simple table header 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -69125,6 +70694,11 @@ exports[`Simple table header 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -69469,9 +71043,232 @@ exports[`Simple table header 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Pull requests",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "pull-requests",
+                        "props": Object {
+                          "data-key": 2,
+                          "data-label": "Pull requests",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Workspaces",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "workspaces",
+                        "props": Object {
+                          "data-key": 3,
+                          "data-label": "Workspaces",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -69524,6 +71321,17 @@ exports[`Simple table header 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={3}
+                  rowKey="3-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -69868,6 +71676,7 @@ exports[`Simple table header 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -69923,6 +71732,11 @@ exports[`Simple table header 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -70267,6 +72081,7 @@ exports[`Simple table header 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -70322,6 +72137,11 @@ exports[`Simple table header 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -70666,9 +72486,162 @@ exports[`Simple table header 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -70721,6 +72694,17 @@ exports[`Simple table header 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={7}
+                  rowKey="7-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -71065,6 +73049,7 @@ exports[`Simple table header 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -71120,6 +73105,11 @@ exports[`Simple table header 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -74163,6 +76153,7 @@ exports[`Sortable table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -74218,6 +76209,11 @@ exports[`Sortable table 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -74963,6 +76959,7 @@ exports[`Sortable table 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -75018,6 +77015,11 @@ exports[`Sortable table 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -75363,9 +77365,92 @@ exports[`Sortable table 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -75418,6 +77503,17 @@ exports[`Sortable table 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={3}
+                  rowKey="3-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -75763,6 +77859,7 @@ exports[`Sortable table 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -75818,6 +77915,11 @@ exports[`Sortable table 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -76163,6 +78265,7 @@ exports[`Sortable table 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -76218,6 +78321,11 @@ exports[`Sortable table 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -76563,9 +78671,198 @@ exports[`Sortable table 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": [Function],
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": Object {},
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": [Function],
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": Object {},
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": [Function],
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": Object {},
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Pull requests",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "pull-requests",
+                        "props": Object {
+                          "data-key": 2,
+                          "data-label": "Pull requests",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -76618,6 +78915,17 @@ exports[`Sortable table 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={7}
+                  rowKey="7-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -76963,6 +79271,7 @@ exports[`Sortable table 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -77018,6 +79327,11 @@ exports[`Sortable table 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -80059,6 +82373,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -80114,6 +82429,11 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -80859,6 +83179,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -80914,6 +83235,11 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -81259,9 +83585,92 @@ exports[`Table variants Breakpoint - grid 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -81314,6 +83723,17 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={3}
+                  rowKey="3-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -81659,6 +84079,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -81714,6 +84135,11 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -82059,6 +84485,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -82114,6 +84541,11 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -82459,9 +84891,198 @@ exports[`Table variants Breakpoint - grid 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Pull requests",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "pull-requests",
+                        "props": Object {
+                          "data-key": 2,
+                          "data-label": "Pull requests",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -82514,6 +85135,17 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={7}
+                  rowKey="7-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -82859,6 +85491,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -82914,6 +85547,11 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -85955,6 +88593,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -86010,6 +88649,11 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -86755,6 +89399,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -86810,6 +89455,11 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -87155,9 +89805,92 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -87210,6 +89943,17 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={3}
+                  rowKey="3-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -87555,6 +90299,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -87610,6 +90355,11 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -87955,6 +90705,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -88010,6 +90761,11 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -88355,9 +91111,198 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Pull requests",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "pull-requests",
+                        "props": Object {
+                          "data-key": 2,
+                          "data-label": "Pull requests",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -88410,6 +91355,17 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={7}
+                  rowKey="7-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -88755,6 +91711,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -88810,6 +91767,11 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -91851,6 +94813,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -91906,6 +94869,11 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "rowKey": "1-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -92651,6 +95619,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -92706,6 +95675,11 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -93051,9 +96025,92 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -93106,6 +96163,17 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={3}
+                  rowKey="3-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -93451,6 +96519,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -93506,6 +96575,11 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -93851,6 +96925,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -93906,6 +96981,11 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -94251,9 +97331,198 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Pull requests",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "pull-requests",
+                        "props": Object {
+                          "data-key": 2,
+                          "data-label": "Pull requests",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -94306,6 +97575,17 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={7}
+                  rowKey="7-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -94651,6 +97931,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -94706,6 +97987,11 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -98147,6 +101433,7 @@ exports[`Table variants Size - compact 1`] = `
                   rowKey="2-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -98202,6 +101489,11 @@ exports[`Table variants Size - compact 1`] = `
                         "rowKey": "2-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={0}
+                    rowKey="0-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -98547,9 +101839,92 @@ exports[`Table variants Size - compact 1`] = `
                   rowKey="3-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={1}
+                    rowKey="1-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -98602,6 +101977,17 @@ exports[`Table variants Size - compact 1`] = `
                         "rowKey": "3-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={2}
+                  rowKey="2-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={2}
+                    rowKey="2-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -98947,6 +102333,7 @@ exports[`Table variants Size - compact 1`] = `
                   rowKey="4-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -99002,6 +102389,11 @@ exports[`Table variants Size - compact 1`] = `
                         "rowKey": "4-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={3}
+                    rowKey="3-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -99347,6 +102739,7 @@ exports[`Table variants Size - compact 1`] = `
                   rowKey="5-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -99402,6 +102795,11 @@ exports[`Table variants Size - compact 1`] = `
                         "rowKey": "5-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={4}
+                    rowKey="4-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -99747,9 +103145,163 @@ exports[`Table variants Size - compact 1`] = `
                   rowKey="6-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
+=======
+                    onClick={[Function]}
+                    rowIndex={5}
+                    rowKey="5-row"
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onClick={[Function]}
+                    >
+                      <BodyCell
+                        component="td"
+                        data-key={0}
+                        data-label="Header cell"
+                        key="0-cell"
+                      >
+                        <td
+                          data-key={0}
+                          data-label="Header cell"
+                        >
+                          one
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="Branches"
+                        key="1-cell"
+                      >
+                        <td
+                          data-key={1}
+                          data-label="Branches"
+                        >
+                          two
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={2}
+                        data-label="Pull requests"
+                        key="2-cell"
+                      >
+                        <td
+                          data-key={2}
+                          data-label="Pull requests"
+                        >
+                          three
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={3}
+                        data-label="Workspaces"
+                        key="3-cell"
+                      >
+                        <td
+                          data-key={3}
+                          data-label="Workspaces"
+                        >
+                          four
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={4}
+                        data-label="Last Commit"
+                        key="4-cell"
+                      >
+                        <td
+                          data-key={4}
+                          data-label="Last Commit"
+                        >
+                          five
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Header cell",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "header-cell",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "Header cell",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                          ],
+                        },
+                        "extraParams": Object {
+                          "actions": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "onCollapse": null,
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "Branches",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "branches",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "Branches",
+                        },
+                      },
+>>>>>>> virtualized sorting
                       Object {
                         "branches": Object {
                           "props": Object {
@@ -99802,6 +103354,17 @@ exports[`Table variants Size - compact 1`] = `
                         "rowKey": "6-row",
                       }
                     }
+<<<<<<< HEAD
+=======
+                  }
+                  rowIndex={6}
+                  rowKey="6-row"
+                >
+                  <RowWrapper
+                    onClick={[Function]}
+                    rowIndex={6}
+                    rowKey="6-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -100147,6 +103710,7 @@ exports[`Table variants Size - compact 1`] = `
                   rowKey="7-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -100202,6 +103766,11 @@ exports[`Table variants Size - compact 1`] = `
                         "rowKey": "7-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={7}
+                    rowKey="7-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""
@@ -100547,6 +104116,7 @@ exports[`Table variants Size - compact 1`] = `
                   rowKey="8-row"
                 >
                   <RowWrapper
+<<<<<<< HEAD
                     className=""
                     onMouseDown={[Function]}
                     row={
@@ -100602,6 +104172,11 @@ exports[`Table variants Size - compact 1`] = `
                         "rowKey": "8-row",
                       }
                     }
+=======
+                    onClick={[Function]}
+                    rowIndex={8}
+                    rowKey="8-row"
+>>>>>>> virtualized sorting
                   >
                     <tr
                       className=""

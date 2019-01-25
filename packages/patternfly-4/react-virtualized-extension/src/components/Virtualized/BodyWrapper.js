@@ -8,10 +8,9 @@ const VirtualizedBodyWrapper = inputRows => {
   class VirtualizedBody extends Component {
     constructor(props) {
       super(props);
-      this.ref = React.createRef();
     }
     render() {
-      const { children, startHeight, endHeight, showExtraRow, mappedRows, ...props } = this.props;
+      const { children, bodyRef, startHeight, endHeight, showExtraRow, mappedRows, ...props } = this.props;
       const startRow = tr({
         key: 'start-row',
         style: {
@@ -43,7 +42,7 @@ const VirtualizedBodyWrapper = inputRows => {
         'tbody',
         {
           ...props,
-          ref: this.ref,
+          ref: bodyRef,
           className: css(
             inputRows.some(row => row.isOpen && !row.hasOwnProperty('parent')) && styles.modifiers.expanded
           )
@@ -52,7 +51,7 @@ const VirtualizedBodyWrapper = inputRows => {
       );
     }
     getRef() {
-      return this.ref;
+      return this.props.tableBodyRef;
     }
   }
   VirtualizedBodyWrapper.contextTypes = bodyWrapperContextTypes;
@@ -64,8 +63,14 @@ const VirtualizedBodyWrapper = inputRows => {
 
   const VirtualizedBodyWithContext = props => (
     <VirtualizedBodyContext.Consumer>
-      {({ startHeight, endHeight, showExtraRow }) => (
-        <VirtualizedBody {...props} startHeight={startHeight} endHeight={endHeight} showExtraRow={showExtraRow} />
+      {({ bodyRef, startHeight, endHeight, showExtraRow }) => (
+        <VirtualizedBody
+          {...props}
+          bodyRef={bodyRef}
+          startHeight={startHeight}
+          endHeight={endHeight}
+          showExtraRow={showExtraRow}
+        />
       )}
     </VirtualizedBodyContext.Consumer>
   );

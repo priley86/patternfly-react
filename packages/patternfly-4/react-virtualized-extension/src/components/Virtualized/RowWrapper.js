@@ -37,7 +37,8 @@ VirtualizedRowWrapper.propTypes = {
     'data-rowkey': PropTypes.string.isRequired
   }).isRequired,
   updateHeight: PropTypes.func.isRequired,
-  initialMeasurement: PropTypes.bool.isRequired
+  initialMeasurement: PropTypes.bool.isRequired,
+  trRef: PropTypes.object
 };
 
 VirtualizedRowWrapper.shouldComponentUpdate = function(nextProps) {

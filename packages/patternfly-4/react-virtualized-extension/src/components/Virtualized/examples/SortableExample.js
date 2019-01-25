@@ -1,18 +1,18 @@
 import React from 'react';
-import { Table, TableHeader } from '@patternfly/react-table';
+import { Table, TableHeader, sortable, SortByDirection } from '@patternfly/react-table';
 import {
   VirtualizedBody,
   VirtualizedBodyWrapper,
   VirtualizedRowWrapper
 } from '@patternfly/react-virtualized-extension';
-
 // import './sample.css';
 
-class VirtualizedExample extends React.Component {
+class SortableExample extends React.Component {
   static title = 'Simple Table';
   constructor(props) {
     super(props);
 
+    this.tableBody = React.createRef();
     this.tableStyles = {
       table: {
         display: 'flex',
@@ -36,6 +36,7 @@ class VirtualizedExample extends React.Component {
         width: '20%'
       }
     };
+
     const rows = [];
     for (let i = 0; i < 100; i++) {
       rows.push({
@@ -46,34 +47,52 @@ class VirtualizedExample extends React.Component {
     }
     this.state = {
       columns: [
-        { title: 'Repositories', props: { style: this.tableStyles.td } },
+        { title: 'Repositories', transforms: [sortable], props: { style: this.tableStyles.td } },
         { title: 'Branches', props: { style: this.tableStyles.td } },
-        { title: 'Pull requests', props: { style: this.tableStyles.td } },
+        { title: 'Pull requests', transforms: [sortable], props: { style: this.tableStyles.td } },
         { title: 'Workspaces', props: { style: this.tableStyles.td } },
         { title: 'Last Commit', props: { style: this.tableStyles.td } }
       ],
-      rows
+      rows,
+      sortBy: {}
     };
+    this.onSort = this.onSort.bind(this);
+  }
+
+  onSort(_event, index, direction) {
+    const sortedRows = this.state.rows.sort(
+      (a, b) => (a.cells[index] < b.cells[index] ? -1 : a.cells[index] > b.cells[index] ? 1 : 0)
+    );
+    this.tableBody.current.scrollTo(0);
+    this.setState({
+      sortBy: {
+        index,
+        direction
+      },
+      rows: direction === SortByDirection.asc ? sortedRows : sortedRows.reverse()
+    });
   }
 
   render() {
-    const { columns, rows } = this.state;
+    const { columns, rows, sortBy } = this.state;
 
     return (
       <Table
         style={this.tableStyles.table}
-        caption="Simple Table"
+        caption="Sortable Virtualized Table"
         className="pf-c-virtualized"
         cells={columns}
         rows={rows}
         bodyWrapper={VirtualizedBodyWrapper}
         rowWrapper={VirtualizedRowWrapper}
+        sortBy={sortBy}
+        onSort={this.onSort}
       >
         <TableHeader style={this.tableStyles.thead} />
-        <VirtualizedBody height={400} rowKey="id" style={this.tableStyles.tbody} />
+        <VirtualizedBody height={400} rowKey="id" tableBody={this.tableBody} style={this.tableStyles.tbody} />
       </Table>
     );
   }
 }
 
-export default VirtualizedExample;
+export default SortableExample;

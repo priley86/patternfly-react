@@ -24,7 +24,27 @@ class Body extends React.Component {
     super(props);
 
     this.measuredRows = {}; // row key -> measurement
-    this.ref = null;
+
+    this.ref = React.createRef();
+
+    this.scrollTo = index => {
+      const startIndex = parseInt(index, 10);
+
+      if (startIndex >= 0) {
+        const startHeight =
+          calculateAverageHeight({
+            measuredRows: this.measuredRows,
+            rows: props.rows,
+            rowKey: props.rowKey
+          }) * startIndex;
+
+        this.scrollTop = startHeight;
+        this.ref.current.scrollTop = startHeight;
+
+        this.setState(this.calculateRows(this.props));
+      }
+    };
+
     this.scrollTop = 0;
     this.initialMeasurement = true;
     this.timeoutId = 0;
@@ -58,6 +78,7 @@ class Body extends React.Component {
     return props.height || props.style.maxHeight;
   }
 
+  // todo: convert `componentWillReceiveProps` to `getDerivedStateFromProps`
   componentWillReceiveProps(nextProps) {
     if (!isEqual(this.props.rows, nextProps.rows) || this.getHeight(this.props) !== this.getHeight(nextProps)) {
       if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && window.LOG_VIRTUALIZED) {
@@ -120,16 +141,13 @@ class Body extends React.Component {
         };
       },
       rowsToRender,
-      // todo: revisit passing ref to scrolling container and finding offset
-      // ref: body => {
-      //   this.ref = body && body.getRef().getRef();
-      // },
       onScroll: this.onScroll
     });
 
     return (
       <VirtualizedBodyContext.Provider
         value={{
+          bodyRef: this.ref,
           startHeight,
           endHeight,
           showExtraRow,
@@ -146,7 +164,7 @@ class Body extends React.Component {
   }
 
   getBodyOffset() {
-    return this.ref.parentElement.offsetTop + this.ref.offsetTop;
+    return this.ref.current.parentElement.offsetTop + this.ref.current.offsetTop;
   }
 
   onScroll(e) {
@@ -166,29 +184,29 @@ class Body extends React.Component {
 
     this.setState(this.calculateRows(this.props));
   }
-  getRef() {
-    const { ref } = this;
+  // getRef() {
+  //   const { ref } = this;
 
-    ref.scrollTo = index => {
-      const startIndex = parseInt(index, 10);
+  //   ref.scrollTo = index => {
+  //     const startIndex = parseInt(index, 10);
 
-      if (startIndex >= 0) {
-        const startHeight =
-          calculateAverageHeight({
-            measuredRows: this.measuredRows,
-            rows: this.props.rows,
-            rowKey: this.props.rowKey
-          }) * startIndex;
+  //     if (startIndex >= 0) {
+  //       const startHeight =
+  //         calculateAverageHeight({
+  //           measuredRows: this.measuredRows,
+  //           rows: this.props.rows,
+  //           rowKey: this.props.rowKey
+  //         }) * startIndex;
 
-        this.scrollTop = startHeight;
-        this.ref.scrollTop = startHeight;
+  //       this.scrollTop = startHeight;
+  //       this.ref.scrollTop = startHeight;
 
-        this.setState(this.calculateRows(this.props));
-      }
-    };
+  //       this.setState(this.calculateRows(this.props));
+  //     }
+  //   };
 
-    return ref;
-  }
+  //   return ref;
+  // }
   calculateRows(props) {
     return calculateRows({
       scrollTop: this.scrollTop,
@@ -221,9 +239,9 @@ class Body extends React.Component {
   }
 }
 
-const VirtualizedBody = props => (
+const VirtualizedBody = ({ tableBody, ...props }) => (
   <TableContext.Consumer>
-    {({ headerData, rows }) => <Body {...props} headerData={headerData} rows={rows} />}
+    {({ headerData, rows }) => <Body {...props} ref={tableBody} headerData={headerData} rows={rows} />}
   </TableContext.Consumer>
 );
 

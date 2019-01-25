@@ -4,9 +4,7 @@ const bodyRowContextTypes = {
   initialMeasurement: PropTypes.bool,
   updateHeight: PropTypes.func
 };
-const bodyRowTypes = {
-  'data-rowkey': PropTypes.string
-};
+
 const bodyWrapperContextTypes = {
   startHeight: PropTypes.number,
   endHeight: PropTypes.number,
@@ -20,4 +18,4 @@ const bodyChildContextTypes = {
   ...bodyWrapperContextTypes
 };
 
-export { bodyChildContextTypes, bodyRowContextTypes, bodyRowTypes, bodyWrapperContextTypes, bodyWrapperTypes };
+export { bodyChildContextTypes, bodyRowContextTypes, bodyWrapperContextTypes, bodyWrapperTypes };
