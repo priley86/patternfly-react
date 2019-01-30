@@ -1,13 +1,12 @@
 import React from 'react';
-import { Table, TableHeader } from '@patternfly/react-table';
+import { Table, TableHeader, headerCol } from '@patternfly/react-table';
 import {
   VirtualizedBody,
   VirtualizedBodyWrapper,
   VirtualizedRowWrapper
 } from '@patternfly/react-virtualized-extension';
 
-class VirtualizedExample extends React.Component {
-  static title = 'Simple Table';
+class SelectableExample extends React.Component {
   constructor(props) {
     super(props);
     const rows = [];
@@ -19,7 +18,7 @@ class VirtualizedExample extends React.Component {
     }
     this.state = {
       columns: [
-        { title: 'Repositories' },
+        { title: 'Repositories', cellTransforms: [headerCol()] },
         { title: 'Branches' },
         { title: 'Pull requests' },
         { title: 'Workspaces' },
@@ -27,6 +26,24 @@ class VirtualizedExample extends React.Component {
       ],
       rows
     };
+    this.onSelect = this.onSelect.bind(this);
+  }
+
+  onSelect(event, isSelected, virtualRowIndex, rowData) {
+    let rows;
+    if (virtualRowIndex === -1) {
+      rows = this.state.rows.map(oneRow => {
+        oneRow.selected = isSelected;
+        return oneRow;
+      });
+    } else {
+      rows = [...this.state.rows];
+      const rowIndex = rows.findIndex(r => r.id === rowData.id);
+      rows[rowIndex].selected = isSelected;
+    }
+    this.setState({
+      rows
+    });
   }
 
   render() {
@@ -34,8 +51,9 @@ class VirtualizedExample extends React.Component {
 
     return (
       <Table
-        caption="Simple Table"
         className="pf-c-virtualized"
+        caption="Selectable Virtualized Table"
+        onSelect={this.onSelect}
         cells={columns}
         rows={rows}
         bodyWrapper={VirtualizedBodyWrapper}
@@ -48,4 +66,4 @@ class VirtualizedExample extends React.Component {
   }
 }
 
-export default VirtualizedExample;
+export default SelectableExample;

@@ -5,53 +5,28 @@ import {
   VirtualizedBodyWrapper,
   VirtualizedRowWrapper
 } from '@patternfly/react-virtualized-extension';
-// import './sample.css';
 
 class SortableExample extends React.Component {
-  static title = 'Simple Table';
+  static title = 'Sortable Table';
   constructor(props) {
     super(props);
 
     this.tableBody = React.createRef();
-    this.tableStyles = {
-      table: {
-        display: 'flex',
-        flexFlow: 'column'
-      },
-      thead: {
-        display: 'table',
-        tableLayout: 'fixed',
-        width: '100%'
-      },
-      tbody: {
-        display: 'block',
-        overflowY: 'scroll'
-      },
-      tr: {
-        display: 'table',
-        tableLayout: 'fixed',
-        width: '100%'
-      },
-      td: {
-        width: '20%'
-      }
-    };
 
     const rows = [];
     for (let i = 0; i < 100; i++) {
       rows.push({
         id: i,
-        props: { style: this.tableStyles.tr },
         cells: [`one-${i}`, `two-${i}`, `three-${i}`, `four-${i}`, `five-${i}`]
       });
     }
     this.state = {
       columns: [
-        { title: 'Repositories', transforms: [sortable], props: { style: this.tableStyles.td } },
-        { title: 'Branches', props: { style: this.tableStyles.td } },
-        { title: 'Pull requests', transforms: [sortable], props: { style: this.tableStyles.td } },
-        { title: 'Workspaces', props: { style: this.tableStyles.td } },
-        { title: 'Last Commit', props: { style: this.tableStyles.td } }
+        { title: 'Repositories', transforms: [sortable] },
+        { title: 'Branches' },
+        { title: 'Pull requests', transforms: [sortable] },
+        { title: 'Workspaces' },
+        { title: 'Last Commit' }
       ],
       rows,
       sortBy: {}
@@ -78,7 +53,6 @@ class SortableExample extends React.Component {
 
     return (
       <Table
-        style={this.tableStyles.table}
         caption="Sortable Virtualized Table"
         className="pf-c-virtualized"
         cells={columns}
@@ -88,8 +62,8 @@ class SortableExample extends React.Component {
         sortBy={sortBy}
         onSort={this.onSort}
       >
-        <TableHeader style={this.tableStyles.thead} />
-        <VirtualizedBody height={400} rowKey="id" tableBody={this.tableBody} style={this.tableStyles.tbody} />
+        <TableHeader />
+        <VirtualizedBody height={400} rowKey="id" tableBody={this.tableBody} />
       </Table>
     );
   }

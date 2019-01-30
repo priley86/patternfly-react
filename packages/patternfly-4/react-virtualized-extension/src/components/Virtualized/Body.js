@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isEqual } from 'lodash-es';
 import { resolveRowKey } from 'reactabular-table';
 import { TableBody, TableContext } from '@patternfly/react-table';
 import calculateAverageHeight from './utils/calculateAverageHeight';
@@ -63,9 +62,10 @@ class Body extends React.Component {
       this.props.container().addEventListener('scroll', this.onScroll);
     }, 0);
   }
-  componentDidUpdate() {
-    this.checkMeasurements();
+  componentDidUpdate(prevProps) {
+    this.checkMeasurements(prevProps);
   }
+
   componentWillUnmount() {
     clearTimeout(this.timeoutId);
   }
@@ -78,22 +78,6 @@ class Body extends React.Component {
     return props.height || props.style.maxHeight;
   }
 
-  // todo: convert `componentWillReceiveProps` to `getDerivedStateFromProps`
-  componentWillReceiveProps(nextProps) {
-    if (!isEqual(this.props.rows, nextProps.rows) || this.getHeight(this.props) !== this.getHeight(nextProps)) {
-      if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && window.LOG_VIRTUALIZED) {
-        console.log('invalidating measurements'); // eslint-disable-line no-console
-      }
-
-      const rows = this.calculateRows(nextProps);
-
-      if (!rows) {
-        return;
-      }
-
-      this.setState(rows);
-    }
-  }
   render() {
     const { onRow, rows, onScroll, container, ...props } = this.props;
     const { startIndex, amountOfRowsToRender, startHeight, endHeight, showExtraRow } = this.state;
@@ -128,7 +112,7 @@ class Body extends React.Component {
       );
     }
 
-    const tableBody = React.createElement(TableBody, {
+    const tableBodyProps = {
       ...props,
       style: { height, display: 'block', overflow: 'auto' },
       onRow: (row, extra) => {
@@ -142,7 +126,7 @@ class Body extends React.Component {
       },
       rowsToRender,
       onScroll: this.onScroll
-    });
+    };
 
     return (
       <VirtualizedBodyContext.Provider
@@ -158,7 +142,7 @@ class Body extends React.Component {
           initialMeasurement: this.initialMeasurement
         }}
       >
-        {tableBody}
+        <TableBody {...tableBodyProps} />
       </VirtualizedBodyContext.Provider>
     );
   }
@@ -184,29 +168,7 @@ class Body extends React.Component {
 
     this.setState(this.calculateRows(this.props));
   }
-  // getRef() {
-  //   const { ref } = this;
 
-  //   ref.scrollTo = index => {
-  //     const startIndex = parseInt(index, 10);
-
-  //     if (startIndex >= 0) {
-  //       const startHeight =
-  //         calculateAverageHeight({
-  //           measuredRows: this.measuredRows,
-  //           rows: this.props.rows,
-  //           rowKey: this.props.rowKey
-  //         }) * startIndex;
-
-  //       this.scrollTop = startHeight;
-  //       this.ref.scrollTop = startHeight;
-
-  //       this.setState(this.calculateRows(this.props));
-  //     }
-  //   };
-
-  //   return ref;
-  // }
   calculateRows(props) {
     return calculateRows({
       scrollTop: this.scrollTop,
@@ -216,11 +178,16 @@ class Body extends React.Component {
       rows: props.rows
     });
   }
-  checkMeasurements() {
-    // If there are no valid measurements, calculate some after waiting a while.
-    // Without this styling solutions like Radium won't work as you might expect
-    // given they can take a while to set container height.
-    if (this.initialMeasurement) {
+  checkMeasurements(prevProps) {
+    // If there are no valid measurements or the rows have changed,
+    // calculate some after waiting a while. Without this styling solutions
+    // like Radium won't work as you might expect given they can take a while to set container height.
+    if (this.initialMeasurement || (prevProps && prevProps.rows !== this.props.rows)) {
+      // If the rows have changed, but the user has not scrolled, maintain the existing
+      // scroll position
+      if (this.ref.current) {
+        this.ref.current.scrollTop = this.scrollTop;
+      }
       this.timeoutId = setTimeout(() => {
         const rows = this.calculateRows(this.props);
 

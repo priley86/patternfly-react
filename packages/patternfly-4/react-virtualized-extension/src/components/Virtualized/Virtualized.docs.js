@@ -7,6 +7,8 @@ import {
 import AutoSizerExample from './examples/AutoSizerExample';
 import VirtualizedExample from './examples/VirtualizedExample';
 import SortableExample from './examples/SortableExample';
+import SelectableExample from './examples/SelectableExample';
+import './examples/common/styles';
 
 export default {
   title: 'Virtualized',
@@ -19,6 +21,7 @@ export default {
   examples: [
     { component: AutoSizerExample, title: 'Simple AutoSizer Example' },
     { component: VirtualizedExample, title: 'Simple Virtualized Example' },
-    { component: SortableExample, title: 'Sortable Virtualized Example' }
+    { component: SortableExample, title: 'Sortable Virtualized Example' },
+    { component: SelectableExample, title: 'Selectable Virtualized Example' }
   ]
 };
