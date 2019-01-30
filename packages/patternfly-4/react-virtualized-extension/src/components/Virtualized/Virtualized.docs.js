@@ -8,7 +8,6 @@ import AutoSizerExample from './examples/AutoSizerExample';
 import VirtualizedExample from './examples/VirtualizedExample';
 import SortableExample from './examples/SortableExample';
 import SelectableExample from './examples/SelectableExample';
-import './examples/common/styles';
 
 export default {
   title: 'Virtualized',
