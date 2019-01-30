@@ -28,7 +28,7 @@
   "dependencies": {
     "@patternfly/patternfly-next": "1.0.167",
     "@patternfly/react-core": "^1.51.0",
-    "@patternfly/react-icons": "^2.10.3",
+    "@patternfly/react-icons": "^2.10.2",
     "@patternfly/react-styles": "^2.3.0",
     "exenv": "^1.2.2",
     "reactabular-table": "^8.14.0"
