@@ -6,7 +6,7 @@ import { checkInput } from '@patternfly/patternfly-next/components/Check/check.c
 const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  onSelect: PropTypes.func,
+  onSelect: PropTypes.func
 };
 const defaultProps = {
   children: null,
