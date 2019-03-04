@@ -3,7 +3,6 @@ import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 export interface NavExpandableProps extends HTMLProps<HTMLDivElement> {
   title: string;
   srText?: string;
-  defaultExpanded?: boolean;
   isExpanded?: boolean;
   children?: ReactNode;
   className?: string;
