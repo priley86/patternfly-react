@@ -26,7 +26,9 @@ const propTypes = {
   /** Identifier to use for the section aria label */
   id: PropTypes.string,
   /** Additional props are spread to the container <li> */
-  '': PropTypes.any
+  '': PropTypes.any,
+  /** allow consumer to optionally override this callback and manage expand state externally */
+  onExpand: PropTypes.func
 };
 
 const defaultProps = {
@@ -36,7 +38,8 @@ const defaultProps = {
   className: '',
   groupId: null,
   isActive: false,
-  id: ''
+  id: '',
+  onExpand: undefined
 };
 
 class NavExpandable extends React.Component {
@@ -54,10 +57,14 @@ class NavExpandable extends React.Component {
     }
   }
 
-  handleUpdateIsExpanded = val => {
-    console.log('val on click', val);
-    this.setState({ expandedState: val });
+  onExpand = (e, val) => {
+    if (this.props.onExpand) {
+      this.props.onExpand(e, val);
+    } else {
+      this.setState({ expandedState: val });
+    }
   };
+
   render() {
     const { id, title, srText, isExpanded, children, className, groupId, isActive, ...props } = this.props;
     const { expandedState } = this.state;
@@ -65,12 +72,7 @@ class NavExpandable extends React.Component {
     return (
       <NavContext.Consumer>
         {context => (
-          <NavToggle
-            groupId={groupId}
-            onToggle={context.onToggle}
-            onUpdateIsExpanded={this.handleUpdateIsExpanded}
-            isExpanded={expandedState}
-          >
+          <NavToggle groupId={groupId} onToggle={context.onToggle} onExpand={this.onExpand} isExpanded={expandedState}>
             {({ toggleValue, toggle }) => (
               <li
                 className={css(

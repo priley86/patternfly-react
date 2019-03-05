@@ -5,14 +5,15 @@ const propTypes = {
   children: PropTypes.func.isRequired,
   isExpanded: PropTypes.bool,
   groupId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onToggle: PropTypes.func
+  onToggle: PropTypes.func,
+  onExpand: PropTypes.func
 };
 
 const defaultProps = {
   isExpanded: false,
   groupId: 0,
   onToggle: () => undefined,
-  onUpdateIsExpanded: () => undefined
+  onExpand: () => undefined
 };
 
 class NavToggle extends React.Component {
@@ -24,9 +25,9 @@ class NavToggle extends React.Component {
     if (e.target.getAttribute('data-component') !== 'pf-nav-expandable') {
       return;
     }
-    const { groupId, onToggle, isExpanded } = this.props;
+    const { groupId, onToggle, onExpand, isExpanded } = this.props;
     onToggle(e, groupId, !isExpanded);
-    this.props.onUpdateIsExpanded(!isExpanded);
+    onExpand(e, !isExpanded);
   };
 
   render() {
