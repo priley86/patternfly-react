@@ -1,10 +1,10 @@
 import {
-  AutoSizer,
   VirtualizedBody,
   VirtualizedBodyWrapper,
-  VirtualizedRowWrapper
+  VirtualizedRowWrapper,
+  WindowScroller
 } from '@patternfly/react-virtualized-extension';
-import AutoSizerExample from './examples/AutoSizerExample';
+import WindowScrollerExample from './examples/WindowScrollerExample';
 import VirtualizedExample from './examples/VirtualizedExample';
 import SortableExample from './examples/SortableExample';
 import SelectableExample from './examples/SelectableExample';
@@ -12,15 +12,15 @@ import SelectableExample from './examples/SelectableExample';
 export default {
   title: 'Virtualized',
   components: {
-    AutoSizer,
     VirtualizedBody,
     VirtualizedBodyWrapper,
-    VirtualizedRowWrapper
+    VirtualizedRowWrapper,
+    WindowScroller
   },
   examples: [
-    { component: AutoSizerExample, title: 'Simple AutoSizer Example' },
     { component: VirtualizedExample, title: 'Simple Virtualized Example' },
     { component: SortableExample, title: 'Sortable Virtualized Example' },
-    { component: SelectableExample, title: 'Selectable Virtualized Example' }
+    { component: SelectableExample, title: 'Selectable Virtualized Example' },
+    { component: WindowScrollerExample, title: 'WindowScroller Example' }
   ]
 };

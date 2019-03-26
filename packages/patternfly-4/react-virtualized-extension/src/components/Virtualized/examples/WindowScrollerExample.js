@@ -7,7 +7,7 @@ import {
   WindowScroller
 } from '@patternfly/react-virtualized-extension';
 
-class AutoSizerExample extends React.Component {
+class WindowScrollerExample extends React.Component {
   static title = 'Simple Table';
   constructor(props) {
     super(props);
@@ -32,13 +32,14 @@ class AutoSizerExample extends React.Component {
 
   render() {
     const { columns, rows } = this.state;
+    const defaultHeight = 400;
 
     return (
       <div id="content-scrollable-1" style={{ height: 300, width: '100%', overflow: 'auto' }}>
         <WindowScroller scrollElement="#content-scrollable-1">
           {({ height, isScrolling, registerChild, onChildScroll, scrollTop }) => (
             <Table
-              caption="Simple Table"
+              caption="WindowScoller allows dynamic sizing of the table based on a parent container or the window."
               className="pf-c-virtualized"
               cells={columns}
               rows={rows}
@@ -46,7 +47,7 @@ class AutoSizerExample extends React.Component {
               rowWrapper={VirtualizedRowWrapper}
             >
               <TableHeader />
-              <VirtualizedBody height={height || 400} rowKey="id" />
+              <VirtualizedBody height={height || defaultHeight} rowKey="id" />
             </Table>
           )}
         </WindowScroller>
@@ -55,4 +56,4 @@ class AutoSizerExample extends React.Component {
   }
 }
 
-export default AutoSizerExample;
+export default WindowScrollerExample;
