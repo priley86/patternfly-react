@@ -77,7 +77,7 @@ class RowWrapper extends React.Component {
 }
 
 RowWrapper.propTypes = {
-  trRef: PropTypes.object,
+  trRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(Element) })]),
   className: PropTypes.string,
   onScroll: PropTypes.func,
   onResize: PropTypes.func,
