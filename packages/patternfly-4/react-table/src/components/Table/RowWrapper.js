@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { debounce } from '@patternfly/react-core';
 import styles from '@patternfly/patternfly/components/Table/table.css';
 import { css } from '@patternfly/react-styles';
+const Element = typeof Element === 'undefined' ? function() {} : Element;
 
 class RowWrapper extends React.Component {
   constructor(props) {
