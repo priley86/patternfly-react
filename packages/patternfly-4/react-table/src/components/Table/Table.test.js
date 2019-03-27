@@ -14,7 +14,7 @@ import {
 import { rows, columns, actions } from '../../test-helpers/data-sets';
 
 describe('Simple table', () => {
-  test.skip('caption', () => {
+  test('caption', () => {
     const view = mount(
       <Table caption="Simple Table" cells={columns} rows={rows}>
         <TableHeader />
@@ -24,7 +24,7 @@ describe('Simple table', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test.skip('header', () => {
+  test('header', () => {
     const view = mount(
       <Table header={<h4>Header title</h4>} cells={columns} rows={rows}>
         <TableHeader />
@@ -33,7 +33,7 @@ describe('Simple table', () => {
     );
     expect(view).toMatchSnapshot();
   });
-  test.skip('aria-label', () => {
+  test('aria-label', () => {
     const view = mount(
       <Table aria-label="Aria labeled" cells={columns} rows={rows}>
         <TableHeader />
@@ -44,7 +44,7 @@ describe('Simple table', () => {
   });
 });
 
-test.skip('Sortable table', () => {
+test('Sortable table', () => {
   const onSortCall = () => undefined;
   columns[0] = { ...columns[0], transforms: [sortable] };
   const view = mount(
@@ -58,7 +58,7 @@ test.skip('Sortable table', () => {
 
 describe('Table variants', () => {
   Object.values(TableGridBreakpoint).forEach(oneBreakpoint => {
-    test.skip(`Breakpoint - ${oneBreakpoint}`, () => {
+    test(`Breakpoint - ${oneBreakpoint}`, () => {
       const view = mount(
         <Table aria-label="Aria labeled" gridBreakPoint={oneBreakpoint} cells={columns} rows={rows}>
           <TableHeader />
@@ -69,7 +69,7 @@ describe('Table variants', () => {
     });
   });
   Object.values(TableVariant).forEach(onevariant => {
-    test.skip(`Size - ${onevariant}`, () => {
+    test(`Size - ${onevariant}`, () => {
       const view = mount(
         <Table aria-label="Aria labeled" variant={onevariant} cells={columns} rows={rows}>
           <TableHeader />
@@ -81,7 +81,7 @@ describe('Table variants', () => {
   });
 });
 
-test.skip('Simple Actions table', () => {
+test('Simple Actions table', () => {
   const rowsWithDisabledAction = [
     ...rows,
     {
@@ -99,7 +99,7 @@ test.skip('Simple Actions table', () => {
   expect(view).toMatchSnapshot();
 });
 
-test.skip('Actions table', () => {
+test('Actions table', () => {
   const view = mount(
     <Table
       aria-label="Aria labeled"
@@ -115,7 +115,7 @@ test.skip('Actions table', () => {
   expect(view).toMatchSnapshot();
 });
 
-test.skip('Cell header table', () => {
+test('Cell header table', () => {
   columns[0] = { ...columns[0], cellTransforms: [headerCol] };
   const view = mount(
     <Table aria-label="Aria labeled" cells={columns} rows={rows}>
@@ -126,7 +126,7 @@ test.skip('Cell header table', () => {
   expect(view).toMatchSnapshot();
 });
 
-test.skip('Collapsible table', () => {
+test('Collapsible table', () => {
   rows[0] = { ...rows[0], isOpen: true };
   rows[1] = { ...rows[1], parent: 0 };
   rows[3] = { ...rows[3], isOpen: false };
@@ -142,7 +142,7 @@ test.skip('Collapsible table', () => {
   expect(view).toMatchSnapshot();
 });
 
-test.skip('Collapsible nested table', () => {
+test('Collapsible nested table', () => {
   rows[0] = { ...rows[0], isOpen: false };
   rows[1] = { ...rows[1], parent: 0, isOpen: true };
   rows[2] = { ...rows[2], parent: 1 };
@@ -156,7 +156,7 @@ test.skip('Collapsible nested table', () => {
   expect(view).toMatchSnapshot();
 });
 
-test.skip('Selectable table', () => {
+test('Selectable table', () => {
   const onSelect = () => undefined;
   const view = mount(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
@@ -167,7 +167,7 @@ test.skip('Selectable table', () => {
   expect(view).toMatchSnapshot();
 });
 
-test.skip('Header width table', () => {
+test('Header width table', () => {
   columns[0] = { ...columns[0], transforms: [cellWidth(10)] };
   columns[2] = { ...columns[2], transforms: [cellWidth(30)] };
   columns[4] = { ...columns[4], transforms: [cellWidth('max')] };
@@ -180,7 +180,7 @@ test.skip('Header width table', () => {
   expect(view).toMatchSnapshot();
 });
 
-test.skip('Selectable table with selected expandable row', () => {
+test('Selectable table with selected expandable row', () => {
   const data = {
     cells: ['column'],
     rows: [

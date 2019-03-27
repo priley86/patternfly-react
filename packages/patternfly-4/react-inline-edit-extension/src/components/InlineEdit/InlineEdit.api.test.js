@@ -68,7 +68,7 @@ describe('Editable table', () => {
     container.unmount();
   });
 
-  test.skip('should call correct function', () => {
+  test('should call correct function', () => {
     const ComposedBody = editableTableBody(TableBody);
     const ComposedRowWrapper = editableRowWrapper(RowWrapper);
 

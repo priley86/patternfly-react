@@ -226,7 +226,7 @@ class Table extends React.Component {
           {...props}
           renderers={{
             body: {
-              wrapper: bodyWrapper(rows) || BodyWrapper,
+              wrapper: bodyWrapper || BodyWrapper,
               row: rowWrapper || RowWrapper,
               cell: BodyCell
             },

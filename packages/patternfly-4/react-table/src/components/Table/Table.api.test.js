@@ -5,7 +5,7 @@ import { rows, columns, actions } from '../../test-helpers/data-sets';
 import MockedTable from '../../test-helpers/MockedTableChanges';
 
 describe('Collapsible table', () => {
-  test.skip('should call correct function', () => {
+  test('should call correct function', () => {
     const items = [...rows];
     items[0].isOpen = false;
     items[1].parent = 0;
@@ -25,7 +25,7 @@ describe('Collapsible table', () => {
 });
 
 describe('Selectable table', () => {
-  test.skip('should call correct function', () => {
+  test('should call correct function', () => {
     const onSelect = jest.fn();
     const view = mount(
       <Table caption="Collapsible table" onSelect={onSelect} cells={columns} rows={rows}>
@@ -42,7 +42,7 @@ describe('Selectable table', () => {
 });
 
 describe('Action table', () => {
-  test.skip('should call correct functions', () => {
+  test('should call correct functions', () => {
     const actionResolver = jest.fn();
     const areActionsDisabled = jest.fn();
     mount(
@@ -64,7 +64,7 @@ describe('Action table', () => {
     expect(areActionsDisabled.mock.calls).toHaveLength(numberOfRenders);
   });
 
-  test.skip('should call action callback', () => {
+  test('should call action callback', () => {
     const onActionClick = jest.fn();
     const customActions = [
       {
@@ -98,7 +98,7 @@ describe('Action table', () => {
 });
 
 describe('Sortable table', () => {
-  test.skip('should call correct function', () => {
+  test('should call correct function', () => {
     const onSort = jest.fn();
     const sortBy = {};
     const header = [...columns];
