@@ -6,30 +6,38 @@ import { RowWrapper } from '@patternfly/react-table';
 import { VirtualizedBodyContext } from './Body';
 
 class VirtualizedRowWrapper extends React.Component {
-  constructor(props) {
-    super(props);
+  ref = React.createRef();
 
-    this.ref = React.createRef();
+  updateRowHeight = () => {
+    const { updateHeight, rowProps } = this.props;
+    updateHeight(rowProps['data-rowkey'], this.ref.current.offsetHeight);
+  };
 
-    this.updateHeight = this.updateHeight.bind(this);
+  static shouldComponentUpdate(nextProps) {
+    const { columns, rowData } = this.props;
+    // Update only if a row has not been measured and either
+    // columns or rowData hasn't changed
+    if (nextProps.rowData._measured) {
+      return !(columnsAreEqual(columns, nextProps.columns) && isEqual(rowData, nextProps.rowData));
+    }
+    return true;
   }
+
   componentDidMount() {
-    this.updateHeight();
+    this.updateRowHeight();
   }
   componentDidUpdate() {
     // Capture height data only during initial measurement for performance.
     // This loses some accuracy if row height changes, but it's good enough
     // for most purposes.
     if (this.props.initialMeasurement) {
-      this.updateHeight();
+      this.updateRowHeight();
     }
   }
+
   render() {
     const { updateHeight, initialMeasurement, ...props } = this.props;
     return <RowWrapper trRef={this.ref} {...props} />;
-  }
-  updateHeight() {
-    this.props.updateHeight(this.props.rowProps['data-rowkey'], this.ref.current.offsetHeight);
   }
 }
 VirtualizedRowWrapper.propTypes = {
@@ -39,20 +47,6 @@ VirtualizedRowWrapper.propTypes = {
   updateHeight: PropTypes.func.isRequired,
   initialMeasurement: PropTypes.bool.isRequired,
   trRef: PropTypes.object
-};
-
-VirtualizedRowWrapper.shouldComponentUpdate = function(nextProps) {
-  const previousProps = this.props;
-
-  // Update only if a row has not been measured and either
-  // columns or rowData hasn't changed
-  if (nextProps.rowData._measured) {
-    return !(
-      columnsAreEqual(previousProps.columns, nextProps.columns) && isEqual(previousProps.rowData, nextProps.rowData)
-    );
-  }
-
-  return true;
 };
 
 const VirtualizedRowWrapperWithContext = props => (

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { VirtualizedBodyContext } from './Body';
 import { bodyWrapperContextTypes, bodyWrapperTypes } from './types';
 
+import { virtualizedCss } from './css/virtualized-css';
+
+virtualizedCss.inject();
+
 class BodyWrapper extends Component {
   tr = props => React.createElement('tr', props);
   render() {

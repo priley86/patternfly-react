@@ -219,8 +219,8 @@ WindowScroller.propTypes = {
   /** Callback to be invoked on-scroll: ({ scrollLeft, scrollTop }) */
   onScroll: PropTypes.func,
 
-  /** Element to attach scroll event listeners. Defaults to window. */
-  scrollElement: PropTypes.oneOfType([PropTypes.instanceOf(window.constructor), PropTypes.instanceOf(Element)]),
+  /** Query string for element to attach scroll event listeners. Defaults to window if no element query string provided. */
+  scrollElement: PropTypes.string,
   /**
    * Wait this amount of time after the last scroll event before resetting child `pointer-events`.
    */
