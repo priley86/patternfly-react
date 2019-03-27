@@ -14,13 +14,15 @@ class BodyWrapper extends Component {
       key: 'start-row',
       style: {
         height: startHeight
-      }
+      },
+      'aria-hidden': true
     });
     const endRow = this.tr({
       key: 'end-row',
       style: {
         height: endHeight
-      }
+      },
+      'aria-hidden': true
     });
     // Extra row to keep onRow indexing stable instead of even/odd. This is important
     // for styling.
@@ -32,7 +34,8 @@ class BodyWrapper extends Component {
           key: 'extra-row',
           style: {
             height: 0
-          }
+          },
+          'aria-hidden': true
         })
       );
     }
