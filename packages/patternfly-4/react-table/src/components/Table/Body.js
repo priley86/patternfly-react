@@ -120,7 +120,7 @@ class ContextBody extends React.Component {
 
 const TableBody = props => (
   <TableContext.Consumer>
-    {({ headerData, rows }) => <ContextBody {...props} headerData={headerData} rows={props.rowsToRender || rows} />}
+    {({ headerData, rows }) => <ContextBody headerData={headerData} rows={props.rowsToRender || rows} {...props} />}
   </TableContext.Consumer>
 );
 
