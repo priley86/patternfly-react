@@ -28,6 +28,8 @@ export const virtualizedCss = StyleSheet.parse(`
     display: block;
     /* flex: 1 1 auto; */
     overflow-y: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 
   .pf-c-virtualized.pf-c-table tbody tr {
