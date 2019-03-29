@@ -18,14 +18,14 @@ export default {
   },
   variablesRoot: 'pf-c-table',
   examples: [
-    { component: Simple, title: 'Simple Table' },
-    { component: Sortable, title: 'Sortable Table' },
-    { component: Selectable, title: 'Selectable Table' },
-    { component: SimpleActions, title: 'Simple Actions Table' },
-    { component: Actions, title: 'Actions Table' },
-    { component: CellHeader, title: 'First cell as Header' },
-    { component: Compact, title: 'Compact Table' },
-    { component: Width, title: 'Table with Width Modifiers' },
-    { component: Collapsible, title: 'Collapsible table' }
+    // { component: Simple, title: 'Simple Table' },
+    { component: Sortable, title: 'Sortable Table' }
+    // { component: Selectable, title: 'Selectable Table' }
+    // { component: SimpleActions, title: 'Simple Actions Table' },
+    // { component: Actions, title: 'Actions Table' },
+    // { component: CellHeader, title: 'First cell as Header' },
+    // { component: Compact, title: 'Compact Table' },
+    // { component: Width, title: 'Table with Width Modifiers' },
+    // { component: Collapsible, title: 'Collapsible table' }
   ]
 };

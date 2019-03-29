@@ -19,9 +19,9 @@ export default {
     WindowScroller
   },
   examples: [
-    { component: VirtualizedExample, title: 'Simple Virtualized Example' },
-    { component: SortableExample, title: 'Sortable Virtualized Example' },
-    { component: SelectableExample, title: 'Selectable Virtualized Example' },
-    { component: WindowScrollerExample, title: 'WindowScroller Example' }
+    // { component: VirtualizedExample, title: 'Simple Virtualized Example' },
+    { component: SortableExample, title: 'Sortable Virtualized Example' }
+    // { component: SelectableExample, title: 'Selectable Virtualized Example' },
+    // { component: WindowScrollerExample, title: 'WindowScroller Example' }
   ]
 };

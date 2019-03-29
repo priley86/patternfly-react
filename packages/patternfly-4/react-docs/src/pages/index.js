@@ -9,11 +9,14 @@ import {
   global_Color_light_100 as heroTextColor
 } from '@patternfly/react-tokens';
 import DocsLayout from '../components/layouts';
+import { registerObserver } from 'react-perf-devtool';
 
 if (process.env.NODE_ENV !== 'production') {
-  const axe = require('react-axe'); // eslint-disable-line global-require
-  axe(React, ReactDOM, 1000);
+  // const axe = require('react-axe'); // eslint-disable-line global-require
+  // axe(React, ReactDOM, 1000);
 }
+
+registerObserver();
 
 const styles = StyleSheet.create({
   hero: {

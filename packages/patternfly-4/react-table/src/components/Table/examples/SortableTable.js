@@ -4,6 +4,13 @@ import { Table, TableHeader, TableBody, sortable, SortByDirection } from '@patte
 class SortableTable extends React.Component {
   constructor(props) {
     super(props);
+    const rows = [];
+    for (let i = 0; i < 5000; i++) {
+      rows.push({
+        id: i,
+        cells: [`one-${i}`, `two-${i}`, `three-${i}`, `four-${i}`, `five-${i}`]
+      });
+    }
     this.state = {
       columns: [
         { title: 'Repositories', transforms: [sortable] },
@@ -12,7 +19,7 @@ class SortableTable extends React.Component {
         'Workspaces',
         'Last Commit'
       ],
-      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      rows,
       sortBy: {}
     };
     this.onSort = this.onSort.bind(this);

@@ -14,7 +14,7 @@ class SortableExample extends React.Component {
     this.tableBody = React.createRef();
 
     const rows = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 5000; i++) {
       rows.push({
         id: i,
         cells: [`one-${i}`, `two-${i}`, `three-${i}`, `four-${i}`, `five-${i}`]
@@ -35,8 +35,8 @@ class SortableExample extends React.Component {
   }
 
   onSort(_event, index, direction) {
-    const sortedRows = this.state.rows.sort(
-      (a, b) => (a.cells[index] < b.cells[index] ? -1 : a.cells[index] > b.cells[index] ? 1 : 0)
+    const sortedRows = this.state.rows.sort((a, b) =>
+      a.cells[index] < b.cells[index] ? -1 : a.cells[index] > b.cells[index] ? 1 : 0
     );
     this.tableBody.current.scrollTo(0);
     this.setState({
