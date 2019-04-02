@@ -17,10 +17,14 @@ export const VirtualizedBodyContext = React.createContext(initialContext);
 class Body extends React.Component {
   state = initialContext;
   measuredRows = {}; // row key -> measurement
-  ref = React.createRef(); //tbody ref used for gathering scroll position
+  tbodyRef = null; // tbody ref used for gathering scroll position
   initialMeasurement = true;
   scrollTop = 0;
   timeoutId = 0;
+
+  setTbodyRef = element => {
+    this.tbodyRef = element;
+  };
 
   scrollTo = index => {
     const { rows, rowKey } = this.props;
@@ -35,7 +39,7 @@ class Body extends React.Component {
         }) * startIndex;
 
       this.scrollTop = startHeight;
-      this.ref.current.scrollTop = startHeight;
+      this.tbodyRef.scrollTop = startHeight;
 
       this.setState(this.calculateRows());
     }
@@ -66,8 +70,8 @@ class Body extends React.Component {
     if (this.initialMeasurement || (prevProps && prevProps.rows !== this.props.rows)) {
       // If the rows have changed, but the user has not scrolled, maintain the existing
       // scroll position
-      if (this.ref.current) {
-        this.ref.current.scrollTop = this.scrollTop;
+      if (this.tbodyRef) {
+        this.tbodyRef.scrollTop = this.scrollTop;
       }
       this.timeoutId = setTimeout(() => {
         const rows = this.calculateRows();
@@ -105,7 +109,7 @@ class Body extends React.Component {
     return renderedRows;
   };
 
-  getBodyOffset = () => this.ref.current.parentElement.offsetTop + this.ref.current.offsetTop;
+  getBodyOffset = () => this.tbodyRef.parentElement.offsetTop + this.tbodyRef.offsetTop;
 
   registerContainer = () => {
     setTimeout(() => {
@@ -138,7 +142,7 @@ class Body extends React.Component {
   }
 
   render() {
-    const { onRow, rows, onScroll, container, rowKey, ...props } = this.props;
+    const { onRow, rows, onScroll, container, rowKey, BodyComponent, ...props } = this.props;
     const { startIndex, amountOfRowsToRender, startHeight, endHeight, showExtraRow } = this.state;
     const height = this.getHeight();
 
@@ -174,7 +178,7 @@ class Body extends React.Component {
     return (
       <VirtualizedBodyContext.Provider
         value={{
-          bodyRef: this.ref,
+          tbodyRef: this.setTbodyRef,
           startHeight,
           endHeight,
           showExtraRow,
@@ -185,37 +189,71 @@ class Body extends React.Component {
           initialMeasurement: this.initialMeasurement
         }}
       >
-        <TableBody {...tableBodyProps} />
+        <BodyComponent {...tableBodyProps} />
       </VirtualizedBodyContext.Provider>
     );
   }
 }
 
-const VirtualizedBody = ({ tableBody, ...props }) => (
-  <TableContext.Consumer>
-    {({ headerData, rows }) => <Body {...props} ref={tableBody} headerData={headerData} rows={rows} />}
-  </TableContext.Consumer>
-);
-
-VirtualizedBody.defaultProps = TableBody.defaultProps;
-VirtualizedBody.propTypes = {
+Body.propTypes = {
   ...TableBody.propTypes,
-  height: heightPropCheck,
-  container: PropTypes.func
+  BodyComponent: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]).isRequired
 };
 
-export function heightPropCheck(props, propName, componentName) {
-  if (
-    typeof props[propName] !== 'number' &&
-    (!props.style || typeof props.style.maxHeight !== 'number') &&
-    (!props.container || typeof props.container !== 'function')
-  ) {
-    return new Error(
-      `height or style.maxHeight of type 'number' or container of type 'function' is marked as required in ${componentName}`
-    );
-  }
+const VirtualizedBody = BodyComponent => {
+  const VirtualizedBodyWithContext = ({ tableBody, ...props }) => (
+    <TableContext.Consumer>
+      {({ headerData, rows }) => (
+        <Body {...props} ref={tableBody} headerData={headerData} rows={rows} BodyComponent={BodyComponent} />
+      )}
+    </TableContext.Consumer>
+  );
+  VirtualizedBodyWithContext.propTypes = {
+    ...TableBody.propTypes,
+    height: function heightPropCheck(props, propName, componentName) {
+      if (
+        typeof props[propName] !== 'number' &&
+        (!props.style || typeof props.style.maxHeight !== 'number') &&
+        (!props.container || typeof props.container !== 'function')
+      ) {
+        return new Error(
+          `height or style.maxHeight of type 'number' or container of type 'function' is marked as required in ${componentName}`
+        );
+      }
 
-  return undefined;
-}
+      return undefined;
+    },
+    container: PropTypes.func
+  };
+  VirtualizedBodyWithContext.defaultProps = TableBody.defaultProps;
+  return VirtualizedBodyWithContext;
+};
+
+// const VirtualizedBody = ({ tableBody, ...props }) => (
+//   <TableContext.Consumer>
+//     {({ headerData, rows }) => <Body {...props} ref={tableBody} headerData={headerData} rows={rows} />}
+//   </TableContext.Consumer>
+// );
+
+// VirtualizedBody.defaultProps = TableBody.defaultProps;
+// VirtualizedBody.propTypes = {
+//   ...TableBody.propTypes,
+//   height: heightPropCheck,
+//   container: PropTypes.func
+// };
+
+// export function heightPropCheck(props, propName, componentName) {
+//   if (
+//     typeof props[propName] !== 'number' &&
+//     (!props.style || typeof props.style.maxHeight !== 'number') &&
+//     (!props.container || typeof props.container !== 'function')
+//   ) {
+//     return new Error(
+//       `height or style.maxHeight of type 'number' or container of type 'function' is marked as required in ${componentName}`
+//     );
+//   }
+
+//   return undefined;
+// }
 
 export default VirtualizedBody;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableHeader, headerCol } from '@patternfly/react-table';
+import { BodyWrapper, Table, TableBody, TableHeader, RowWrapper, headerCol } from '@patternfly/react-table';
 import {
   VirtualizedBody,
   VirtualizedBodyWrapper,
@@ -48,6 +48,9 @@ class SelectableExample extends React.Component {
 
   render() {
     const { columns, rows } = this.state;
+    const ComposedRowWrapper = VirtualizedRowWrapper(RowWrapper);
+    const ComposedBodyWrapper = VirtualizedBodyWrapper(BodyWrapper);
+    const ComposedBody = VirtualizedBody(TableBody);
 
     return (
       <Table
@@ -56,11 +59,11 @@ class SelectableExample extends React.Component {
         onSelect={this.onSelect}
         cells={columns}
         rows={rows}
-        bodyWrapper={VirtualizedBodyWrapper}
-        rowWrapper={VirtualizedRowWrapper}
+        bodyWrapper={ComposedBodyWrapper}
+        rowWrapper={ComposedRowWrapper}
       >
         <TableHeader />
-        <VirtualizedBody height={400} rowKey="id" />
+        <ComposedBody height={400} rowKey="id" />
       </Table>
     );
   }

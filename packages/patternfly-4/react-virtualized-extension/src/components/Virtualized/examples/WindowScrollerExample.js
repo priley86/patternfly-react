@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableHeader } from '@patternfly/react-table';
+import { BodyWrapper, Table, TableBody, TableHeader, RowWrapper } from '@patternfly/react-table';
 import {
   VirtualizedBody,
   VirtualizedBodyWrapper,
@@ -33,6 +33,9 @@ class WindowScrollerExample extends React.Component {
   render() {
     const { columns, rows } = this.state;
     const defaultHeight = 400;
+    const ComposedRowWrapper = VirtualizedRowWrapper(RowWrapper);
+    const ComposedBodyWrapper = VirtualizedBodyWrapper(BodyWrapper);
+    const ComposedBody = VirtualizedBody(TableBody);
 
     return (
       <div id="content-scrollable-1" style={{ height: 300, width: '100%', overflow: 'auto' }}>
@@ -43,11 +46,11 @@ class WindowScrollerExample extends React.Component {
               className="pf-c-virtualized"
               cells={columns}
               rows={rows}
-              bodyWrapper={VirtualizedBodyWrapper}
-              rowWrapper={VirtualizedRowWrapper}
+              bodyWrapper={ComposedBodyWrapper}
+              rowWrapper={ComposedRowWrapper}
             >
               <TableHeader />
-              <VirtualizedBody height={height || defaultHeight} rowKey="id" />
+              <ComposedBody height={height || defaultHeight} rowKey="id" />
             </Table>
           )}
         </WindowScroller>

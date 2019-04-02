@@ -1,8 +1,9 @@
+/* eslint-disable react/no-multi-comp */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isEqual } from 'lodash-es';
 import { columnsAreEqual } from 'reactabular-table';
-import { RowWrapper } from '@patternfly/react-table';
+import { RowWrapper as ReactTableRowWrapper } from '@patternfly/react-table';
 import { VirtualizedBodyContext } from './Body';
 
 class VirtualizedRowWrapper extends React.Component {
@@ -42,24 +43,42 @@ class VirtualizedRowWrapper extends React.Component {
   }
 
   render() {
-    const { updateHeight, initialMeasurement, ...props } = this.props;
-    return <RowWrapper trRef={this.setTrRef} {...props} />;
+    const { updateHeight, initialMeasurement, RowWrapperComponent, ...props } = this.props;
+    return <RowWrapperComponent trRef={this.setTrRef} {...props} />;
   }
 }
 VirtualizedRowWrapper.propTypes = {
+  ...ReactTableRowWrapper.propTypes,
   rowProps: PropTypes.shape({
     'data-rowkey': PropTypes.string.isRequired
-  }).isRequired,
+  }),
   updateHeight: PropTypes.func.isRequired,
-  initialMeasurement: PropTypes.bool.isRequired
+  initialMeasurement: PropTypes.bool.isRequired,
+  RowWrapperComponent: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]).isRequired
 };
 
-const VirtualizedRowWrapperWithContext = props => (
-  <VirtualizedBodyContext.Consumer>
-    {({ updateHeight, initialMeasurement }) => (
-      <VirtualizedRowWrapper {...props} updateHeight={updateHeight} initialMeasurement={initialMeasurement} />
-    )}
-  </VirtualizedBodyContext.Consumer>
-);
+VirtualizedRowWrapper.defaultProps = {
+  rowProps: {}
+};
 
-export default VirtualizedRowWrapperWithContext;
+const VirtualizedRowWrapperComponent = RowWrapperComponent => {
+  const VirtualizedRowWrapperWithContext = ({ ...props }) => (
+    <VirtualizedBodyContext.Consumer>
+      {({ updateHeight, initialMeasurement }) => (
+        <VirtualizedRowWrapper
+          {...props}
+          RowWrapperComponent={RowWrapperComponent}
+          updateHeight={updateHeight}
+          initialMeasurement={initialMeasurement}
+        />
+      )}
+    </VirtualizedBodyContext.Consumer>
+  );
+
+  VirtualizedRowWrapperWithContext.propTypes = {
+    ...ReactTableRowWrapper.propTyes
+  };
+  return VirtualizedRowWrapperWithContext;
+};
+
+export default VirtualizedRowWrapperComponent;

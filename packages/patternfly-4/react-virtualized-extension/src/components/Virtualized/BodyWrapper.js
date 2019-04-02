@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { BodyWrapper as ReactTableBodyWrapper } from '@patternfly/react-table';
 import { VirtualizedBodyContext } from './Body';
 import { bodyWrapperContextTypes, bodyWrapperTypes } from './types';
 
@@ -9,7 +11,7 @@ virtualizedCss.inject();
 class BodyWrapper extends Component {
   tr = props => React.createElement('tr', props);
   render() {
-    const { children, bodyRef, startHeight, endHeight, showExtraRow, mappedRows, ...props } = this.props;
+    const { children, tbodyRef, startHeight, endHeight, showExtraRow, BodyWrapperComponent, ...props } = this.props;
     const startRow = this.tr({
       key: 'start-row',
       style: {
@@ -41,26 +43,38 @@ class BodyWrapper extends Component {
     }
 
     return (
-      <tbody {...props} ref={bodyRef}>
+      <BodyWrapperComponent {...props} tbodyRef={tbodyRef}>
         {rows}
-      </tbody>
+      </BodyWrapperComponent>
     );
   }
 }
 BodyWrapper.contextTypes = bodyWrapperContextTypes;
-BodyWrapper.propTypes = bodyWrapperTypes;
+BodyWrapper.propTypes = {
+  ...ReactTableBodyWrapper.propTypes,
+  ...bodyWrapperTypes,
+  BodyWrapperComponent: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]).isRequired
+};
 
-const VirtualizedBodyWrapper = ({ ...props }) => (
-  <VirtualizedBodyContext.Consumer>
-    {({ bodyRef, startHeight, endHeight, showExtraRow }) => (
-      <BodyWrapper
-        {...props}
-        bodyRef={bodyRef}
-        startHeight={startHeight}
-        endHeight={endHeight}
-        showExtraRow={showExtraRow}
-      />
-    )}
-  </VirtualizedBodyContext.Consumer>
-);
+const VirtualizedBodyWrapper = BodyWrapperComponent => {
+  const VirtualizedBodyWrapperWithContext = ({ ...props }) => (
+    <VirtualizedBodyContext.Consumer>
+      {({ tbodyRef, startHeight, endHeight, showExtraRow }) => (
+        <BodyWrapper
+          {...props}
+          tbodyRef={tbodyRef}
+          startHeight={startHeight}
+          endHeight={endHeight}
+          showExtraRow={showExtraRow}
+          BodyWrapperComponent={BodyWrapperComponent}
+        />
+      )}
+    </VirtualizedBodyContext.Consumer>
+  );
+  VirtualizedBodyWrapperWithContext.propTypes = {
+    ...ReactTableBodyWrapper.propTypes
+  };
+  return VirtualizedBodyWrapperWithContext;
+};
+
 export default VirtualizedBodyWrapper;

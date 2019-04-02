@@ -1,5 +1,13 @@
 import React from 'react';
-import { Table, TableHeader, sortable, SortByDirection } from '@patternfly/react-table';
+import {
+  BodyWrapper,
+  Table,
+  TableBody,
+  TableHeader,
+  RowWrapper,
+  sortable,
+  SortByDirection
+} from '@patternfly/react-table';
 import {
   VirtualizedBody,
   VirtualizedBodyWrapper,
@@ -35,8 +43,8 @@ class SortableExample extends React.Component {
   }
 
   onSort(_event, index, direction) {
-    const sortedRows = this.state.rows.sort(
-      (a, b) => (a.cells[index] < b.cells[index] ? -1 : a.cells[index] > b.cells[index] ? 1 : 0)
+    const sortedRows = this.state.rows.sort((a, b) =>
+      a.cells[index] < b.cells[index] ? -1 : a.cells[index] > b.cells[index] ? 1 : 0
     );
     this.tableBody.current.scrollTo(0);
     this.setState({
@@ -50,20 +58,22 @@ class SortableExample extends React.Component {
 
   render() {
     const { columns, rows, sortBy } = this.state;
-
+    const ComposedRowWrapper = VirtualizedRowWrapper(RowWrapper);
+    const ComposedBodyWrapper = VirtualizedBodyWrapper(BodyWrapper);
+    const ComposedBody = VirtualizedBody(TableBody);
     return (
       <Table
         caption="Sortable Virtualized Table"
         className="pf-c-virtualized"
         cells={columns}
         rows={rows}
-        bodyWrapper={VirtualizedBodyWrapper}
-        rowWrapper={VirtualizedRowWrapper}
+        bodyWrapper={ComposedBodyWrapper}
+        rowWrapper={ComposedRowWrapper}
         sortBy={sortBy}
         onSort={this.onSort}
       >
         <TableHeader />
-        <VirtualizedBody height={400} rowKey="id" tableBody={this.tableBody} />
+        <ComposedBody height={400} rowKey="id" tableBody={this.tableBody} />
       </Table>
     );
   }
