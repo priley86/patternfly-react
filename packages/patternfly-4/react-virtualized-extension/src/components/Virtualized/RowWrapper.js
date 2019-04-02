@@ -6,11 +6,17 @@ import { RowWrapper } from '@patternfly/react-table';
 import { VirtualizedBodyContext } from './Body';
 
 class VirtualizedRowWrapper extends React.Component {
-  ref = React.createRef();
+  trRef = null;
+
+  setTrRef = element => {
+    this.trRef = element;
+  };
 
   updateRowHeight = () => {
-    const { updateHeight, rowProps } = this.props;
-    updateHeight(rowProps['data-rowkey'], this.ref.current.offsetHeight);
+    if (this.trRef) {
+      const { updateHeight, rowProps } = this.props;
+      updateHeight(rowProps['data-rowkey'], this.trRef.offsetHeight);
+    }
   };
 
   static shouldComponentUpdate(nextProps) {
@@ -37,7 +43,7 @@ class VirtualizedRowWrapper extends React.Component {
 
   render() {
     const { updateHeight, initialMeasurement, ...props } = this.props;
-    return <RowWrapper trRef={this.ref} {...props} />;
+    return <RowWrapper trRef={this.setTrRef} {...props} />;
   }
 }
 VirtualizedRowWrapper.propTypes = {
@@ -45,8 +51,7 @@ VirtualizedRowWrapper.propTypes = {
     'data-rowkey': PropTypes.string.isRequired
   }).isRequired,
   updateHeight: PropTypes.func.isRequired,
-  initialMeasurement: PropTypes.bool.isRequired,
-  trRef: PropTypes.object
+  initialMeasurement: PropTypes.bool.isRequired
 };
 
 const VirtualizedRowWrapperWithContext = props => (

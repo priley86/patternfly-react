@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { debounce } from '@patternfly/react-core';
 import styles from '@patternfly/patternfly/components/Table/table.css';
 import { css } from '@patternfly/react-styles';
-const Element = typeof Element === 'undefined' ? function() {} : Element;
 
 class RowWrapper extends React.Component {
   constructor(props) {
@@ -78,7 +77,7 @@ class RowWrapper extends React.Component {
 }
 
 RowWrapper.propTypes = {
-  trRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(Element) })]),
+  trRef: PropTypes.func,
   className: PropTypes.string,
   onScroll: PropTypes.func,
   onResize: PropTypes.func,
