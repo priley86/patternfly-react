@@ -17,10 +17,14 @@ export const VirtualizedBodyContext = React.createContext(initialContext);
 class Body extends React.Component {
   state = initialContext;
   measuredRows = {}; // row key -> measurement
-  ref = React.createRef(); //tbody ref used for gathering scroll position
+  tbodyRef = null; // tbody ref used for gathering scroll position
   initialMeasurement = true;
   scrollTop = 0;
   timeoutId = 0;
+
+  setTbodyRef = element => {
+    this.tbodyRef = element;
+  };
 
   scrollTo = index => {
     const { rows, rowKey } = this.props;
@@ -35,7 +39,7 @@ class Body extends React.Component {
         }) * startIndex;
 
       this.scrollTop = startHeight;
-      this.ref.current.scrollTop = startHeight;
+      this.tbodyRef.scrollTop = startHeight;
 
       this.setState(this.calculateRows());
     }
@@ -66,8 +70,8 @@ class Body extends React.Component {
     if (this.initialMeasurement || (prevProps && prevProps.rows !== this.props.rows)) {
       // If the rows have changed, but the user has not scrolled, maintain the existing
       // scroll position
-      if (this.ref.current) {
-        this.ref.current.scrollTop = this.scrollTop;
+      if (this.tbodyRef) {
+        this.tbodyRef.scrollTop = this.scrollTop;
       }
       this.timeoutId = setTimeout(() => {
         const rows = this.calculateRows();
@@ -105,7 +109,7 @@ class Body extends React.Component {
     return renderedRows;
   };
 
-  getBodyOffset = () => this.ref.current.parentElement.offsetTop + this.ref.current.offsetTop;
+  getBodyOffset = () => this.tbodyRef.parentElement.offsetTop + this.tbodyRef.offsetTop;
 
   registerContainer = () => {
     setTimeout(() => {
@@ -174,7 +178,7 @@ class Body extends React.Component {
     return (
       <VirtualizedBodyContext.Provider
         value={{
-          bodyRef: this.ref,
+          tbodyRef: this.setTbodyRef,
           startHeight,
           endHeight,
           showExtraRow,

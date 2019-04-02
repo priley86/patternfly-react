@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { VirtualizedBodyContext } from './Body';
+import { BodyWrapper as ReactTableBodyWrapper } from '@patternfly/react-table';
 import { bodyWrapperContextTypes, bodyWrapperTypes } from './types';
 
 import { virtualizedCss } from './css/virtualized-css';
@@ -9,7 +10,7 @@ virtualizedCss.inject();
 class BodyWrapper extends Component {
   tr = props => React.createElement('tr', props);
   render() {
-    const { children, bodyRef, startHeight, endHeight, showExtraRow, mappedRows, ...props } = this.props;
+    const { children, tbodyRef, startHeight, endHeight, showExtraRow, mappedRows, ...props } = this.props;
     const startRow = this.tr({
       key: 'start-row',
       style: {
@@ -41,9 +42,9 @@ class BodyWrapper extends Component {
     }
 
     return (
-      <tbody {...props} ref={bodyRef}>
+      <ReactTableBodyWrapper {...props} tbodyRef={tbodyRef}>
         {rows}
-      </tbody>
+      </ReactTableBodyWrapper>
     );
   }
 }
@@ -52,10 +53,10 @@ BodyWrapper.propTypes = bodyWrapperTypes;
 
 const VirtualizedBodyWrapper = ({ ...props }) => (
   <VirtualizedBodyContext.Consumer>
-    {({ bodyRef, startHeight, endHeight, showExtraRow }) => (
+    {({ tbodyRef, startHeight, endHeight, showExtraRow }) => (
       <BodyWrapper
         {...props}
-        bodyRef={bodyRef}
+        tbodyRef={tbodyRef}
         startHeight={startHeight}
         endHeight={endHeight}
         showExtraRow={showExtraRow}
