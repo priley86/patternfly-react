@@ -40,6 +40,7 @@ class VirtualizedExample extends React.Component {
         rows={rows}
         bodyWrapper={VirtualizedBodyWrapper}
         rowWrapper={VirtualizedRowWrapper}
+        aria-rowcount={rows.length}
       >
         <TableHeader />
         <VirtualizedBody height={400} rowKey="id" />

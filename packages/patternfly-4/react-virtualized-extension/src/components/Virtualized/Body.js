@@ -104,6 +104,7 @@ class Body extends React.Component {
   rowsToRender = (rows, startIndex, amountOfRowsToRender, rowKey) => {
     const renderedRows = rows.slice(startIndex, startIndex + amountOfRowsToRender).map((rowData, rowIndex) => ({
       ...rowData,
+      'aria-rowindex': startIndex + rowIndex + 1, // aria-rowindex should be 1-based, not 0-based.
       _measured: !!this.measuredRows[resolveRowKey({ rowData, rowIndex, rowKey })]
     }));
     return renderedRows;

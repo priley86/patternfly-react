@@ -35,8 +35,8 @@ class SortableExample extends React.Component {
   }
 
   onSort(_event, index, direction) {
-    const sortedRows = this.state.rows.sort(
-      (a, b) => (a.cells[index] < b.cells[index] ? -1 : a.cells[index] > b.cells[index] ? 1 : 0)
+    const sortedRows = this.state.rows.sort((a, b) =>
+      a.cells[index] < b.cells[index] ? -1 : a.cells[index] > b.cells[index] ? 1 : 0
     );
     this.tableBody.current.scrollTo(0);
     this.setState({
@@ -61,6 +61,7 @@ class SortableExample extends React.Component {
         rowWrapper={VirtualizedRowWrapper}
         sortBy={sortBy}
         onSort={this.onSort}
+        aria-rowcount={rows.length}
       >
         <TableHeader />
         <VirtualizedBody height={400} rowKey="id" tableBody={this.tableBody} />

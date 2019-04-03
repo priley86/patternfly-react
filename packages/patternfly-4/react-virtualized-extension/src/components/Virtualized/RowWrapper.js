@@ -42,11 +42,12 @@ class VirtualizedRowWrapper extends React.Component {
   }
 
   render() {
-    const { updateHeight, initialMeasurement, ...props } = this.props;
-    return <RowWrapper trRef={this.setTrRef} {...props} />;
+    const { updateHeight, initialMeasurement, row, ...props } = this.props;
+    return <RowWrapper trRef={this.setTrRef} row={row} aria-rowindex={row['aria-rowindex']} {...props} />;
   }
 }
 VirtualizedRowWrapper.propTypes = {
+  ...RowWrapper.propTypes,
   rowProps: PropTypes.shape({
     'data-rowkey': PropTypes.string.isRequired
   }).isRequired,

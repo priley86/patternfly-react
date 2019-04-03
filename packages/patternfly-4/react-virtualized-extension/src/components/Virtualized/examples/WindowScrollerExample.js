@@ -45,6 +45,7 @@ class WindowScrollerExample extends React.Component {
               rows={rows}
               bodyWrapper={VirtualizedBodyWrapper}
               rowWrapper={VirtualizedRowWrapper}
+              aria-rowcount={rows.length}
             >
               <TableHeader />
               <VirtualizedBody height={height || defaultHeight} rowKey="id" />

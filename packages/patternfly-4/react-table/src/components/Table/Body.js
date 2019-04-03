@@ -79,7 +79,7 @@ class ContextBody extends React.Component {
               ...mappedCell
             };
           },
-          { id: row.id !== undefined ? row.id : row[rowKey] || rowKey }
+          { id: row.id !== undefined ? row.id : rowKey }
         ))
     };
   };
