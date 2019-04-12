@@ -21,7 +21,6 @@ export const virtualizedCss = StyleSheet.parse(`
     /* 0.9em approximates scrollbar width  */
     /* width: calc(100% - 0.9em); */
     width: 100%;
-    display: table;
   }
 
   .pf-c-virtualized.pf-c-table tbody {
