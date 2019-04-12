@@ -124,8 +124,11 @@ class WindowScroller extends React.PureComponent {
 
   _getScrollElement() {
     const { scrollElement } = this.props;
-    const el = document.querySelector(scrollElement);
-    return el || getWindow();
+    if (typeof scrollElement === 'string') {
+      return document.querySelector(scrollElement);
+    }
+    // scrollElement defaults to Window
+    return scrollElement;
   }
 
   _registerChild = element => {

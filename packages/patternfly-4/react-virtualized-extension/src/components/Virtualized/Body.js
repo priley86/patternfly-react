@@ -22,6 +22,12 @@ class Body extends React.Component {
   scrollTop = 0;
   timeoutId = 0;
 
+  constructor(props) {
+    super(props);
+    // onScroll is bound to `this` class instead of the container element
+    this.onScroll = this.onScroll.bind(this);
+  }
+
   setTbodyRef = element => {
     this.tbodyRef = element;
   };
@@ -43,24 +49,6 @@ class Body extends React.Component {
 
       this.setState(this.calculateRows());
     }
-  };
-
-  onScroll = e => {
-    const { onScroll, container } = this.props;
-    onScroll && onScroll(e);
-
-    const {
-      target: { scrollTop }
-    } = e;
-
-    // Y didn't change, bail to avoid rendering rows
-    if (this.scrollTop === scrollTop) {
-      return;
-    }
-
-    this.scrollTop = container ? scrollTop - this.getBodyOffset() : scrollTop;
-
-    this.setState(this.calculateRows());
   };
 
   checkMeasurements = prevProps => {
@@ -92,7 +80,7 @@ class Body extends React.Component {
 
   getHeight = () => {
     const { container, height, style } = this.props;
-    if (container) {
+    if (container && container()) {
       return container().clientHeight;
     }
     // If `props.height` is not defined, we use `props.style.maxHeight` instead.
@@ -110,11 +98,14 @@ class Body extends React.Component {
     return renderedRows;
   };
 
-  getBodyOffset = () => this.tbodyRef.parentElement.offsetTop + this.tbodyRef.offsetTop;
+  getBodyOffset = () =>
+    // possibly a bug in reactabular-virtualized
+    // return this.tbodyRef.parentElement.offsetTop + this.tbodyRef.offsetTop;
+    this.tbodyRef.offsetTop;
 
   registerContainer = () => {
     setTimeout(() => {
-      this.props.container().addEventListener('scroll', this.onScroll);
+      this.props.container() && this.props.container().addEventListener('scroll', this.onScroll);
     }, 0);
   };
 
@@ -142,6 +133,24 @@ class Body extends React.Component {
     clearTimeout(this.timeoutId);
   }
 
+  onScroll(e) {
+    const { onScroll, container } = this.props;
+    onScroll && onScroll(e);
+
+    const {
+      target: { scrollTop }
+    } = e;
+
+    // Y didn't change, bail to avoid rendering rows
+    if (this.scrollTop === scrollTop) {
+      return;
+    }
+
+    this.scrollTop = container ? scrollTop - this.getBodyOffset() : scrollTop;
+
+    this.setState(this.calculateRows());
+  }
+
   render() {
     const { onRow, rows, onScroll, container, rowKey, ...props } = this.props;
     const { startIndex, amountOfRowsToRender, startHeight, endHeight, showExtraRow } = this.state;
@@ -164,9 +173,16 @@ class Body extends React.Component {
       );
     }
 
+    const style = { height };
+    if (!container) {
+      // if we do not have a parent container to scroll, set the body to scroll
+      style.display = 'block';
+      style.overflow = 'auto';
+    }
     const tableBodyProps = {
       ...props,
-      style: { height, display: 'block', overflow: 'auto' },
+      height,
+      style,
       onRow: (row, extra) => ({
         // Pass index so that row heights can be tracked properly
         'data-rowkey': extra.rowKey,
@@ -195,6 +211,15 @@ class Body extends React.Component {
     );
   }
 }
+Body.propTypes = {
+  ...TableBody.propTypes,
+  height: heightPropCheck,
+  container: PropTypes.func
+};
+Body.defaultProps = {
+  height: undefined,
+  container: undefined
+};
 
 const VirtualizedBody = ({ tableBody, ...props }) => (
   <TableContext.Consumer>

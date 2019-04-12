@@ -11,6 +11,10 @@ class WindowScrollerExample extends React.Component {
   static title = 'Simple Table';
   constructor(props) {
     super(props);
+    this.container = null;
+    this.setContainer = element => {
+      this.container = element;
+    };
     const rows = [];
     for (let i = 0; i < 100; i++) {
       rows.push({
@@ -35,23 +39,24 @@ class WindowScrollerExample extends React.Component {
     const defaultHeight = 400;
 
     return (
-      <div id="content-scrollable-1" style={{ height: 300, width: '100%', overflow: 'auto' }}>
-        <WindowScroller scrollElement="#content-scrollable-1">
-          {({ height, isScrolling, registerChild, onChildScroll, scrollTop }) => (
-            <Table
-              caption="WindowScoller allows dynamic sizing of the table based on a parent container or the window."
-              className="pf-c-virtualized"
-              cells={columns}
-              rows={rows}
-              bodyWrapper={VirtualizedBodyWrapper}
-              rowWrapper={VirtualizedRowWrapper}
-              aria-rowcount={rows.length}
-            >
-              <TableHeader />
-              <VirtualizedBody height={height || defaultHeight} rowKey="id" />
-            </Table>
-          )}
-        </WindowScroller>
+      <div>
+        <div id="content-scrollable-1" ref={this.setContainer} style={{ height: 300, width: '100%', overflow: 'auto' }}>
+          <WindowScroller scrollElement="content-scrollable-1">
+            {({ height, isScrolling, registerChild, onChildScroll, scrollTop }) => (
+              <Table
+                caption="WindowScoller allows scrolling of a parent container or the window instead of tbody. It also can be used to dynamically size the table to the size of the scroll element."
+                cells={columns}
+                rows={rows}
+                bodyWrapper={VirtualizedBodyWrapper}
+                rowWrapper={VirtualizedRowWrapper}
+                aria-rowcount={rows.length}
+              >
+                <TableHeader />
+                <VirtualizedBody height={height || defaultHeight} container={() => this.container} rowKey="id" />
+              </Table>
+            )}
+          </WindowScroller>
+        </div>
       </div>
     );
   }
