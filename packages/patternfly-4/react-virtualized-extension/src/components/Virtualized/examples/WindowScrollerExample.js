@@ -41,7 +41,7 @@ class WindowScrollerExample extends React.Component {
     return (
       <div>
         <div id="content-scrollable-1" ref={this.setContainer} style={{ height: 300, width: '100%', overflow: 'auto' }}>
-          <WindowScroller scrollElement="content-scrollable-1">
+          <WindowScroller scrollElement="#content-scrollable-1">
             {({ height, isScrolling, registerChild, onChildScroll, scrollTop }) => (
               <Table
                 caption="WindowScoller allows scrolling of a parent container or the window instead of tbody. It also can be used to dynamically size the table to the size of the scroll element."

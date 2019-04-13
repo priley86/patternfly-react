@@ -4,6 +4,7 @@ import { resolveRowKey } from 'reactabular-table';
 import { TableBody, TableContext } from '@patternfly/react-table';
 import calculateAverageHeight from './utils/calculateAverageHeight';
 import calculateRows from './utils/calculateRows';
+import createDetectElementResize from './utils/detectElementResize';
 
 const initialContext = {
   amountOfRowsToRender: 3, // First few rows for initial measurement
@@ -24,8 +25,8 @@ class Body extends React.Component {
 
   constructor(props) {
     super(props);
-    // onScroll is bound to `this` class instead of the container element
     this.onScroll = this.onScroll.bind(this);
+    this.onResize = this.onResize.bind(this);
   }
 
   setTbodyRef = element => {
@@ -53,8 +54,8 @@ class Body extends React.Component {
 
   checkMeasurements = prevProps => {
     // If there are no valid measurements or the rows have changed,
-    // calculate some after waiting a while. Without this styling solutions
-    // like Radium won't work as you might expect given they can take a while to set container height.
+    // calculate some after waiting a while. Without this some styling solutions
+    // won't work as you might expect given they can take a while to set container height.
     if (this.initialMeasurement || (prevProps && prevProps.rows !== this.props.rows)) {
       // If the rows have changed, but the user has not scrolled, maintain the existing
       // scroll position
@@ -100,7 +101,7 @@ class Body extends React.Component {
 
   getBodyOffset = () =>
     // possibly a bug in reactabular-virtualized
-    // return this.tbodyRef.parentElement.offsetTop + this.tbodyRef.offsetTop;
+    // this.tbodyRef.parentElement.offsetTop + this.tbodyRef.offsetTop;
     this.tbodyRef.offsetTop;
 
   registerContainer = () => {
@@ -123,6 +124,8 @@ class Body extends React.Component {
   componentDidMount() {
     this.checkMeasurements();
     this.props.container && this.registerContainer();
+    this._detectElementResize = createDetectElementResize();
+    this._detectElementResize.addResizeListener(this.tbodyRef, this.onResize);
   }
 
   componentDidUpdate(prevProps) {
@@ -130,7 +133,17 @@ class Body extends React.Component {
   }
 
   componentWillUnmount() {
+    this._detectElementResize.removeResizeListener(this.tbodyRef, this.onResize);
     clearTimeout(this.timeoutId);
+  }
+
+  onResize() {
+    // reset all measurements & `measuredRows`, then check again
+    this.initialMeasurement = true;
+    this.scrollTop = 0;
+    this.setState(initialContext);
+    this.measuredRows = {};
+    this.checkMeasurements();
   }
 
   onScroll(e) {
@@ -145,9 +158,7 @@ class Body extends React.Component {
     if (this.scrollTop === scrollTop) {
       return;
     }
-
     this.scrollTop = container ? scrollTop - this.getBodyOffset() : scrollTop;
-
     this.setState(this.calculateRows());
   }
 
@@ -202,7 +213,7 @@ class Body extends React.Component {
           updateHeight: (oneRowKey, rowHeight) => {
             this.measuredRows[oneRowKey] = rowHeight;
           },
-          // Capture height data only during the initial measurement
+          // Capture height data only during the initial measurement or during resize
           initialMeasurement: this.initialMeasurement
         }}
       >

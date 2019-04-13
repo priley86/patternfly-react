@@ -15,8 +15,15 @@ class VirtualizedRowWrapper extends React.Component {
   updateRowHeight = () => {
     if (this.trRef) {
       const { updateHeight, rowProps } = this.props;
-      updateHeight(rowProps['data-rowkey'], this.trRef.offsetHeight);
+      updateHeight(rowProps['data-rowkey'], this.getAbsoluteHeight(this.trRef));
     }
+  };
+
+  // offsetHeight does not include margins, so we use this helper for better accuracy
+  getAbsoluteHeight = el => {
+    const styles = window.getComputedStyle(el);
+    const margin = parseFloat(styles.marginTop) + parseFloat(styles.marginBottom);
+    return Math.ceil(el.offsetHeight + margin);
   };
 
   static shouldComponentUpdate(nextProps) {
@@ -33,9 +40,7 @@ class VirtualizedRowWrapper extends React.Component {
     this.updateRowHeight();
   }
   componentDidUpdate() {
-    // Capture height data only during initial measurement for performance.
-    // This loses some accuracy if row height changes, but it's good enough
-    // for most purposes.
+    // Capture height data only during initial measurement or during resize
     if (this.props.initialMeasurement) {
       this.updateRowHeight();
     }

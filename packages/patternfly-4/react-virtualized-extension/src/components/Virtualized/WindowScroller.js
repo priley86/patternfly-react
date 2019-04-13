@@ -41,6 +41,12 @@ class WindowScroller extends React.PureComponent {
       scrollLeft: 0,
       scrollTop: 0
     };
+    this.onResize = this.onResize.bind(this);
+    this.updatePosition = this.updatePosition.bind(this);
+  }
+
+  onResize() {
+    this.updatePosition();
   }
 
   updatePosition(scrollable) {
@@ -155,22 +161,18 @@ class WindowScroller extends React.PureComponent {
 
   _registerResizeListener = element => {
     if (element === window) {
-      window.addEventListener('resize', this._onResize, false);
+      window.addEventListener('resize', this.onResize, false);
     } else {
-      this._detectElementResize.addResizeListener(element, this._onResize);
+      this._detectElementResize.addResizeListener(element, this.onResize);
     }
   };
 
   _unregisterResizeListener = element => {
     if (element === window) {
-      window.removeEventListener('resize', this._onResize, false);
+      window.removeEventListener('resize', this.onResize, false);
     } else if (element) {
-      this._detectElementResize.removeResizeListener(element, this._onResize);
+      this._detectElementResize.removeResizeListener(element, this.onResize);
     }
-  };
-
-  _onResize = () => {
-    this.updatePosition();
   };
 
   // Referenced by utils/onScroll

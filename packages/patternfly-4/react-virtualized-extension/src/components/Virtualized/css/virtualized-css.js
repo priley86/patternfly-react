@@ -1,6 +1,14 @@
 import { StyleSheet } from '@patternfly/react-styles';
 
 export const virtualizedCss = StyleSheet.parse(`
+  /* virtualized tables use aria-hidden tr's to offset scrolled rows -
+     do not add extra spacing to these elements as offset height is important
+  */
+  .pf-c-table tbody tr[aria-hidden="true"] {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+  }
   .pf-c-virtualized.pf-c-table {
     display: flex;
     flex-flow: column;
