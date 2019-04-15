@@ -1,13 +1,27 @@
 import calculateAverageHeight from './calculateAverageHeight';
 
 const calculateRows = ({ measuredRows, height, rowKey, rows, scrollTop = 0 }) => {
-  // Calculate amount of rows to render based on average height and take the
-  // amount of actual rows into account.
+  // used exact measured row heights for determining `startIndex` for smooth scroll
+  // average heights are not accurate when there is lots of variation in row heights
+  let startIndex = 0;
+  let startHeight = 0;
+  let accruedHeight = 0;
+  for (let i = 0; i < Object.keys(measuredRows).length; i++) {
+    accruedHeight += measuredRows[`${i}-row`];
+    if (scrollTop < accruedHeight) {
+      startIndex = i;
+      break;
+    } else {
+      startHeight = accruedHeight;
+    }
+  }
+
+  // averageHeight of measuredRows can still be used to closely approximate amount of rows to render
+  // if this causes issues w/ row visibility, exact heights can still be used
   const averageHeight = calculateAverageHeight({ measuredRows, rows, rowKey });
   const amountOfRowsToRender = Math.ceil(height / averageHeight) + 2;
 
-  const startIndex = Math.floor(scrollTop / averageHeight);
-  const zeroedIndex = Math.max(startIndex, 0);
+  const zeroedIndex = startIndex;
   const rowsToRender = rows.slice(zeroedIndex, Math.max(startIndex + amountOfRowsToRender, 0));
 
   if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && window.LOG_VIRTUALIZED) {
@@ -31,8 +45,6 @@ const calculateRows = ({ measuredRows, height, rowKey, rows, scrollTop = 0 }) =>
   if (!rowsToRender.length) {
     return null;
   }
-
-  const startHeight = zeroedIndex * averageHeight;
 
   // Calculate the padding of the last row so we can match whole height. This
   // won't be totally accurate if row heights differ but should get close
