@@ -2399,6 +2399,7 @@ exports[`Actions table 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -11425,6 +11426,7 @@ exports[`Cell header table 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -17686,6 +17688,7 @@ exports[`Collapsible nested table 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -24745,6 +24748,7 @@ exports[`Collapsible table 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className="pf-m-expanded"
@@ -33497,6 +33501,7 @@ exports[`Header width table 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -39847,6 +39852,7 @@ exports[`Selectable table 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -47254,6 +47260,7 @@ exports[`Simple Actions table 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -58237,6 +58244,7 @@ exports[`Simple table aria-label 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -64229,6 +64237,7 @@ exports[`Simple table caption 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -70225,6 +70234,7 @@ exports[`Simple table header 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -76268,6 +76278,7 @@ exports[`Sortable table 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -82318,6 +82329,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -88368,6 +88380,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -94418,6 +94431,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -100468,6 +100482,7 @@ exports[`Table variants Breakpoint - grid-xl 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
@@ -106518,6 +106533,7 @@ exports[`Table variants Size - compact 1`] = `
                 ]
               }
               rows={Array []}
+              tbodyRef={null}
             >
               <tbody
                 className=""
