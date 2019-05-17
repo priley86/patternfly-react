@@ -143,7 +143,8 @@ const propTypes = {
       throw new Error('Specify at least one of: header, caption, aria-label');
     }
     return null;
-  }
+  },
+  role: PropTypes.string
 };
 
 const defaultProps = {
@@ -158,7 +159,8 @@ const defaultProps = {
   contentId: 'expanded-content',
   dropdownPosition: DropdownPosition.right,
   dropdownDirection: DropdownDirection.down,
-  gridBreakPoint: TableGridBreakpoint.gridMd
+  gridBreakPoint: TableGridBreakpoint.gridMd,
+  role: 'grid'
 };
 
 export const TableContext = React.createContext();
@@ -207,6 +209,7 @@ class Table extends React.Component {
       bodyWrapper,
       rowWrapper,
       borders,
+      role,
       ...props
     } = this.props;
 
@@ -249,7 +252,7 @@ class Table extends React.Component {
             }
           }}
           columns={headerData}
-          role="grid"
+          role={role}
           className={css(
             styles.table,
             gridBreakPoint && getModifier(stylesGrid, gridBreakPoint),
