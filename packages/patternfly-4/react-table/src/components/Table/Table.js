@@ -125,21 +125,21 @@ const propTypes = {
   dropdownDirection: PropTypes.oneOf(Object.values(DropdownDirection)),
   /** Header to display above table for accessibility reasons. */
   header: props => {
-    if (!props['aria-label'] && !props.caption && !props.header) {
+    if (!props['aria-label'] && !props.caption && !props.header && !props.role === 'presentation') {
       throw new Error('Specify at least one of: header, caption, aria-label');
     }
     return null;
   },
   /** Caption to display in table for accessibility reasons. */
   caption: props => {
-    if (!props['aria-label'] && !props.caption && !props.header) {
+    if (!props['aria-label'] && !props.caption && !props.header && !props.role === 'presentation') {
       throw new Error('Specify at least one of: header, caption, aria-label');
     }
     return null;
   },
   /** aria-label in table for accessibility reasons. */
   'aria-label': props => {
-    if (!props['aria-label'] && !props.caption && !props.header) {
+    if (!props['aria-label'] && !props.caption && !props.header && !props.role === 'presentation') {
       throw new Error('Specify at least one of: header, caption, aria-label');
     }
     return null;
