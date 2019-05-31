@@ -101,6 +101,7 @@ class VirtualizedExample extends React.Component {
       <div
         aria-label="Scrollable Table"
         role="grid"
+        className="pf-c-scrollablegrid"
         aria-rowcount={rows.length}>
         <Table
           caption="Simple Table"
@@ -243,6 +244,7 @@ class SortableExample extends React.Component {
       <div
         aria-label="Scrollable Table"
         role="grid"
+        className="pf-c-scrollablegrid"
         aria-rowcount={rows.length}>
         <Table
           caption="Sortable Virtualized Table"
@@ -396,6 +398,7 @@ class SelectableExample extends React.Component {
       <div
         aria-label="Scrollable Table"
         role="grid"
+        className="pf-c-scrollablegrid"
         aria-rowcount={rows.length}>
         <Table
           caption="Selectable Virtualized Table"
@@ -464,7 +467,7 @@ class ActionsExample extends React.Component {
         { title: 'Labels', props: { className: 'pf-m-4-col-on-md pf-m-4-col-on-lg pf-m-3-col-on-xl pf-m-hidden pf-m-visible-on-md'} },
         { title: 'Status', props: { className: 'pf-m-2-col-on-lg pf-m-2-col-on-xl pf-m-hidden pf-m-visible-on-lg'} },
         { title: 'Pod Selector', props: { className: 'pf-m-2-col-on-xl pf-m-hidden pf-m-visible-on-xl'} },
-        { title: '', props: { className: 'pf-col-kebab'}},
+        { title: '', props: { className: 'pf-c-table__action'}},
       ],
       rows,
       actions: [
@@ -550,6 +553,7 @@ class ActionsExample extends React.Component {
       <div
         aria-label="Scrollable Table"
         role="grid"
+        className="pf-c-scrollablegrid"
         aria-rowcount={rows.length}>
         <Table
           caption="Actions Virtualized Table"

@@ -124,6 +124,7 @@ class WindowScrollerExample extends React.Component {
         id="content-scrollable-1"
         aria-label="Scrollable Table"
         role="grid"
+        className="pf-c-scrollablegrid"
         aria-rowcount={rows.length}
         style={{
           height: 500, /* important note: the scrollable container should have some sort of fixed height, or it should be wrapped in container that is smaller than ReactVirtualized__VirtualGrid container and has overflow visible if using the Window Scroller. See WindowScroller.example.css */
