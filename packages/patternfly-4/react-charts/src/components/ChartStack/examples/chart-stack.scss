@@ -1,7 +1,23 @@
 .ws-preview {
   & > * {
     .stack-chart-container {
-      width: 450px;
+      width: 80%;
+      margin: auto;
     }
   }
+  .subscriptions-usage-graph .pf-l-split {
+    width: 100%;
+  }
+  .subscriptions-usage-graph .pf-l-split,
+  .subscriptions-usage-graph .pf-l-split__item {
+    padding: 0;
+    border: none;
+  }
+}
+.subscriptions-usage-graph .pf-c-card__head {
+  border-bottom: var(--pf-global--BorderWidth--sm	) solid var(--pf-global--BorderColor--100);
+}
+
+.subscriptions-usage-graph .stack-chart-container tspan {
+  font-size: 10px !important;
 }
