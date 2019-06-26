@@ -523,7 +523,7 @@ class CompactTable extends React.Component {
 
     return (
       <Table
-        caption="Compact Table with border"
+        caption="Compact Table with borderless rows"
         variant={TableVariant.compact}
         borders={false}
         cells={columns}
