@@ -104,16 +104,16 @@ export type IAreActionsDisabled = (rowData: IRowData, extraData: IExtraData) => 
 // to be removed in future, this interface is no longer accurate
 export interface IDecorator extends React.HTMLProps<HTMLElement> {	
   isVisible: boolean;	
-  children?: React.ReactNode;	
+  children?: React.ReactNode;
 }
 
 export interface ICell {
   title?: string;
-  transforms?: ((...args: any) => any)[];
-  cellTransforms?: ((...args: any) => any)[];
-  columnTransforms?: ((...args: any) => any)[];
-  formatters?: ((...args: any) => any)[];
-  cellFormatters?: ((...args: any) => any)[];
+  transforms?: ((value: any) => IDecorator)[];
+  cellTransforms?: ((value: any) => IDecorator)[];
+  columnTransforms?: ((value: any) => IDecorator)[];
+  formatters?: ((value: any) => IDecorator)[];
+  cellFormatters?: ((value: any) => IDecorator)[];
   props?: any;
   data?: any;
   header?: any;
