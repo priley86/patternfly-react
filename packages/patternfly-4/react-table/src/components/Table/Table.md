@@ -2,6 +2,7 @@
 title: 'Table'
 cssPrefix: 'pf-c-table'
 section: 'components'
+typescript: true
 propComponents: ['Table', 'TableHeader', 'TableBody']
 ---
 
