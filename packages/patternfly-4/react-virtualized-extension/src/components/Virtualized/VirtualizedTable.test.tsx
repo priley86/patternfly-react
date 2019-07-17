@@ -2,19 +2,9 @@ import * as React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import clsx from 'clsx';
 import { mount } from 'enzyme';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableGridBreakpoint,
-  TableVariant,
-  cellWidth,
-  headerCol,
-  sortable,
-  expandable
-} from '@patternfly/react-table';
+import { Table, TableHeader, sortable } from '@patternfly/react-table';
 import { VirtualTableBody } from './index';
-import { rows, columns, actions } from '@patternfly/react-table/src/test-helpers/data-sets';
+import { rows, columns, actions } from './VirtualizedDataSets';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 
 const measurementCache = new CellMeasurerCache({
@@ -83,7 +73,7 @@ test('Sortable Virtualized Table', () => {
   };
 
   const onSortCall = () => undefined;
-  columns[0] = { ...columns[0], transforms: [sortable] };
+  columns[0] = Object.assign({}, columns[0]);
   const view = mount(
     <Table aria-label="Aria labeled" onSort={onSortCall} sortBy={{}} cells={columns} rows={rows}>
       <TableHeader />
@@ -183,7 +173,7 @@ test('Selectable virtualized table', () => {
     });
   };
 
-  const onSelect = () => undefined;
+  const onSelect = Function<any>(() => undefined);
   const view = mount(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
       <TableHeader />
