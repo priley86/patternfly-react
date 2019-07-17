@@ -72,7 +72,7 @@ test('Sortable Virtualized Table', () => {
     });
   };
 
-  const onSortCall = () => undefined;
+  const onSortCall = () => undefined as any;
   columns[0] = Object.assign({}, columns[0]);
   const view = mount(
     <Table aria-label="Aria labeled" onSort={onSortCall} sortBy={{}} cells={columns} rows={rows}>
@@ -173,7 +173,7 @@ test('Selectable virtualized table', () => {
     });
   };
 
-  const onSelect = Function<any>(() => undefined);
+  const onSelect = () => undefined as any;
   const view = mount(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
       <TableHeader />
