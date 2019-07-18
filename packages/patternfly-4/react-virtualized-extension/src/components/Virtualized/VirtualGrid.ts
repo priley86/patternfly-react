@@ -293,8 +293,8 @@ class VirtualGrid extends React.PureComponent<Props, State> {
   _onVirtualGridRenderedMemoizer = createCallbackMemoizer();
   _onScrollMemoizer = createCallbackMemoizer(false);
 
-  _deferredInvalidateColumnIndex = null;
-  _deferredInvalidateRowIndex = null;
+  _deferredInvalidateColumnIndex = null as any;
+  _deferredInvalidateRowIndex = null as any;
   _recomputeScrollLeftFlag = false;
   _recomputeScrollTopFlag = false;
 
@@ -317,7 +317,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
   _initialScrollTop: number;
   _initialScrollLeft: number;
 
-  _disablePointerEventsTimeoutId;
+  _disablePointerEventsTimeoutId: any;
 
   _styleCache: StyleCache = {};
   _cellCache: CellCache = {};
@@ -836,8 +836,8 @@ class VirtualGrid extends React.PureComponent<Props, State> {
       });
     }
 
-    let maybeStateA;
-    let maybeStateB;
+    let maybeStateA: any;
+    let maybeStateB: any;
 
     calculateSizeAndPositionDataAndUpdateScrollOffset({
       cellCount: instanceProps.prevColumnCount,
@@ -1242,7 +1242,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
     totalRowsHeight: number
   }) {
     this._onScrollMemoizer({
-      callback: ({ scrollLeft, scrollTop }) => {
+      callback: ({ scrollLeft } : { scrollLeft: any }, { scrollTop } : { scrollTop: any }) => {
         const { height, onScroll, width } = this.props;
 
         onScroll({
@@ -1426,7 +1426,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
     // And it keeps the caches from growing too large.
     // Performance is most sensitive when a user is scrolling.
     // Don't clear visible cells from cellCache if isScrollingOptOut is specified.
-    // This keeps the cellCache to a resonable size.
+    // This keeps the cellCache to a reasonable size.
     this._cellCache = {};
     this._styleCache = {};
 

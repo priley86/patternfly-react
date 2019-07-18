@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const columns = [
+export const columns: any = [
   { title: 'Header cell' },
   'Branches',
   { title: 'Pull requests' },
@@ -40,7 +40,7 @@ export const rows = [
   }
 ];
 
-export const actions = [
+export const actions: any = [
   {
     title: 'Some action',
     onClick: (event, rowId) => console.log('clicked on Some action, on row: ', rowId)
