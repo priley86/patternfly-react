@@ -16,8 +16,9 @@ export interface BodyProps {
   rows: RowsType;
   rowKey?: RowKeyType;
   columns?: RenderersTypes['columns'];
-  renderers: RenderersTypes['renderers'];
+  renderers?: RenderersTypes['renderers'];
   mappedRows?: any;
+  className?: string;
 }
 
 class BaseBody extends React.Component<BodyProps, {}> {

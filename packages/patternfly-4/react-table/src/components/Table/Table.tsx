@@ -9,7 +9,7 @@ import HeaderCell from './HeaderCell';
 import RowWrapper from './RowWrapper';
 import BodyWrapper from './BodyWrapper';
 import { calculateColumns } from './utils/headerUtils';
-import { ColumnType, RowKeyType } from './base';
+import { ColumnType, RowType, RowKeyType } from './base';
 
 export enum TableGridBreakpoint {
   none = '',
@@ -94,7 +94,7 @@ export interface IRowCell {
   props: any;
 }
 
-export interface IRow {
+export interface IRow extends RowType {
   cells: (React.ReactNode | IRowCell)[];
   isOpen?: boolean;
   parent?: number;

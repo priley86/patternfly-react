@@ -32,7 +32,7 @@ export type RowKeyType = Function | string;
 export interface RowType {
   header?: HeaderType;
   cell?: CellType;
-  [key:string]: object;
+  [key:string]: any;
 }
 
 // Table Defaults
