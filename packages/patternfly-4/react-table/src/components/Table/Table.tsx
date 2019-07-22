@@ -105,6 +105,7 @@ export interface IRow {
   isExpanded?: boolean;
   isFirstVisible?: boolean;
   isLastVisible?: boolean;
+  selected?: boolean;
 }
 
 export interface TableProps {
@@ -139,7 +140,7 @@ export interface TableProps {
 export const TableContext = React.createContext({
   headerData: null as any,
   headerRows: null as IHeaderRow[],
-  rows: []
+  rows: [] as (IRow | string[])[]
 });
 
 class Table extends React.Component<TableProps, {}> {
@@ -160,10 +161,14 @@ class Table extends React.Component<TableProps, {}> {
     role: 'grid'
   }
 
-  isSelected = (row: any) => row.selected === true;
+  isSelected = (row: IRow) => row.selected === true;
 
-  areAllRowsSelected = (rows: any) =>
-    rows.every((row: any) => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
+  areAllRowsSelected = (rows: IRow[]) => {
+    if (rows === undefined || rows.length === 0) {
+      return false;
+    }
+    return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
+  };
     
   render(){
     const {
@@ -205,7 +210,7 @@ class Table extends React.Component<TableProps, {}> {
       sortBy,
       onSort,
       onSelect,
-      allRowsSelected: onSelect ? this.areAllRowsSelected(rows) : false,
+      allRowsSelected: onSelect ? this.areAllRowsSelected(rows as IRow[]) : false,
       actions,
       actionResolver,
       areActionsDisabled,
