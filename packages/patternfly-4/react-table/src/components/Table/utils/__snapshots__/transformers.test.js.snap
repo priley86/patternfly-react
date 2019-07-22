@@ -15,7 +15,6 @@ Object {
   "children": <SelectColumn
     aria-labelledby="simple-node0"
     checked={false}
-    className=""
     name="checkrow0"
     onSelect={[Function]}
   >
