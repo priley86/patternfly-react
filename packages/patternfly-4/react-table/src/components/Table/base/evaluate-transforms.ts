@@ -3,15 +3,15 @@
  *
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
- * */
+ */
 import { isFunction } from 'lodash-es';
 import { mergeProps } from './merge-props';
-import { transformsType, extraParamsType } from './types';
+import { transformsType, ExtraParamsType } from './types';
 
-export function evaluateTransforms(transforms:transformsType = [], value: string | object, extraParameters:extraParamsType = {}) {
+export function evaluateTransforms(transforms:transformsType = [], value: string | object, extraParameters:ExtraParamsType = {}) {
   if (process.env.NODE_ENV !== 'production') {
     if (!transforms.every(isFunction)) {
-      throw new Error("All transforms weren't functions!");
+      throw new Error('All transforms weren\'t functions!');
     }
   }
 

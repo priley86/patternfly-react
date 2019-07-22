@@ -14,7 +14,7 @@ interface HeaderCellProps {
 const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   className = '',
   component = 'th',
-  isVisible = undefined,
+  isVisible,
   scope = '',
   textCenter = false,
   ...props

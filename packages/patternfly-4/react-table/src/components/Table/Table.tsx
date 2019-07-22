@@ -25,6 +25,7 @@ export enum TableVariant {
 };
 
 interface OnSort {
+  // tslint:disable-next-line:callable-types
   (event: React.MouseEvent, columnIndex: number, extraData: IExtraColumnData): void
 }
 
@@ -70,7 +71,7 @@ export interface IAction {
 }
 
 export interface ISeparator {
-  isSeparator: Boolean
+  isSeparator: boolean;
 }
 
 export interface IDecorator extends React.HTMLProps<HTMLElement> {
@@ -94,16 +95,16 @@ export interface IRowCell {
 }
 
 export interface IRow {
-  cells: Array<React.ReactNode | IRowCell>;
-  isOpen?: Boolean;
+  cells: (React.ReactNode | IRowCell)[];
+  isOpen?: boolean;
   parent?: number;
   props?: any;
-  fullWidth?: Boolean;
-  noPadding?: Boolean;
-  showSelect?: Boolean;
-  isExpanded?: Boolean;
-  isFirstVisible?: Boolean;
-  isLastVisible?: Boolean;
+  fullWidth?: boolean;
+  noPadding?: boolean;
+  showSelect?: boolean;
+  isExpanded?: boolean;
+  isFirstVisible?: boolean;
+  isLastVisible?: boolean;
 }
 
 export interface TableProps {
@@ -118,8 +119,8 @@ export interface TableProps {
   onExpand?: (event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => undefined;
   onSelect?: (event: React.MouseEvent, isSelected: boolean, rowIndex: number, rowData: IRowData, extraData: IExtraData) => undefined;
   onSort?: (event: React.MouseEvent, columnIndex: number, extraData: IExtraColumnData) => undefined;
-  actions?: Array<IAction | ISeparator>;
-  actionResolver?: (rowData: IRowData, extraData: IExtraData) => Array<IAction | ISeparator>;
+  actions?: (IAction | ISeparator)[];
+  actionResolver?: (rowData: IRowData, extraData: IExtraData) => (IAction | ISeparator)[];
   areActionsDisabled?: (rowData: IRowData, extraData: IExtraData) => boolean;
   header?: React.ReactNode;
   caption?: React.ReactNode;
@@ -128,8 +129,8 @@ export interface TableProps {
   contentId?: string;
   dropdownPosition?: 'right' | 'left';
   dropdownDirection?: 'up' | 'down';
-  rows: Array<IRow | Array<string>>;
-  cells: Array<ICell | string>;
+  rows: (IRow | string[])[];
+  cells: (ICell | string)[];
   bodyWrapper?: Function;
   rowWrapper?: Function;
   role?: string;
@@ -142,7 +143,7 @@ export const TableContext = React.createContext({
 });
 
 class Table extends React.Component<TableProps, {}> {
-  public static defaultProps = {
+  static defaultProps = {
     children: null as React.ReactNode,
     className: '',
     variant: null as TableVariant,

@@ -42,7 +42,7 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./build/copyStyles.js",
+    "build": "yarn typecheck && yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./build/copyStyles.js",
     "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
     "build:babel:cjs": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
     "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
@@ -51,7 +51,7 @@
     "clean": "rimraf dist",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps",
     "lint:ts": "tslint -p tsconfig.typecheck.json",
-    "typecheck": "tsc -p tsconfig.typecheck.json"
+    "typecheck": "tsc -p tsconfig.typecheck.json && yarn lint:ts"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -71,6 +71,9 @@
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-react": "^3.6.0",
     "typescript": "3.4.5"
   }
 }

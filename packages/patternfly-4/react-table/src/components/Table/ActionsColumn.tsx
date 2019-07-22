@@ -8,13 +8,13 @@ import {
   DropdownSeparator
 } from '@patternfly/react-core';
 
-//todo: export from react-core as enum
+// todo: export from react-core as enum
 export enum DropdownPosition {
   right = 'right',
   left= 'left'
 }
 
-//todo: export from react-core as enum
+// todo: export from react-core as enum
 export enum DropdownDirection {
   up = 'up',
   down = 'down',
@@ -41,7 +41,7 @@ export interface ActionsColumnState {
 }
 
 class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnState> {
-  public static defaultProps = {
+  static defaultProps = {
     children: null as React.ReactNode,
     items: [] as ActionsItem[],
     dropdownPosition: DropdownPosition.right,
@@ -66,6 +66,7 @@ class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnSta
     onClick: ((event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, rowIndex: number | undefined, rowData: object | undefined, extraData: object | undefined) => void) | undefined): void => {
     const { rowData, extraData } = this.props;
     event.preventDefault();
+    // tslint:disable-next-line:no-unused-expression
     onClick && onClick(event, extraData && extraData.rowIndex, rowData, extraData);
     this.setState({
       isOpen: !this.state.isOpen

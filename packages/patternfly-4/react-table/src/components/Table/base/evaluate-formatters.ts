@@ -3,11 +3,11 @@
  *
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
- * */
-import { formattersType, formatterValueType, extraParamsType } from './types';
+ */
+import { formattersType, formatterValueType, ExtraParamsType } from './types';
 
 export function evaluateFormatters(formatters: formattersType) {
-  return (value: formatterValueType, extra: extraParamsType) =>
+  return (value: formatterValueType, extra: ExtraParamsType) =>
     formatters.reduce(
       (parameters, formatter) => ({
         value: formatter(parameters.value, parameters.extra),

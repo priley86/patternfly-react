@@ -3,17 +3,17 @@
  *
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
- * */
+ */
 import * as React from 'react';
 import { createElementType, RowsType, ColumnsType, RenderersTypes } from './types';
 import { ProviderContext } from './provider';
 import { HeaderRow } from './header-row';
 
 export interface HeaderProps {
-  headerRows?: RowsType[] | ColumnsType; //array of rows arrays
+  headerRows?: RowsType[] | ColumnsType; // array of rows arrays
   children?: React.ReactNode;
-  columns?: RenderersTypes["columns"];
-  renderers?: RenderersTypes["renderers"];
+  columns?: RenderersTypes['columns'];
+  renderers?: RenderersTypes['renderers'];
   onRow?: Function;
   className?: string;
 }

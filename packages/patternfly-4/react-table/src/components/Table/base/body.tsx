@@ -3,7 +3,7 @@
  *
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
- * */
+ */
 import * as React from 'react';
 import { isEqual, isFunction } from 'lodash-es';
 import { RowsType, RowType, RowKeyType, RenderersTypes, createElementType } from './types';
@@ -15,13 +15,13 @@ export interface BodyProps {
   onRow?: Function;
   rows: RowsType;
   rowKey?: RowKeyType;
-  columns?: RenderersTypes["columns"];
-  renderers: RenderersTypes["renderers"];
+  columns?: RenderersTypes['columns'];
+  renderers: RenderersTypes['renderers'];
   mappedRows?: any;
 }
 
 class BaseBody extends React.Component<BodyProps, {}> {
-  public static defaultProps = {
+  static defaultProps = {
     onRow: (...args:any) => Object 
   };
 

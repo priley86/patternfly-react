@@ -3,7 +3,7 @@
  *
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
- * */
+ */
 import * as React from 'react';
 import { evaluateFormatters } from './evaluate-formatters';
 import { evaluateTransforms } from './evaluate-transforms';
@@ -13,7 +13,7 @@ import { createElementType, ColumnType, HeaderType, RowsType, RenderersTypes } f
 export interface HeaderRowProps {
   rowData: RowsType;
   rowIndex: number;
-  renderers: RenderersTypes["renderers"]["header"];
+  renderers: RenderersTypes['renderers']['header'];
   onRow?: Function;
 }
 
@@ -38,6 +38,7 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
       const transformedProps = evaluateTransforms(transforms, label, extraParameters);
 
       if (!transformedProps) {
+        // tslint:disable-next-line:no-console
         console.warn('Table.Header - Failed to receive a transformed result'); // eslint-disable-line max-len, no-console
       }
 

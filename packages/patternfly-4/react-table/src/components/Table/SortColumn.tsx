@@ -11,7 +11,7 @@ export enum SortByDirection {
 interface SortColumnProps extends React.HTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   className?: string;
-  isSortedBy?: Boolean;
+  isSortedBy?: boolean;
   onSort?: Function;
   sortDirection?: string;
 } 

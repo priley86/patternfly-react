@@ -3,7 +3,7 @@
  *
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
- * */
+ */
 import { isEqual, isFunction } from 'lodash-es';
 import * as React from 'react';
 import { columnsAreEqual } from './columns-are-equal';
@@ -13,8 +13,8 @@ import { mergeProps } from './merge-props';
 import { createElementType, formatterValueType, ColumnType, RowType, RenderersTypes } from './types';
 
 export interface BodyRowProps {
-  columns: RenderersTypes["columns"];
-  renderers: RenderersTypes["renderers"]["body"];
+  columns: RenderersTypes['columns'];
+  renderers: RenderersTypes['renderers']['body'];
   onRow?: Function;
   rowIndex: number;
   rowData: RowType;
@@ -22,7 +22,7 @@ export interface BodyRowProps {
 }
 
 export class BodyRow extends React.Component<BodyRowProps, {}> {
-  public static defaultProps = {
+  static defaultProps = {
     onRow: (...args:any) => Object 
   };
 
@@ -65,6 +65,7 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
         const transformed = evaluateTransforms(transforms, rowData[evaluatedProperty], extraParameters);
 
         if (!transformed) {
+          // tslint:disable-next-line:no-console
           console.warn('Table.Body - Failed to receive a transformed result');
         }
 
