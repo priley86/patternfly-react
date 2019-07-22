@@ -2,13 +2,14 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
 import { Provider } from './base';
-import { DropdownPosition, DropdownDirection, Omit } from '@patternfly/react-core';
+import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 import { css, getModifier } from '@patternfly/react-styles';
 import BodyCell from './BodyCell';
 import HeaderCell from './HeaderCell';
 import RowWrapper from './RowWrapper';
 import BodyWrapper from './BodyWrapper';
 import { calculateColumns } from './utils/headerUtils';
+import { ColumnType, RowKeyType } from './base';
 
 export enum TableGridBreakpoint {
   none = '',
@@ -27,19 +28,7 @@ interface OnSort {
   (event: React.MouseEvent, columnIndex: number, extraData: IExtraColumnData): void
 }
 
-export interface IHeaderRow {
-  header?: {
-    label?: string,
-    transforms?: Array<Function>,
-    formatters?: Array<Function>,
-    props?: Object
-  },
-  cell?: {
-    property?: number | string,
-    transforms?: Array<Function>,
-    formatters?: Array<Function>,
-    props?: Object
-  }
+export interface IHeaderRow extends ColumnType {
 }
 
 export interface IRowData {
@@ -54,7 +43,7 @@ export interface IColumn {
 
 export interface IExtraRowData {
   rowIndex: number;
-  rowKey?: string;
+  rowKey?: RowKeyType;
 }
 
 export interface IExtraColumnData {
@@ -111,6 +100,10 @@ export interface IRow {
   props?: any;
   fullWidth?: Boolean;
   noPadding?: Boolean;
+  showSelect?: Boolean;
+  isExpanded?: Boolean;
+  isFirstVisible?: Boolean;
+  isLastVisible?: Boolean;
 }
 
 export interface TableProps {

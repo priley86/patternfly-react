@@ -10,7 +10,7 @@ import { ProviderContext } from './provider';
 import { HeaderRow } from './header-row';
 
 export interface HeaderProps {
-  headerRows?: RowsType[]; //array of rows arrays
+  headerRows?: RowsType[] | ColumnsType; //array of rows arrays
   children?: React.ReactNode;
   columns?: RenderersTypes["columns"];
   renderers?: RenderersTypes["renderers"];
