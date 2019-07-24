@@ -1,10 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import CollapseColumn from '../../CollapseColumn';
 import ExpandableRowContent from '../../ExpandableRowContent';
+import { IExtra, IFormatterValueType } from '../../Table';
 
-export const collapsible = (value, { rowIndex, columnIndex, rowData, column, property }) => {
+export const collapsible = (value: IFormatterValueType, { rowIndex, columnIndex, rowData, column, property }: IExtra) => {
   const {
     extraParams: { onCollapse, rowLabeledBy = 'simple-node', expandId = 'expand-toggle' }
   } = column;
@@ -15,9 +16,11 @@ export const collapsible = (value, { rowIndex, columnIndex, rowData, column, pro
     property
   };
 
-  function onToggle(event) {
+  function onToggle(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    // tslint:disable-next-line:no-unused-expression
     onCollapse && onCollapse(event, rowIndex, rowData && !rowData.isOpen, rowData, extraData);
   }
+
   return {
     className: rowData.isOpen !== undefined && css(styles.tableToggle),
     isVisible: !rowData.fullWidth,
@@ -34,19 +37,19 @@ export const collapsible = (value, { rowIndex, columnIndex, rowData, column, pro
   };
 };
 
-export const expandable = (value, { rowData }) =>
+export const expandable = (value: IFormatterValueType, { rowData }: IExtra) =>
   rowData.hasOwnProperty('parent') ? <ExpandableRowContent>{value}</ExpandableRowContent> : value;
 
-export const expandedRow = colSpan => {
+export const expandedRow = (colSpan: string) => {
   const expandedRowFormatter = (
-    value,
+    value: IFormatterValueType,
     {
       rowIndex,
       rowData,
       column: {
         extraParams: { contentId = 'expanded-content' }
       }
-    }
+    }: IExtra
   ) =>
     rowData.hasOwnProperty('parent') && {
       colSpan: colSpan + !!rowData.fullWidth,

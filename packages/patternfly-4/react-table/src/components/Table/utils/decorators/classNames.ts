@@ -13,6 +13,7 @@ export const Visibility = pickProperties(styles.modifiers, [
   'visibleOnXl'
 ]);
 
-export default (...classNames) => () => ({
+// tslint:disable-next-line:no-shadowed-variable
+export const classNames = (...classNames: any[]) => () => ({
   className: css(...classNames)
 });

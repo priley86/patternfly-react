@@ -1,34 +1,16 @@
 import * as React from 'react';
 import {
-  Omit,
   Dropdown,
   KebabToggle,
   DropdownItem,
-  DropdownItemProps,
   DropdownSeparator
 } from '@patternfly/react-core';
 
-// todo: export from react-core as enum
-export enum DropdownPosition {
-  right = 'right',
-  left= 'left'
-}
-
-// todo: export from react-core as enum
-export enum DropdownDirection {
-  up = 'up',
-  down = 'down',
-}
-
-export interface ActionsItem extends Omit<DropdownItemProps, 'title'> {
-  isSeparator?: boolean;
-  itemKey?: string;
-  title?: string | React.ReactNode;
-}
+import { IActionsItem, DropdownPosition, DropdownDirection } from './Table';
 
 export interface ActionsColumnProps {
   children?: React.ReactNode;
-  items: ActionsItem[];
+  items: IActionsItem[];
   isDisabled?: boolean;
   dropdownPosition?: DropdownPosition;
   dropdownDirection?: DropdownDirection;
@@ -43,7 +25,7 @@ export interface ActionsColumnState {
 class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnState> {
   static defaultProps = {
     children: null as React.ReactNode,
-    items: [] as ActionsItem[],
+    items: [] as IActionsItem[],
     dropdownPosition: DropdownPosition.right,
     dropdownDirection: DropdownDirection.down,
     rowData: {},

@@ -5,6 +5,7 @@ import { Button } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 interface CollapseColumnProps {
+  id?: string;
   className?: string;
   children?: React.ReactNode,
   onToggle?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,

@@ -1,13 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import ActionsColumn from '../../ActionsColumn';
+import { IActions, IActionsItem, IActionsResolver, IAreActionsDisabled, IExtra, IExtraData, IFormatterValueType, IRowData } from '../../Table';
 
-const resolveOrDefault = (resolver, defaultValue, ...data) =>
-  typeof resolver === 'function' ? resolver(...data) : defaultValue;
+const resolveOrDefault = (resolver: IActionsResolver | IAreActionsDisabled, defaultValue: IActions | boolean, rowData: IRowData, extraData: IExtraData) =>
+  typeof resolver === 'function' ? resolver(rowData, extraData) : defaultValue;
 
-export default (actions, actionResolver, areActionsDisabled) => (
-  label,
+export const cellActions = (actions: IActions, actionResolver: IActionsResolver, areActionsDisabled: IAreActionsDisabled) => (
+  label: IFormatterValueType,
   {
     rowData,
     column,
@@ -17,7 +18,7 @@ export default (actions, actionResolver, areActionsDisabled) => (
       extraParams: { dropdownPosition, dropdownDirection }
     },
     property
-  }
+  } : IExtra
 ) => {
   const extraData = {
     rowIndex,
@@ -25,16 +26,16 @@ export default (actions, actionResolver, areActionsDisabled) => (
     column,
     property
   };
-  const resolvedActions = resolveOrDefault(actionResolver, actions, rowData, extraData);
+  const resolvedActions = resolveOrDefault(actionResolver, actions, rowData, extraData) as IActionsItem[];
   const resolvedIsDisabled = resolveOrDefault(
     areActionsDisabled,
     rowData && rowData.disableActions,
     rowData,
     extraData
-  );
+  ) as boolean;
 
   const renderProps =
-    resolvedActions && resolvedActions.length > 0
+    resolvedActions && (resolvedActions as []).length > 0
       ? {
           children: (
             <ActionsColumn

@@ -25,5 +25,5 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLDivElemen
     sendRef?: (index: number, ref: any, isDisabled: boolean) => void
   };
   /** Callback for click event */
-  onClick?: (event: any) => void;
+  onClick?: (event: any, ...args:any) => void;
 }

@@ -1,9 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+import { IExtra, IFormatterValueType } from '../../Table';
 
-export const compoundExpand = (value, { rowIndex, columnIndex, rowData, column, property }) => {
+export const compoundExpand = (value: IFormatterValueType, { rowIndex, columnIndex, rowData, column, property }: IExtra) => {
   if (!value) {
     return null;
   }
@@ -18,7 +19,8 @@ export const compoundExpand = (value, { rowIndex, columnIndex, rowData, column, 
     property
   };
 
-  function onToggle(event) {
+  function onToggle(event: React.MouseEvent) {
+    // tslint:disable-next-line:no-unused-expression
     onExpand && onExpand(event, rowIndex, columnIndex, props.isOpen, rowData, extraData);
   }
   return {
