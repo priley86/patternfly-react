@@ -40,7 +40,7 @@ export enum TableVariant {
 type OnSort = (event: React.MouseEvent, columnIndex: number, extraData: IExtraColumnData) => void;
 type OnCollapse = (event: React.MouseEvent, rowIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => undefined;
 type OnExpand = (event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => undefined;
-type OnSelect = (event: React.MouseEvent, isSelected: boolean, rowIndex: number, rowData: IRowData, extraData: IExtraData) => undefined;
+export type OnSelect = (event: React.MouseEvent, isSelected: boolean, rowIndex: number, rowData: IRowData, extraData: IExtraData) => undefined;
 
 export interface IHeaderRow extends ColumnType {
 }
@@ -127,8 +127,8 @@ export interface ICell {
 }
 
 export interface IRowCell {
-  title: React.ReactNode;
-  props: any;
+  title?: React.ReactNode;
+  props?: any;
 }
 
 export interface IRow extends RowType {

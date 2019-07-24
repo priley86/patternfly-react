@@ -10,9 +10,10 @@ import {
   headerCol,
   sortable,
   expandable,
-  compoundExpand
+  compoundExpand, IRow
 } from './index';
 import { rows, columns, actions } from '../../test-helpers/data-sets';
+import { ColumnsType, RowsType } from './base';
 
 describe('Simple table', () => {
   test('caption', () => {
@@ -144,11 +145,11 @@ test('Collapsible table', () => {
 });
 
 test('Compound Expandable table', () => {
-  const compoundColumns: any = [
+  const compoundColumns: ColumnsType = [
     { title: 'col1', cell: { transforms: [compoundExpand] } },
     { title: 'col2', cell: { transforms: [compoundExpand] } }
   ];
-  const compoundRows: any = [
+  const compoundRows: IRow[] = [
     { isOpen: true, cells: [{ title: '1', props: { isOpen: true } }, { title: '2', props: { isOpen: false } }] },
     { parent: 0, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] },
     { isOpen: false, cells: [{ title: '3', props: { isOpen: false } }, { title: '4', props: { isOpen: false } }] },
