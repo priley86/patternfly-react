@@ -5,8 +5,8 @@ import { css } from '@patternfly/react-styles';
 
 // legacy export now, RowWrapperRow can simply be typed as IRow in the future
 export interface RowWrapperRow {
-  isOpen: Boolean;
-  isExpanded: Boolean;
+  isOpen?: Boolean;
+  isExpanded?: Boolean;
 }
 
 export interface RowWrapperProps {

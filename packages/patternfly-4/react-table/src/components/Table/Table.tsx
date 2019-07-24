@@ -61,25 +61,26 @@ export interface IColumn {
     contentId?: string;
     dropdownPosition?: DropdownPosition;
     dropdownDirection?: DropdownDirection;
+    allRowsSelected?: boolean;
   }
 }
 
 export interface IExtraRowData {
-  rowIndex: number;
+  rowIndex?: number;
   rowKey?: RowKeyType;
 }
 
 export interface IExtraColumnData {
-  columnIndex: number,
-  column: IColumn,
-  property: string,
+  columnIndex?: number,
+  column?: IColumn,
+  property?: string,
 }
 
 export interface IExtraData extends IExtraColumnData, IExtraRowData {
 }
 
 export interface IExtra extends IExtraData {
-  rowData: IRowData;
+  rowData?: IRowData;
 }
 
 export type IFormatterValueType = formatterValueType & {

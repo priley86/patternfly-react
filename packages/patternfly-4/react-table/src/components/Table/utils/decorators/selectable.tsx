@@ -1,9 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+import { IExtra, IFormatterValueType } from '../../Table';
 import SelectColumn from '../../SelectColumn';
 
-export default (label, { rowIndex, columnIndex, rowData, column, property }) => {
+export const selectable = (label: IFormatterValueType, { rowIndex, columnIndex, rowData, column, property }: IExtra) => {
   const {
     extraParams: { onSelect, allRowsSelected, rowLabeledBy = 'simple-node' }
   } = column;
@@ -23,9 +24,12 @@ export default (label, { rowIndex, columnIndex, rowData, column, property }) => 
   }
   const rowId = rowIndex !== undefined ? rowIndex : -1;
 
-  function selectClick(event) {
+  
+  function selectClick(event: React.ChangeEvent<HTMLInputElement>) {
     const selected = rowIndex === undefined ? event.target.checked : rowData && !rowData.selected;
-    onSelect && onSelect(event, selected, rowId, rowData, extraData);
+    // todo: change event type to React.FormEvent<HTMLInputElement> in the future, breaking change a.t.m.
+    // tslint:disable-next-line:no-unused-expression
+    onSelect && onSelect((event as unknown) as React.MouseEvent, selected, rowId, rowData, extraData);
   }
   const customProps = {
     ...(rowId !== -1

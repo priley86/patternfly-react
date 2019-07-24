@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 interface SelectColumnProps {
+  name?: string;
   children?: React.ReactNode,
   className?: string;
   onSelect?: (event: React.ChangeEvent<HTMLInputElement>) => void;
