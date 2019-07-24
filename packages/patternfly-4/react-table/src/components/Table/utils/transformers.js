@@ -1,8 +1,8 @@
 export { selectable } from './decorators/selectable';
-export { default as sortable } from './decorators/sortable';
+export { sortable } from './decorators/sortable';
 export { cellActions } from './decorators/cellActions';
 export { cellWidth } from './decorators/cellWidth';
-export { default as textCenter } from './decorators/textCenter';
+export { textCenter } from './decorators/textCenter';
 export { collapsible, expandedRow, expandable } from './decorators/collapsible';
 export { compoundExpand } from './decorators/compoundExpand';
 export { headerCol } from './decorators/headerCol';
