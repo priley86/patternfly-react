@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IRow, IRowData, IExtraData } from './Table';
 import { mapOpenedRows } from './utils/headerUtils';
 
-interface BodyWrapperProps {
+export interface BodyWrapperProps {
   children?: React.ReactNode;
   mappedRows?: IRow[];
   rows?: IRow[];
@@ -12,7 +12,7 @@ interface BodyWrapperProps {
   tbodyRef?: React.Ref<any>;
 }
 
-const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
+export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
   mappedRows,
   rows = [] as IRow[],
   onCollapse, 
@@ -38,5 +38,3 @@ const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
 
   return <tbody {...props} ref={tbodyRef} />;
 };
-
-export default BodyWrapper;

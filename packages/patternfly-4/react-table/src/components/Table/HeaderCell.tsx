@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-interface HeaderCellProps {
+export interface HeaderCellProps {
   'data-label'?: string;
   className?: string;
   component?: React.ReactNode;
@@ -11,7 +11,7 @@ interface HeaderCellProps {
   textCenter?: boolean;
 }
 
-const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
+export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   className = '',
   component = 'th',
   isVisible,
@@ -26,5 +26,3 @@ const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   };
   return <Component {...mappedProps} className={css(className, textCenter && styles.modifiers.center)} />;
 };
-
-export default HeaderCell;

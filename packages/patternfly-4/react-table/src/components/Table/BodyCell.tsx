@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-interface BodyCellProps {
+export interface BodyCellProps {
   'data-label'?: string;
   className?: string;
   colSpan?: number;
@@ -14,7 +14,7 @@ interface BodyCellProps {
   ariaControls?: string;
 }
 
-const BodyCell: React.FunctionComponent<BodyCellProps> = ({
+export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   'data-label':dataLabel = '',
   className = '',
   colSpan,
@@ -35,5 +35,3 @@ const BodyCell: React.FunctionComponent<BodyCellProps> = ({
     <Component {...mappedProps} className={css(className, textCenter && styles.modifiers.center)} colSpan={colSpan} />
   );
 };
-
-export default BodyCell;

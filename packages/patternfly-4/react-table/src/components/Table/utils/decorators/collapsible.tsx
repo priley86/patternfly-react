@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import CollapseColumn from '../../CollapseColumn';
-import ExpandableRowContent from '../../ExpandableRowContent';
+import { CollapseColumn } from '../../CollapseColumn';
+import { ExpandableRowContent } from '../../ExpandableRowContent';
 import { IExtra, IFormatterValueType } from '../../Table';
 
 export const collapsible = (value: IFormatterValueType, { rowIndex, columnIndex, rowData, column, property }: IExtra) => {

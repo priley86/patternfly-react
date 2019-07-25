@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import ActionsColumn from '../../ActionsColumn';
+import { ActionsColumn } from '../../ActionsColumn';
 import { IActions, IActionsItem, IActionsResolver, IAreActionsDisabled, IExtra, IExtraData, IFormatterValueType, IRowData } from '../../Table';
 
 const resolveOrDefault = (resolver: IActionsResolver | IAreActionsDisabled, defaultValue: IActions | boolean, rowData: IRowData, extraData: IExtraData) =>

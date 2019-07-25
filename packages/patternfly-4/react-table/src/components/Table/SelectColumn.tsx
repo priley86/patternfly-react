@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-interface SelectColumnProps {
+export interface SelectColumnProps {
   name?: string;
   children?: React.ReactNode,
   className?: string;
   onSelect?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
+export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
   children = null as React.ReactNode,
   className = '',
   onSelect = null as (event: React.ChangeEvent<HTMLInputElement>) => void,
@@ -20,5 +20,3 @@ const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
     </React.Fragment>
   );
 };
-
-export default SelectColumn;

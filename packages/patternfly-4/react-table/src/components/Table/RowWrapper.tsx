@@ -18,7 +18,7 @@ export interface RowWrapperProps {
   rowProps?: Object;
 }
 
-class RowWrapper extends React.Component<RowWrapperProps, {}> {
+export class RowWrapper extends React.Component<RowWrapperProps, {}> {
   static defaultProps = {
     className: '' as string,
     row: {
@@ -98,6 +98,4 @@ class RowWrapper extends React.Component<RowWrapperProps, {}> {
       />
     );
   }
-}
-
-export default RowWrapper;
+};

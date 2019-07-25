@@ -110,7 +110,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
   }
 }
 
-const TableBody = ({
+export const TableBody = ({
   onRow = (...args:any) => Object,
   className = '' as string,
   children = null as React.ReactNode,
@@ -130,5 +130,3 @@ const TableBody = ({
         onRowClick={onRowClick} {...props} />}
   </TableContext.Consumer>
 );
-
-export default TableBody;

@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { SortByDirection, IExtra, IFormatterValueType } from '../../Table';
-import SortColumn from '../../SortColumn';
+import { SortColumn } from '../../SortColumn';
 
 export const sortable = (label: IFormatterValueType, { columnIndex, column, property }: IExtra) => {
   const {

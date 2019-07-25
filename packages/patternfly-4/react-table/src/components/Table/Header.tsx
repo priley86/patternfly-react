@@ -20,12 +20,10 @@ export interface HeaderProps extends React.HTMLProps<HTMLTableRowElement> {
   className?: string;
 }
 
-const TableHeader: React.FunctionComponent<HeaderProps> = ({
+export const TableHeader: React.FunctionComponent<HeaderProps> = ({
   ...props
 } : HeaderProps ) => (
   <TableContext.Consumer>
   {({ headerRows }) => <ContextHeader {...props} headerRows={headerRows} />}
   </TableContext.Consumer>
 );
-
-export default TableHeader;

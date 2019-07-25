@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { SortByDirection } from './Table';
 
-interface SortColumnProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface SortColumnProps extends React.HTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   className?: string;
   isSortedBy?: boolean;
@@ -12,7 +12,7 @@ interface SortColumnProps extends React.HTMLAttributes<HTMLButtonElement> {
   sortDirection?: string;
 } 
 
-const SortColumn: React.FunctionComponent<SortColumnProps> = ({
+export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
   children = null,
   className = '',
   isSortedBy = false,
@@ -35,5 +35,3 @@ const SortColumn: React.FunctionComponent<SortColumnProps> = ({
     </button>
   );
 };
-
-export default SortColumn;

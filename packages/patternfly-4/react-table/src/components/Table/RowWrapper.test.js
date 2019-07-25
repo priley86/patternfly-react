@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import RowWrapper from './RowWrapper';
+import { RowWrapper } from './RowWrapper';
 
 const getRowWrapper = props => (
   <table>

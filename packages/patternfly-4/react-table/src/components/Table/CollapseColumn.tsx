@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-interface CollapseColumnProps {
+export interface CollapseColumnProps {
   id?: string;
   className?: string;
   children?: React.ReactNode,
@@ -12,7 +12,7 @@ interface CollapseColumnProps {
   isOpen?: boolean;
 }
 
-const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
+export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
   className = '' as string,
   children = null as React.ReactNode,
   isOpen,
@@ -37,5 +37,3 @@ const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
     </React.Fragment>
   );
 };
-
-export default CollapseColumn;

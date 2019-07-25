@@ -22,12 +22,12 @@ export interface ActionsColumnState {
   isOpen: boolean;
 }
 
-class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnState> {
+export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnState> {
   static defaultProps = {
     children: null as React.ReactNode,
     items: [] as IActionsItem[],
-    dropdownPosition: DropdownPosition.right,
-    dropdownDirection: DropdownDirection.down,
+    dropdownPosition: 'right',
+    dropdownDirection: 'down',
     rowData: {},
     extraData: {}
   }
@@ -87,5 +87,3 @@ class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnSta
     );
   }
 }
-
-export default ActionsColumn;

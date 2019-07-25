@@ -3,10 +3,10 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
 import { Provider } from './base';
 import { css, getModifier } from '@patternfly/react-styles';
-import BodyCell from './BodyCell';
-import HeaderCell from './HeaderCell';
-import RowWrapper from './RowWrapper';
-import BodyWrapper from './BodyWrapper';
+import { BodyCell } from './BodyCell';
+import { HeaderCell } from './HeaderCell';
+import { RowWrapper } from './RowWrapper';
+import { BodyWrapper } from './BodyWrapper';
 import { calculateColumns } from './utils/headerUtils';
 import { formatterValueType, ColumnType, RowType, RowKeyType } from './base';
 import { DropdownItemProps, Omit } from '@patternfly/react-core';
@@ -122,18 +122,18 @@ export interface IDecorator extends React.HTMLProps<HTMLElement> {
 }
 
 export interface ICell {
-  title: string;
+  title?: string;
   transforms?: ((value: any) => IDecorator)[];
   cellTransforms?: ((value: any) => IDecorator)[];
   columnTransforms?: ((value: any) => IDecorator)[];
   formatters?: ((value: any) => IDecorator)[];
   cellFormatters?: ((value: any) => IDecorator)[];
-  props: any;
+  props?: any;
 }
 
 export interface IRowCell {
-  title: React.ReactNode;
-  props: any;
+  title?: React.ReactNode;
+  props?: any;
 }
 
 export interface IRow extends RowType {
@@ -185,7 +185,7 @@ export const TableContext = React.createContext({
   rows: [] as (IRow | string[])[]
 });
 
-class Table extends React.Component<TableProps, {}> {
+export class Table extends React.Component<TableProps, {}> {
   static defaultProps = {
     children: null as React.ReactNode,
     className: '',
@@ -305,5 +305,4 @@ class Table extends React.Component<TableProps, {}> {
       </TableContext.Provider>
     );
   }
-}
-export default Table;
+};
