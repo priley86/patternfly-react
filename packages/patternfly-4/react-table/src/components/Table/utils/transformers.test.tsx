@@ -14,8 +14,16 @@ import {
   textCenter
 } from './transformers';
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
+import { IActions, IActionsResolver, IAreActionsDisabled, IExtraData, IRowData } from '../Table';
 
-const testCellActions = ({ actions, actionResolver, areActionsDisabled, rowData, expectDisabled }) => {
+const testCellActions = (
+  { actions }: { actions: IActions },
+  { actionResolver }: { actionResolver: IActionsResolver },
+  { areActionsDisabled }: { areActionsDisabled: IAreActionsDisabled },
+  { rowData }: { rowData: IRowData },
+  { extraData }: { extraData: IExtraData },
+  { expectDisabled }: { expectDisabled: boolean }
+) => {
   const returnedData = cellActions(actions, actionResolver, areActionsDisabled)('', {
     rowIndex: 0,
     rowData,
@@ -28,7 +36,7 @@ const testCellActions = ({ actions, actionResolver, areActionsDisabled, rowData,
   });
 
   if (actionResolver) {
-    actions = actionResolver(rowData);
+    actions = actionResolver(rowData, extraData);
   }
 
   expect(returnedData).toMatchObject({ className: 'pf-c-table__action' });
@@ -135,7 +143,7 @@ describe('Transformer functions', () => {
         actions
       },
       {
-        actionResolver: () => null
+        actionResolver: () => null as any
       },
       {
         actionResolver: () => actions
@@ -165,7 +173,7 @@ describe('Transformer functions', () => {
     const widths = [10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 'max'];
     widths.forEach(width =>
       test(`${width}`, () => {
-        expect(cellWidth(width)()).toEqual({ className: `pf-m-width-${width}` });
+        expect(cellWidth(width as string)()).toEqual({ className: `pf-m-width-${width}` });
       })
     );
   });
@@ -212,7 +220,7 @@ describe('Transformer functions', () => {
 
   describe('expandedRow', () => {
     test('with parent', () => {
-      const returned = expandedRow(5)(
+      const returned = expandedRow(String(5))(
         { title: 'test' },
         { rowIndex: 2, rowData: { parent: 1 }, column: { extraParams: {} } }
       );
@@ -220,11 +228,11 @@ describe('Transformer functions', () => {
     });
 
     test('no parent', () => {
-      expect(expandedRow(5)({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })).toBe(false);
+      expect(expandedRow(String(5))({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })).toBe(false);
     });
 
     test('full width', () => {
-      const returned = expandedRow(5)(
+      const returned = expandedRow(String(5))(
         { title: 'test' },
         { rowIndex: 2, rowData: { parent: 1, fullWidth: true }, column: { extraParams: {} } }
       );
@@ -232,7 +240,7 @@ describe('Transformer functions', () => {
     });
 
     test('no padding', () => {
-      const returned = expandedRow(5)(
+      const returned = expandedRow(String(5))(
         { title: 'test' },
         { rowIndex: 2, rowData: { parent: 1, noPadding: true }, column: { extraParams: {} } }
       );

@@ -90,7 +90,7 @@ export interface IExtra extends IExtraData {
 
 export type IFormatterValueType = formatterValueType & {
   title?: string | React.ReactNode;
-  props: any;
+  props?: any;
 };
 
 export interface ISortBy {
@@ -137,7 +137,7 @@ export interface IRowCell {
 }
 
 export interface IRow extends RowType {
-  cells: (React.ReactNode | IRowCell)[];
+  cells?: (React.ReactNode | IRowCell)[];
   isOpen?: boolean;
   parent?: number;
   props?: any;
