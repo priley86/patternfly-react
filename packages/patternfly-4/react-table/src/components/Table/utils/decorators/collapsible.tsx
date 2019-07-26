@@ -40,7 +40,7 @@ export const collapsible = (value: IFormatterValueType, { rowIndex, columnIndex,
 export const expandable = (value: IFormatterValueType, { rowData }: IExtra) =>
   rowData.hasOwnProperty('parent') ? <ExpandableRowContent>{value}</ExpandableRowContent> : value;
 
-export const expandedRow = (colSpan: string) => {
+export const expandedRow = (colSpan: number) => {
   const expandedRowFormatter = (
     value: IFormatterValueType,
     {
@@ -52,9 +52,11 @@ export const expandedRow = (colSpan: string) => {
     }: IExtra
   ) =>
     rowData.hasOwnProperty('parent') && {
-      colSpan: colSpan + !!rowData.fullWidth,
+      // todo: rewrite this logic, it is not type safe
+      colSpan: colSpan + (!!rowData.fullWidth as any),
       id: contentId + rowIndex,
       className: rowData.noPadding && css(styles.modifiers.noPadding)
     };
+  expandedRowFormatter.prototype.name = 'expandedRowFormatter';
   return expandedRowFormatter;
 };

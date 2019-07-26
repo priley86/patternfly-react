@@ -14,15 +14,24 @@ import {
   textCenter
 } from './transformers';
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
-import { IActions, IActionsResolver, IAreActionsDisabled, IExtraData, IRowData } from '../Table';
+import { IAction, IActions, IActionsResolver, IAreActionsDisabled, IExtra, IExtraData, IRowData, ISeparator } from '../Table';
 
 const testCellActions = (
-  { actions }: { actions: IActions },
-  { actionResolver }: { actionResolver: IActionsResolver },
-  { areActionsDisabled }: { areActionsDisabled: IAreActionsDisabled },
-  { rowData }: { rowData: IRowData },
-  { extraData }: { extraData: IExtraData },
-  { expectDisabled }: { expectDisabled: boolean }
+  { 
+    actions,
+    actionResolver,
+    areActionsDisabled,
+    rowData,
+    extraData,
+    expectDisabled
+  }: {
+    actions?: IActions,
+    actionResolver?: IActionsResolver,
+    areActionsDisabled?: IAreActionsDisabled,
+    rowData?: IRowData,
+    extraData?: IExtraData,
+    expectDisabled?: boolean
+  }
 ) => {
   const returnedData = cellActions(actions, actionResolver, areActionsDisabled)('', {
     rowIndex: 0,
@@ -60,7 +69,7 @@ describe('Transformer functions', () => {
       const column = {
         extraParams: { onSelect }
       };
-      const returnedData = selectable('', { column, rowData: {} });
+      const returnedData = selectable('', { column, rowData: {} } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
       const view = mount(returnedData.children);
       view.find('input').simulate('change');
@@ -73,7 +82,7 @@ describe('Transformer functions', () => {
       const column = {
         extraParams: { onSelect }
       };
-      const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: true } });
+      const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: true } } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
       const view = mount(returnedData.children);
       view.find('input').simulate('change');
@@ -86,7 +95,7 @@ describe('Transformer functions', () => {
       const column = {
         extraParams: { onSelect }
       };
-      const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: false } });
+      const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: false } } as IExtra);
       expect(returnedData).toMatchSnapshot();
       const view = mount(returnedData.children);
       view.find('input').simulate('change');
@@ -109,7 +118,7 @@ describe('Transformer functions', () => {
     test('asc', () => {
       const onSort = jest.fn();
       const column = { extraParams: { sortBy: { index: 0, direction: 'asc' }, onSort } };
-      const returnedData = sortable('', { column, columnIndex: 0 });
+      const returnedData = sortable('', { column, columnIndex: 0 } as IExtra);
       expect(returnedData).toMatchSnapshot();
       const view = mount(returnedData.children);
       view.find('button').simulate('click');
@@ -119,7 +128,7 @@ describe('Transformer functions', () => {
     test('desc', () => {
       const onSort = jest.fn();
       const column = { extraParams: { sortBy: { index: 0, direction: 'desc' }, onSort } };
-      const returnedData = sortable('', { column, columnIndex: 0 });
+      const returnedData = sortable('', { column, columnIndex: 0 } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__sort pf-m-selected' });
       const view = mount(returnedData.children);
       view.find('button').simulate('click');
@@ -133,30 +142,30 @@ describe('Transformer functions', () => {
         title: 'Some',
         onClick: jest.fn()
       }
-    ];
+    ] as IActions;
 
     const actionConfigs = [
       {
-        actions: []
+        actions: [] as IActions
       },
       {
         actions
       },
       {
-        actionResolver: () => null as any
+        actionResolver: () => null as (IAction | ISeparator)[]
       },
       {
-        actionResolver: () => actions
+        actionResolver: () => actions as (IAction | ISeparator)[]
       },
       {
-        actionResolver: () => actions,
+        actionResolver: () => actions as (IAction | ISeparator)[],
         areActionsDisabled: () => false
       },
       {
         actions,
         rowData: {
           disableActions: true
-        },
+        } as IRowData,
         expectDisabled: true
       },
       {
@@ -207,8 +216,8 @@ describe('Transformer functions', () => {
 
   describe('expandable', () => {
     test('with parent', () => {
-      const returned = expandable('test', { rowIndex: 2, rowData: { parent: 1 }, column: { extraParams: {} } });
-      const view = mount(returned);
+      const returned = expandable('test', { rowIndex: 2, rowData: { parent: 1 }, column: { extraParams: {} } } as IExtra);
+      const view = mount(returned as React.ReactElement<any>);
       expect(view.find('div.pf-c-table__expandable-row-content')).toHaveLength(1);
       expect(view).toMatchSnapshot();
     });
@@ -220,7 +229,7 @@ describe('Transformer functions', () => {
 
   describe('expandedRow', () => {
     test('with parent', () => {
-      const returned = expandedRow(String(5))(
+      const returned = expandedRow(5)(
         { title: 'test' },
         { rowIndex: 2, rowData: { parent: 1 }, column: { extraParams: {} } }
       );
@@ -228,11 +237,11 @@ describe('Transformer functions', () => {
     });
 
     test('no parent', () => {
-      expect(expandedRow(String(5))({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })).toBe(false);
+      expect(expandedRow(5)({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })).toBe(false);
     });
 
     test('full width', () => {
-      const returned = expandedRow(String(5))(
+      const returned = expandedRow(5)(
         { title: 'test' },
         { rowIndex: 2, rowData: { parent: 1, fullWidth: true }, column: { extraParams: {} } }
       );
@@ -240,7 +249,7 @@ describe('Transformer functions', () => {
     });
 
     test('no padding', () => {
-      const returned = expandedRow(String(5))(
+      const returned = expandedRow(5)(
         { title: 'test' },
         { rowIndex: 2, rowData: { parent: 1, noPadding: true }, column: { extraParams: {} } }
       );

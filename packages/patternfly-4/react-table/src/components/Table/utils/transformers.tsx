@@ -10,23 +10,31 @@ export { classNames, Visibility } from './decorators/classNames';
 
 import { IFormatterValueType, IExtra } from '../Table';
 
-export const emptyTD = () => ({
+const emptyTD = () => ({
   scope: '',
   component: 'td'
 });
+emptyTD.prototype.name = 'emptyTD';
 
-export const scopeColTransformer = () => ({
+const scopeColTransformer = () => ({
   scope: 'col'
 });
+scopeColTransformer.prototype.name = 'scopeColTransformer';
 
-export const emptyCol = (label: IFormatterValueType) => ({
+const emptyCol = (label: IFormatterValueType) => ({
   ...(label ? {} : { scope: '' })
 });
+emptyCol.prototype.name = 'emptyCol';
 
-export const parentId = (_value: IFormatterValueType, { rowData }: IExtra) => ({
+const parentId = (_value: IFormatterValueType, { rowData }: IExtra) => ({
   parentId: rowData.parent
 });
+parentId.prototype.name = 'parentId';
 
-export const mapProps = (_label: IFormatterValueType, { property, rowData }: IExtra) => ({
+
+const mapProps = (_label: IFormatterValueType, { property, rowData }: IExtra) => ({
   ...(rowData[property] && rowData[property].props)
 });
+mapProps.prototype.name = 'mapProps';
+
+export { emptyTD, scopeColTransformer, emptyCol, parentId, mapProps };

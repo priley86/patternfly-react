@@ -1,3 +1,6 @@
-import { IRowCell } from '../Table';
+import { IFormatterValueType } from '../Table';
 
-export const defaultTitle = (data: IRowCell) => (data && data.hasOwnProperty('title') ? data.title : data);
+const defaultTitle = (data: IFormatterValueType) => (data && data.hasOwnProperty('title') ? data.title : data);
+defaultTitle.prototype.name = 'defaultTitle';
+
+export { defaultTitle };
