@@ -1,10 +1,14 @@
+import * as React from 'react';
+
 export const buildExpandableRows = (relationships = {}, openIndexes = [], rowCount = 10) => {
   const rows = [];
   for (let i = 0; i < rowCount; i++) {
     const row = {
       data: {
         mockData: 'mock'
-      }
+      },
+      isOpen: undefined,
+      parent: undefined
     };
 
     if (openIndexes.indexOf(i) >= 0) {

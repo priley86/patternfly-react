@@ -1,15 +1,16 @@
 import { isRowExpanded } from './utils';
 import { buildExpandableRows } from '../../../test-helpers/data-helpers';
+import { IRow } from '../Table';
 
-const assertExpanded = (rows, expandedRowIndexes) => {
-  expandedRowIndexes.forEach(expandedRowIndex => {
+const assertExpanded = (rows: IRow[], expandedRowIndexes: any[]) => {
+  expandedRowIndexes.forEach(({ expandedRowIndex }: { expandedRowIndex: number }) => {
     const expandedRow = rows[expandedRowIndex];
     expect(isRowExpanded(expandedRow, rows)).toBeTruthy();
   });
 };
 
-const assertNotExpanded = (rows, notExpandedRowIndexes) => {
-  notExpandedRowIndexes.forEach(expandedRowIndex => {
+const assertNotExpanded = (rows: IRow[], notExpandedRowIndexes: any[]) => {
+  notExpandedRowIndexes.forEach(({ expandedRowIndex }: { expandedRowIndex: number }) => {
     const expandedRow = rows[expandedRowIndex];
     expect(isRowExpanded(expandedRow, rows)).toBeFalsy();
   });
