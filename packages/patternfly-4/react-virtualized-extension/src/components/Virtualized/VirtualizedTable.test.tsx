@@ -64,7 +64,7 @@ describe('Simple virtualized table', () => {
 });
 
 test('Sortable Virtualized Table', () => {
-  const rowRenderer = ({ index }: { index: number }, { isVisible }: { isVisible: any }) => {
+  const rowRenderer = ( index: number , isVisible: any ) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -165,7 +165,7 @@ test('Actions virtualized table', () => {
 });
 
 test('Selectable virtualized table', () => {
-  const rowRenderer = ({ index }: { index: number }, { isVisible }: { isVisible: any }) => {
+  const rowRenderer = (index: number, isVisible: any ) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -177,7 +177,7 @@ test('Selectable virtualized table', () => {
   const view = mount(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
       <TableHeader />
-      {({ width }: { width: number }) => (
+      {( width: number ) => (
         <VirtualTableBody
           height={400}
           rowCount={rows.length}

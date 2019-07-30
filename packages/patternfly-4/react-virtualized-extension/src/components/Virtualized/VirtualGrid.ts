@@ -1242,7 +1242,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
     totalRowsHeight: number
   }) {
     this._onScrollMemoizer({
-      callback: ({ scrollLeft } : { scrollLeft: any }, { scrollTop } : { scrollTop: any }) => {
+      callback: ( scrollLeft: number, scrollTop: number ) => {
         const { height, onScroll, width } = this.props;
 
         onScroll({
@@ -1475,5 +1475,5 @@ class VirtualGrid extends React.PureComponent<Props, State> {
   };
 }
 
-polyfill(VirtualGrid);
+polyfill(VirtualGrid as any);
 export default VirtualGrid;
