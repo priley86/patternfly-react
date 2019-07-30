@@ -9,12 +9,11 @@ export interface TabContentProps extends React.HTMLProps<HTMLElement> {
   /** class of tab content area if used outside Tabs component */
   className?: string; 
   /** Identifies the active Tab  */
-  activeKey?: number; 
+  activeKey?: number | string; 
   /** uniquely identifies the controlling Tab if used outside Tabs component */
-  eventKey?: number; 
+  eventKey?: number | string; 
   /** Callback for the section ref */
-  innerRef?: React.Ref<HTMLElement>;
-//  innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.any }), PropTypes.string])
+  innerRef?: React.Ref<any>;
   /** id passed from parent to identify the content section */
   id: string; 
   /** title of controlling Tab if used outside Tabs component */

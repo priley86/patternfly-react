@@ -1,14 +1,15 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { Provider } from './base';
-import { DropdownPosition, DropdownDirection, Omit } from '@patternfly/react-core';
+import { DropdownPosition, DropdownDirection, DropdownItemProps, Omit } from '@patternfly/react-core';
 import { css, getModifier } from '@patternfly/react-styles';
-import BodyCell from './BodyCell';
-import HeaderCell from './HeaderCell';
-import RowWrapper from './RowWrapper';
-import BodyWrapper from './BodyWrapper';
+import { Provider } from './base';
+import { BodyCell } from './BodyCell';
+import { HeaderCell } from './HeaderCell';
+import { RowWrapper } from './RowWrapper';
+import { BodyWrapper } from './BodyWrapper';
 import { calculateColumns } from './utils/headerUtils';
+import { formatterValueType, ColumnType, RowType, RowKeyType } from './base';
 
 export enum TableGridBreakpoint {
   none = '',
@@ -23,66 +24,81 @@ export enum TableVariant {
   compact = 'compact'
 };
 
-interface OnSort {
-  (event: React.MouseEvent, columnIndex: number, extraData: IExtraColumnData): void
+export type OnSort = (event: React.MouseEvent, columnIndex: number, sortByDirection: SortByDirection, extraData: IExtraColumnData) => void;
+export type OnCollapse = (event: React.MouseEvent, rowIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => undefined;
+export type OnExpand = (event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => undefined;
+export type OnSelect = (event: React.MouseEvent, isSelected: boolean, rowIndex: number, rowData: IRowData, extraData: IExtraData) => undefined;
+
+export enum SortByDirection {
+  asc = 'asc',
+  desc = 'desc'
+};
+
+export interface IHeaderRow extends ColumnType {
 }
 
-export interface IHeaderRow {
-  header?: {
-    label?: string,
-    transforms?: Array<Function>,
-    formatters?: Array<Function>,
-    props?: Object
-  },
-  cell?: {
-    property?: number | string,
-    transforms?: Array<Function>,
-    formatters?: Array<Function>,
-    props?: Object
-  }
-}
-
-export interface IRowData {
+export interface IRowData extends IRow {
+  disableActions?: boolean;
 }
 
 export interface IColumn {
   extraParams: {
     sortBy?: ISortBy;
     onSort?: OnSort;
+    onCollapse?: OnCollapse;
+    onExpand?: OnExpand;
+    onSelect?: OnSelect;
+    rowLabeledBy?: string;
+    expandId?: string;
+    contentId?: string;
+    dropdownPosition?: DropdownPosition;
+    dropdownDirection?: DropdownDirection;
+    allRowsSelected?: boolean;
   }
 }
 
 export interface IExtraRowData {
-  rowIndex: number;
-  rowKey?: string;
+  rowIndex?: number;
+  rowKey?: RowKeyType;
 }
 
 export interface IExtraColumnData {
-  columnIndex: number,
-  column: IColumn,
-  property: string,
+  columnIndex?: number,
+  column?: IColumn,
+  property?: string,
 }
 
 export interface IExtraData extends IExtraColumnData, IExtraRowData {
 }
 
 export interface IExtra extends IExtraData {
-  rowData: IRowData,
+  rowData?: IRowData;
 }
+
+export type IFormatterValueType = formatterValueType & {
+  title?: string | React.ReactNode;
+  props?: any;
+};
 
 export interface ISortBy {
   index?: number;
   direction?: 'asc' | 'desc'
 }
 
-export interface IAction {
-  title: string;
+export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
+  isSeparator?: boolean;
+  itemKey?: string;
+  title?: string | React.ReactNode;
   onClick: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
 }
 
-export interface ISeparator {
-  isSeparator: Boolean
+export interface ISeparator extends IAction {
+  isSeparator: boolean;
 }
+
+export type IActions = (IAction | ISeparator)[];
+export type IActionsResolver = (rowData: IRowData, extraData: IExtraData) => (IAction | ISeparator)[];
+export type IAreActionsDisabled = (rowData: IRowData, extraData: IExtraData) => boolean;
 
 export interface IDecorator extends React.HTMLProps<HTMLElement> {
   isVisible: boolean;
@@ -90,43 +106,53 @@ export interface IDecorator extends React.HTMLProps<HTMLElement> {
 }
 
 export interface ICell {
-  title: string;
+  title?: string;
   transforms?: ((value: any) => IDecorator)[];
   cellTransforms?: ((value: any) => IDecorator)[];
   columnTransforms?: ((value: any) => IDecorator)[];
   formatters?: ((value: any) => IDecorator)[];
   cellFormatters?: ((value: any) => IDecorator)[];
-  props: any;
+  props?: any;
+  data?: any;
+  header?: any;
+  cell?: any;
 }
 
 export interface IRowCell {
-  title: React.ReactNode;
-  props: any;
-}
-
-export interface IRow {
-  cells: Array<React.ReactNode | IRowCell>;
-  isOpen?: Boolean;
-  parent?: number;
+  title?: React.ReactNode;
   props?: any;
-  fullWidth?: Boolean;
-  noPadding?: Boolean;
 }
 
-export interface TableProps extends Omit<Omit<React.HTMLProps<HTMLTableElement>, 'onSelect'>, 'rows'> {
+export interface IRow extends RowType {
+  cells?: (React.ReactNode | IRowCell)[];
+  isOpen?: boolean;
+  parent?: number;
+  compoundParent?: number;
+  props?: any;
+  fullWidth?: boolean;
+  noPadding?: boolean;
+  showSelect?: boolean;
+  isExpanded?: boolean;
+  isFirstVisible?: boolean;
+  isLastVisible?: boolean;
+  selected?: boolean;
+}
+
+export interface TableProps {
+  'aria-label'?: string;
   children?: React.ReactNode;
   className?: string;
   variant?: 'compact';
   borders?: boolean;
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';
   sortBy?: ISortBy;
-  onCollapse?: (event: React.MouseEvent, rowIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => undefined;
-  onExpand?: (event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => undefined;
-  onSelect?: (event: React.MouseEvent, isSelected: boolean, rowIndex: number, rowData: IRowData, extraData: IExtraData) => undefined;
-  onSort?: (event: React.MouseEvent, columnIndex: number, extraData: IExtraColumnData) => undefined;
-  actions?: Array<IAction | ISeparator>;
-  actionResolver?: (rowData: IRowData, extraData: IExtraData) => Array<IAction | ISeparator>;
-  areActionsDisabled?: (rowData: IRowData, extraData: IExtraData) => boolean;
+  onCollapse?: OnCollapse;
+  onExpand?: OnExpand;
+  onSelect?: OnSelect;
+  onSort?: OnSort;
+  actions?: IActions;
+  actionResolver?: IActionsResolver;
+  areActionsDisabled?: IAreActionsDisabled;
   header?: React.ReactNode;
   caption?: React.ReactNode;
   rowLabeledBy?: string;
@@ -134,20 +160,21 @@ export interface TableProps extends Omit<Omit<React.HTMLProps<HTMLTableElement>,
   contentId?: string;
   dropdownPosition?: 'right' | 'left';
   dropdownDirection?: 'up' | 'down';
-  rows: Array<IRow | Array<string>>;
-  cells: Array<ICell | string>;
+  rows: (IRow | string[])[];
+  cells: (ICell | string)[];
   bodyWrapper?: Function;
   rowWrapper?: Function;
+  role?: string;
 }
 
 export const TableContext = React.createContext({
   headerData: null as any,
   headerRows: null as IHeaderRow[],
-  rows: []
+  rows: [] as (IRow | string[])[]
 });
 
-class Table extends React.Component<TableProps, {}> {
-  public static defaultProps = {
+export class Table extends React.Component<TableProps, {}> {
+  static defaultProps = {
     children: null as React.ReactNode,
     className: '',
     variant: null as TableVariant,
@@ -164,13 +191,18 @@ class Table extends React.Component<TableProps, {}> {
     role: 'grid'
   }
 
-  isSelected = (row: any) => row.selected === true;
+  isSelected = (row: IRow) => row.selected === true;
 
-  areAllRowsSelected = (rows: any) =>
-    rows.every((row: any) => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
+  areAllRowsSelected = (rows: IRow[]) => {
+    if (rows === undefined || rows.length === 0) {
+      return false;
+    }
+    return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
+  };
     
   render(){
     const {
+      'aria-label': ariaLabel,
       caption,
       header,
       className,
@@ -199,15 +231,16 @@ class Table extends React.Component<TableProps, {}> {
       ...props
     } = this.props;
 
-    if (!this.props['aria-label'] && !caption && !header && role !== 'presentation') {
-      throw new Error('Specify at least one of: header, caption, aria-label');
+    if (!ariaLabel && !caption && !header && role !== 'presentation') {
+      // tslint:disable-next-line:no-console
+      console.error('Table: Specify at least one of: header, caption, aria-label')
     }
 
     const headerData = calculateColumns(cells, {
       sortBy,
       onSort,
       onSelect,
-      allRowsSelected: onSelect ? this.areAllRowsSelected(rows) : false,
+      allRowsSelected: onSelect ? this.areAllRowsSelected(rows as IRow[]) : false,
       actions,
       actionResolver,
       areActionsDisabled,
@@ -232,6 +265,7 @@ class Table extends React.Component<TableProps, {}> {
         {header}
         <Provider
           {...props}
+          aria-label = {ariaLabel}
           renderers={{
             body: {
               wrapper: bodyWrapper || BodyWrapper,
@@ -259,5 +293,4 @@ class Table extends React.Component<TableProps, {}> {
       </TableContext.Provider>
     );
   }
-}
-export default Table;
+};

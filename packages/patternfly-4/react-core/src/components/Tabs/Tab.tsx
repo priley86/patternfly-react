@@ -10,7 +10,7 @@ export interface TabProps extends React.HTMLProps<HTMLAnchorElement | HTMLButton
   /** Tab title */
   title: string; 
   /** uniquely identifies the tab */
-  eventKey: number; 
+  eventKey: number | string; 
   /** child id for case in which a TabContent section is defined outside of a Tabs component */
   tabContentId?: string | number; 
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
@@ -36,15 +36,17 @@ const Tab0: React.FC<TabProps> = ({
 }
 
 interface ForwardedRefProps extends TabProps {
-  forwardRef: React.Ref<any>;
+  forwardRef?: React.Ref<any>;
 }
 
 const withForwardedRef = (Component: any) => {
-  const TabContainer: React.FC<ForwardedRefProps> = (props: ForwardedRefProps) => {
-    const { forwardRef, ...rest } = props;
-    return <Component ref={forwardRef} {...rest} />;
+  class TabContainer extends React.Component<ForwardedRefProps> {
+    render() {
+      const { forwardRef, ...rest } = this.props;
+      return <Component ref={forwardRef} {...rest} />;
+    }
   }
-  return React.forwardRef((props: TabProps, tabContentRef) => <TabContainer {...props} forwardRef={tabContentRef} />);
+  return React.forwardRef((props: any, tabContentRef) => <TabContainer {...props} forwardRef={tabContentRef} />);
 };
 
 export const Tab = withForwardedRef(Tab0);

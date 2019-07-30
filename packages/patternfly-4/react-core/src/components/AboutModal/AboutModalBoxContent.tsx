@@ -27,13 +27,10 @@ export const AboutModalBoxContent: React.SFC<AboutModalBoxContentProps> = ({
 }: AboutModalBoxContentProps) => (
   <div className={css(styles.aboutModalBoxContent, className)} id={id} {...props}>
     <div className={css('pf-c-about-modal-box__body')}>
-      {noAboutModalBoxContentContainer
-      ? children
-      : <div className={css(contentStyles.content)}>{children}</div>
-      }
+      {noAboutModalBoxContentContainer ? children : <div className={css(contentStyles.content)}>{children}</div>}
     </div>
-    <div className={css(styles.aboutModalBoxStrapline)}>
-      <p className={css(titleStyles.title, titleStyles.modifiers.md)}>{trademark}</p>
-    </div>
+    <p className={css(styles.aboutModalBoxStrapline)}>
+      {trademark}
+    </p>
   </div>
 );

@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.13...@patternfly/react-icons@3.10.14) (2019-07-24)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.10.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.12...@patternfly/react-icons@3.10.13) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.10.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.11...@patternfly/react-icons@3.10.12) (2019-07-17)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.10.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.10...@patternfly/react-icons@3.10.11) (2019-07-16)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.10.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.9...@patternfly/react-icons@3.10.10) (2019-07-10)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.10.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.8...@patternfly/react-icons@3.10.9) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
+## [3.10.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.7...@patternfly/react-icons@3.10.8) (2019-07-06)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.10.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.6...@patternfly/react-icons@3.10.7) (2019-07-05)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.10.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.5...@patternfly/react-icons@3.10.6) (2019-06-28)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.10.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.4...@patternfly/react-icons@3.10.5) (2019-06-27)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
 ## [3.10.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.3...@patternfly/react-icons@3.10.4) (2019-06-21)
 
 **Note:** Version bump only for package @patternfly/react-icons

@@ -1,15 +1,17 @@
 ---
 title: 'Select'
 cssPrefix: 'pf-c-select'
-propComponents: ['Select', 'SelectOption', 'CheckboxSelectGroup', 'CheckboxSelectOption']
+propComponents: ['Select', 'SelectOption', 'SelectGroup']
+typescript: true
 ---
 
-import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
 
 ## Single select input
+
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
   constructor(props) {
@@ -87,9 +89,10 @@ class SingleSelectInput extends React.Component {
 ```
 
 ## Checkbox select input
+
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 class CheckboxSelectInput extends React.Component {
   constructor(props) {
@@ -128,11 +131,11 @@ class CheckboxSelectInput extends React.Component {
     };
 
     this.options = [
-      <CheckboxSelectOption key={0} value="Active" />,
-      <CheckboxSelectOption key={1} value="Cancelled" />,
-      <CheckboxSelectOption key={2} value="Paused" />,
-      <CheckboxSelectOption key={3} value="Warning" />,
-      <CheckboxSelectOption key={4} value="Restarted" />
+      <SelectOption key={0} value="Active" />,
+      <SelectOption key={1} value="Cancelled" />,
+      <SelectOption key={2} value="Paused" />,
+      <SelectOption key={3} value="Warning" />,
+      <SelectOption key={4} value="Restarted" />
     ];
   }
 
@@ -163,9 +166,10 @@ class CheckboxSelectInput extends React.Component {
 ```
 
 ## Grouped checkbox select input
+
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
 
 class GroupedCheckboxSelectInput extends React.Component {
   constructor(props) {
@@ -203,18 +207,18 @@ class GroupedCheckboxSelectInput extends React.Component {
     };
 
     this.options = [
-      <CheckboxSelectGroup label="Status" key="group1">
-        <CheckboxSelectOption key={0} value="Running" />
-        <CheckboxSelectOption key={1} value="Stopped" />
-        <CheckboxSelectOption key={2} value="Down" />
-        <CheckboxSelectOption key={3} value="Degraded" />
-        <CheckboxSelectOption key={4} value="Needs Maintenence" />
-      </CheckboxSelectGroup>,
-      <CheckboxSelectGroup label="Vendor Names" key="group2">
-        <CheckboxSelectOption key={5} value="Dell" />
-        <CheckboxSelectOption key={6} value="Samsung" isDisabled />
-        <CheckboxSelectOption key={7} value="Hewlett-Packard" />
-      </CheckboxSelectGroup>
+      <SelectGroup label="Status" key="group1">
+        <SelectOption key={0} value="Running" />
+        <SelectOption key={1} value="Stopped" />
+        <SelectOption key={2} value="Down" />
+        <SelectOption key={3} value="Degraded" />
+        <SelectOption key={4} value="Needs Maintenence" />
+      </SelectGroup>,
+      <SelectGroup label="Vendor Names" key="group2">
+        <SelectOption key={5} value="Dell" />
+        <SelectOption key={6} value="Samsung" isDisabled />
+        <SelectOption key={7} value="Hewlett-Packard" />
+      </SelectGroup>
     ];
   }
 
@@ -228,7 +232,6 @@ class GroupedCheckboxSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.checkbox}
-          aria-label="Grouped Checkbox Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}
@@ -246,9 +249,10 @@ class GroupedCheckboxSelectInput extends React.Component {
 ```
 
 ## Typeahead select input
+
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 class TypeaheadSelectInput extends React.Component {
   constructor(props) {
@@ -312,11 +316,7 @@ class TypeaheadSelectInput extends React.Component {
           placeholderText="Select a state"
         >
           {this.options.map((option, index) => (
-            <SelectOption
-              isDisabled={option.disabled}
-              key={index}
-              value={option.value}
-            />
+            <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
           ))}
         </Select>
       </div>
@@ -325,10 +325,102 @@ class TypeaheadSelectInput extends React.Component {
 }
 ```
 
-## Multiple typeahead select input
+## Typeahead select input - custom filtering
+
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+class TypeaheadSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = [
+      <SelectOption key={0} value="Alabama" />,
+      <SelectOption key={1} value="Florida" />,
+      <SelectOption key={2} value="New Jersey" />,
+      <SelectOption key={3} value="New Mexico" />,
+      <SelectOption key={4} value="New York" />,
+      <SelectOption key={5} value="North Carolina" />
+    ];
+
+    this.state = {
+      isExpanded: false,
+      selected: null
+    };
+
+    this.onToggle = isExpanded => {
+      this.setState({
+        isExpanded
+      });
+    };
+
+    this.onSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          selected: selection,
+          isExpanded: false
+        });
+        console.log('selected:', selection);
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: null,
+        isExpanded: false
+      });
+    };
+
+    this.customFilter = (e) => {
+      let input;
+      try {
+        input = new RegExp(e.target.value, 'i');
+      } catch (err) {
+        input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+      }
+      let typeaheadFilteredChildren =
+        e.target.value !== ''
+          ? this.options.filter(child => input.test(child.props.value))
+          : this.options;
+      return typeaheadFilteredChildren;
+    }
+  }
+
+  render() {
+    const { isExpanded, selected } = this.state;
+    const titleId = 'typeahead-select-id';
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Select a state
+        </span>
+        <Select
+          variant={SelectVariant.typeahead}
+          aria-label="Select a state"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          onClear={this.clearSelection}
+          onFilter={this.customFilter}
+          selections={selected}
+          isExpanded={isExpanded}
+          ariaLabelledBy={titleId}
+          placeholderText="Select a state"
+        >
+          {this.options}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+
+## Multiple typeahead select input
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 class MultiTypeaheadSelectInput extends React.Component {
   constructor(props) {
@@ -371,7 +463,7 @@ class MultiTypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: [],
-        isExpanded: false,
+        isExpanded: false
       });
     };
   }
@@ -397,11 +489,7 @@ class MultiTypeaheadSelectInput extends React.Component {
           placeholderText="Select a state"
         >
           {this.options.map((option, index) => (
-            <SelectOption
-              isDisabled={option.disabled}
-              key={index}
-              value={option.value}
-            />
+            <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
           ))}
         </Select>
       </div>

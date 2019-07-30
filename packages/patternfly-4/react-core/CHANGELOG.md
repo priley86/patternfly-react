@@ -3,6 +3,696 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.78.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.2...@patternfly/react-core@3.78.0) (2019-07-29)
+
+
+### Bug Fixes
+
+* **Dropdown:** adds aria-label for icon only example ([#2517](https://github.com/patternfly/patternfly-react/issues/2517)) ([dd2dc02](https://github.com/patternfly/patternfly-react/commit/dd2dc02))
+
+
+### Features
+
+* **Select:** add select custom filter callback ([#2434](https://github.com/patternfly/patternfly-react/issues/2434)) ([878a107](https://github.com/patternfly/patternfly-react/commit/878a107))
+
+
+
+
+
+## [3.77.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.1...@patternfly/react-core@3.77.2) (2019-07-26)
+
+
+### Bug Fixes
+
+* **page:** skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/issues/2519)) ([1f709bd](https://github.com/patternfly/patternfly-react/commit/1f709bd))
+* **PF4: Pagination:** When 0 or negative number is passed to Pagintion show 0 pages ([#2558](https://github.com/patternfly/patternfly-react/issues/2558)) ([7dee544](https://github.com/patternfly/patternfly-react/commit/7dee544)), closes [#2557](https://github.com/patternfly/patternfly-react/issues/2557)
+
+
+
+
+
+## [3.77.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.0...@patternfly/react-core@3.77.1) (2019-07-25)
+
+
+### Bug Fixes
+
+* **form:** replace radio with check ([#2567](https://github.com/patternfly/patternfly-react/issues/2567)) ([f5516de](https://github.com/patternfly/patternfly-react/commit/f5516de))
+
+
+
+
+
+# [3.77.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.76.0...@patternfly/react-core@3.77.0) (2019-07-25)
+
+
+### Features
+
+* **Dropdown:** Convert dropdown to typescript ([#2502](https://github.com/patternfly/patternfly-react/issues/2502)) ([14474fe](https://github.com/patternfly/patternfly-react/commit/14474fe))
+
+
+
+
+
+# [3.76.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.75.3...@patternfly/react-core@3.76.0) (2019-07-25)
+
+
+### Features
+
+* **Tooltip:** Added support for aria prop from Tippy library ([#2539](https://github.com/patternfly/patternfly-react/issues/2539)) ([54dce53](https://github.com/patternfly/patternfly-react/commit/54dce53)), closes [#1458](https://github.com/patternfly/patternfly-react/issues/1458)
+
+
+
+
+
+## [3.75.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.75.2...@patternfly/react-core@3.75.3) (2019-07-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.75.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.75.1...@patternfly/react-core@3.75.2) (2019-07-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.75.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.75.0...@patternfly/react-core@3.75.1) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.75.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.74.0...@patternfly/react-core@3.75.0) (2019-07-22)
+
+
+### Features
+
+* **experimental:** add POC for experimental button and badge ([#2363](https://github.com/patternfly/patternfly-react/issues/2363)) ([3d4d322](https://github.com/patternfly/patternfly-react/commit/3d4d322))
+
+
+
+
+
+# [3.74.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.73.2...@patternfly/react-core@3.74.0) (2019-07-22)
+
+
+### Features
+
+* **Select:** update typeahead filtered list when children change ([#2518](https://github.com/patternfly/patternfly-react/issues/2518)) ([85562fe](https://github.com/patternfly/patternfly-react/commit/85562fe))
+
+
+
+
+
+## [3.73.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.73.1...@patternfly/react-core@3.73.2) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.73.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.73.0...@patternfly/react-core@3.73.1) (2019-07-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.73.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.72.3...@patternfly/react-core@3.73.0) (2019-07-17)
+
+
+### Features
+
+* **Tabs:** Implement overflow styles for secondary tabs ([#2512](https://github.com/patternfly/patternfly-react/issues/2512)) ([d840c4d](https://github.com/patternfly/patternfly-react/commit/d840c4d))
+
+
+
+
+
+## [3.72.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.72.2...@patternfly/react-core@3.72.3) (2019-07-17)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.72.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.72.1...@patternfly/react-core@3.72.2) (2019-07-16)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.72.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.72.0...@patternfly/react-core@3.72.1) (2019-07-15)
+
+
+### Bug Fixes
+
+* **options menu:** update examples to trigger select on the whole item ([#2513](https://github.com/patternfly/patternfly-react/issues/2513)) ([a533a7c](https://github.com/patternfly/patternfly-react/commit/a533a7c))
+
+
+
+
+
+# [3.72.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.71.0...@patternfly/react-core@3.72.0) (2019-07-12)
+
+
+### Features
+
+* **EmptyState:** update EmptyStateBody to use <div> instead of <p> ([#2499](https://github.com/patternfly/patternfly-react/issues/2499)) ([233fe25](https://github.com/patternfly/patternfly-react/commit/233fe25)), closes [#2494](https://github.com/patternfly/patternfly-react/issues/2494)
+
+
+
+
+
+# [3.71.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.70.1...@patternfly/react-core@3.71.0) (2019-07-12)
+
+
+### Features
+
+* **Select:** add optional display via children to option ([#2419](https://github.com/patternfly/patternfly-react/issues/2419)) ([03be1a7](https://github.com/patternfly/patternfly-react/commit/03be1a7))
+
+
+
+
+
+## [3.70.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.70.0...@patternfly/react-core@3.70.1) (2019-07-11)
+
+
+### Bug Fixes
+
+* **login page:** removes ariaLabel from checkbox ([#2455](https://github.com/patternfly/patternfly-react/issues/2455)) ([3cf57e3](https://github.com/patternfly/patternfly-react/commit/3cf57e3))
+
+
+
+
+
+# [3.70.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.69.0...@patternfly/react-core@3.70.0) (2019-07-11)
+
+
+### Features
+
+* **Pagination:** Let users enter numbers into the input field ([#2417](https://github.com/patternfly/patternfly-react/issues/2417)) ([38ed9d8](https://github.com/patternfly/patternfly-react/commit/38ed9d8)), closes [#2344](https://github.com/patternfly/patternfly-react/issues/2344)
+
+
+
+
+
+# [3.69.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.68.0...@patternfly/react-core@3.69.0) (2019-07-10)
+
+
+### Features
+
+* **Tabs:** Allow eventKey to accept a string ([#2493](https://github.com/patternfly/patternfly-react/issues/2493)) ([1bde27c](https://github.com/patternfly/patternfly-react/commit/1bde27c)), closes [#1446](https://github.com/patternfly/patternfly-react/issues/1446)
+
+
+
+
+
+# [3.68.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.4...@patternfly/react-core@3.68.0) (2019-07-10)
+
+
+### Bug Fixes
+
+* **aboutModal+modal:** now trap focus in browser ([#2428](https://github.com/patternfly/patternfly-react/issues/2428)) ([e9d7534](https://github.com/patternfly/patternfly-react/commit/e9d7534))
+
+
+### Features
+
+* **Grid:** Convert grid to typescript ([#2443](https://github.com/patternfly/patternfly-react/issues/2443)) ([d4f8231](https://github.com/patternfly/patternfly-react/commit/d4f8231))
+
+
+
+
+
+## [3.67.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.3...@patternfly/react-core@3.67.4) (2019-07-10)
+
+
+### Bug Fixes
+
+* **ApplicationLauncher:** Allow custom icon for application launcher toggle ([#2492](https://github.com/patternfly/patternfly-react/issues/2492)) ([9cdc85d](https://github.com/patternfly/patternfly-react/commit/9cdc85d))
+
+
+
+
+
+## [3.67.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.2...@patternfly/react-core@3.67.3) (2019-07-09)
+
+
+### Bug Fixes
+
+* **unit tests:** tests now pass in util.test.js ([#2489](https://github.com/patternfly/patternfly-react/issues/2489)) ([86981f6](https://github.com/patternfly/patternfly-react/commit/86981f6))
+
+
+
+
+
+## [3.67.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.1...@patternfly/react-core@3.67.2) (2019-07-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.67.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.0...@patternfly/react-core@3.67.1) (2019-07-08)
+
+
+### Bug Fixes
+
+* **Dropdown:** Provide option to not autofocus on first item ([#2473](https://github.com/patternfly/patternfly-react/issues/2473)) ([f094b2d](https://github.com/patternfly/patternfly-react/commit/f094b2d))
+
+
+
+
+
+# [3.67.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.66.1...@patternfly/react-core@3.67.0) (2019-07-08)
+
+
+### Features
+
+* **Toolbar:** Convert toolbar to typescript ([#2475](https://github.com/patternfly/patternfly-react/issues/2475)) ([b508e5d](https://github.com/patternfly/patternfly-react/commit/b508e5d))
+
+
+
+
+
+## [3.66.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.66.0...@patternfly/react-core@3.66.1) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
+# [3.66.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.65.0...@patternfly/react-core@3.66.0) (2019-07-08)
+
+
+### Features
+
+* **Split:** Convert split to typescript ([#2466](https://github.com/patternfly/patternfly-react/issues/2466)) ([a544f31](https://github.com/patternfly/patternfly-react/commit/a544f31))
+
+
+
+
+
+# [3.65.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.64.0...@patternfly/react-core@3.65.0) (2019-07-08)
+
+
+### Features
+
+* **datalist:** add hidden and visible breakpoints ([#2251](https://github.com/patternfly/patternfly-react/issues/2251)) ([fdbde6d](https://github.com/patternfly/patternfly-react/commit/fdbde6d))
+
+
+
+
+
+# [3.64.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.63.0...@patternfly/react-core@3.64.0) (2019-07-08)
+
+
+### Features
+
+* **Level:** Convert level to typescript ([#2450](https://github.com/patternfly/patternfly-react/issues/2450)) ([5c891a0](https://github.com/patternfly/patternfly-react/commit/5c891a0))
+
+
+
+
+
+# [3.63.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.62.1...@patternfly/react-core@3.63.0) (2019-07-08)
+
+
+### Features
+
+* **react-core:** add ouia compatibility to Switch ([#2304](https://github.com/patternfly/patternfly-react/issues/2304)) ([2cc4d48](https://github.com/patternfly/patternfly-react/commit/2cc4d48))
+
+
+
+
+
+## [3.62.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.62.0...@patternfly/react-core@3.62.1) (2019-07-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.62.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.61.1...@patternfly/react-core@3.62.0) (2019-07-05)
+
+
+### Features
+
+* **Gallery:** Convert gallery to typescript ([#2432](https://github.com/patternfly/patternfly-react/issues/2432)) ([f351fd0](https://github.com/patternfly/patternfly-react/commit/f351fd0))
+
+
+
+
+
+## [3.61.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.61.0...@patternfly/react-core@3.61.1) (2019-07-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.61.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.60.0...@patternfly/react-core@3.61.0) (2019-07-05)
+
+
+### Features
+
+* **Bullseye:** Convert bullseye to typescript ([#2427](https://github.com/patternfly/patternfly-react/issues/2427)) ([2515be5](https://github.com/patternfly/patternfly-react/commit/2515be5))
+
+
+
+
+
+# [3.60.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.5...@patternfly/react-core@3.60.0) (2019-07-05)
+
+
+### Features
+
+* **Stack:** Convert stack to typescript ([#2412](https://github.com/patternfly/patternfly-react/issues/2412)) ([a1c34b6](https://github.com/patternfly/patternfly-react/commit/a1c34b6))
+
+
+
+
+
+## [3.59.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.4...@patternfly/react-core@3.59.5) (2019-07-05)
+
+
+### Bug Fixes
+
+* **select:** removed ariaLabel from grouped checkbox select ([#2456](https://github.com/patternfly/patternfly-react/issues/2456)) ([415a462](https://github.com/patternfly/patternfly-react/commit/415a462))
+
+
+
+
+
+## [3.59.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.3...@patternfly/react-core@3.59.4) (2019-07-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.59.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.2...@patternfly/react-core@3.59.3) (2019-07-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.59.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.1...@patternfly/react-core@3.59.2) (2019-07-02)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.59.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.0...@patternfly/react-core@3.59.1) (2019-07-02)
+
+
+### Bug Fixes
+
+* **Modal:** get modal container from state to set/unset aria-hidden ([#2406](https://github.com/patternfly/patternfly-react/issues/2406)) ([dd49c7e](https://github.com/patternfly/patternfly-react/commit/dd49c7e))
+
+
+
+
+
+# [3.59.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.58.1...@patternfly/react-core@3.59.0) (2019-07-02)
+
+
+### Features
+
+* **Pagination:** Pagination Component Typescript Conversion ([#2256](https://github.com/patternfly/patternfly-react/issues/2256)) ([8a29a20](https://github.com/patternfly/patternfly-react/commit/8a29a20))
+
+
+
+
+
+## [3.58.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.58.0...@patternfly/react-core@3.58.1) (2019-07-01)
+
+
+### Bug Fixes
+
+* **clipboardcopy:** add read only expanded example  ([#2379](https://github.com/patternfly/patternfly-react/issues/2379)) ([2d3c9c2](https://github.com/patternfly/patternfly-react/commit/2d3c9c2))
+
+
+
+
+
+# [4.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.58.0...@patternfly/react-core@4.0.0) (2019-07-01)
+
+
+### Bug Fixes
+
+* **tooltip:** revert tippy2 upgrade ([#2326](https://github.com/patternfly/patternfly-react/issues/2326)) ([#2414](https://github.com/patternfly/patternfly-react/issues/2414)) ([3e919e3](https://github.com/patternfly/patternfly-react/commit/3e919e3))
+
+
+### Features
+
+* **OptionsMenu:** Add disabled modifier to the toggle ([#2401](https://github.com/patternfly/patternfly-react/issues/2401)) ([c6693c1](https://github.com/patternfly/patternfly-react/commit/c6693c1)), closes [#2396](https://github.com/patternfly/patternfly-react/issues/2396)
+* **Select:** convert to Typescript ([#2201](https://github.com/patternfly/patternfly-react/issues/2201)) ([fd9fca1](https://github.com/patternfly/patternfly-react/commit/fd9fca1))
+
+
+* **Select:** Checkbox select variant collapsed into Select. CheckboxSelectGroup now is a generic
+Select Group to be used in any variant.
+
+* fix(Select): fix optional flag on optional params
+
+* fix(Select): add tslint ignore to focus trap require (cannot use ES6)
+
+* fix(Select): fix function component declaration
+
+* feat(Select): add pr feedback, fix docs build
+
+* fix(Select): update test snapshots from rebase
+
+* feat(Select): add backwards compatibility with previous select (removing breaking changes)
+
+old method should still work as well as the new method
+
+* feat(Select): add pr feedback
+
+update tests, minor fixes
+
+* feat(Select): add props extensions
+
+* feat(Select): update props of group
+
+
+
+
+
+# (2019-07-01)
+
+
+### Bug Fixes
+
+* **tooltip:** revert tippy2 upgrade ([#2326](https://github.com/patternfly/patternfly-react/issues/2326)) ([#2414](https://github.com/patternfly/patternfly-react/issues/2414)) ([3e919e3](https://github.com/patternfly/patternfly-react/commit/3e919e3))
+
+
+
+
+
+# (2019-07-01)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# (2019-07-01)
+
+
+### Features
+
+* **OptionsMenu:** Add disabled modifier to the toggle ([#2401](https://github.com/patternfly/patternfly-react/issues/2401)) ([c6693c1](https://github.com/patternfly/patternfly-react/commit/c6693c1)), closes [#2396](https://github.com/patternfly/patternfly-react/issues/2396)
+
+
+
+
+
+# (2019-07-01)
+
+
+### Features
+
+* **Select:** convert to Typescript ([#2201](https://github.com/patternfly/patternfly-react/issues/2201)) ([fd9fca1](https://github.com/patternfly/patternfly-react/commit/fd9fca1))
+
+
+### BREAKING CHANGES
+
+* **Select:** Checkbox select variant collapsed into Select. CheckboxSelectGroup now is a generic
+Select Group to be used in any variant.
+
+* fix(Select): fix optional flag on optional params
+
+* fix(Select): add tslint ignore to focus trap require (cannot use ES6)
+
+* fix(Select): fix function component declaration
+
+* feat(Select): add pr feedback, fix docs build
+
+* fix(Select): update test snapshots from rebase
+
+* feat(Select): add backwards compatibility with previous select (removing breaking changes)
+
+old method should still work as well as the new method
+
+* feat(Select): add pr feedback
+
+update tests, minor fixes
+
+* feat(Select): add props extensions
+
+* feat(Select): update props of group
+
+
+
+
+
+# [3.58.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.57.2...@patternfly/react-core@3.58.0) (2019-07-01)
+
+
+### Bug Fixes
+
+* **tabs:** tab container refs ([#2402](https://github.com/patternfly/patternfly-react/issues/2402)) ([3c0a8a1](https://github.com/patternfly/patternfly-react/commit/3c0a8a1))
+
+
+### Features
+
+* **card:** Add compact card variation ([#2399](https://github.com/patternfly/patternfly-react/issues/2399)) ([e27ad9e](https://github.com/patternfly/patternfly-react/commit/e27ad9e))
+
+
+
+
+
+## [3.57.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.57.1...@patternfly/react-core@3.57.2) (2019-07-01)
+
+
+### Bug Fixes
+
+* **grid:** always remove props from {...props} ([#2404](https://github.com/patternfly/patternfly-react/issues/2404)) ([f549b95](https://github.com/patternfly/patternfly-react/commit/f549b95))
+
+
+
+
+
+## [3.57.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.57.0...@patternfly/react-core@3.57.1) (2019-06-28)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.57.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.56.1...@patternfly/react-core@3.57.0) (2019-06-27)
+
+
+### Bug Fixes
+
+* **aboutmodal:** change strapline element to paragraph ([#2376](https://github.com/patternfly/patternfly-react/issues/2376)) ([8a06aa2](https://github.com/patternfly/patternfly-react/commit/8a06aa2))
+
+
+### Features
+
+* **Notification Badge:** Adds the notification badge component ([#2342](https://github.com/patternfly/patternfly-react/issues/2342)) ([a0e7965](https://github.com/patternfly/patternfly-react/commit/a0e7965)), closes [#2021](https://github.com/patternfly/patternfly-react/issues/2021)
+
+
+
+
+
+## [3.56.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.56.0...@patternfly/react-core@3.56.1) (2019-06-27)
+
+
+### Bug Fixes
+
+* **Radio:** fix warning from undefined starting params ([#2292](https://github.com/patternfly/patternfly-react/issues/2292)) ([fe708e1](https://github.com/patternfly/patternfly-react/commit/fe708e1))
+
+
+
+
+
+# [3.56.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.55.0...@patternfly/react-core@3.56.0) (2019-06-27)
+
+
+### Features
+
+* **Page:** add page section main nav type variant ([#2268](https://github.com/patternfly/patternfly-react/issues/2268)) ([0c0d4a0](https://github.com/patternfly/patternfly-react/commit/0c0d4a0))
+
+
+
+
+
+# [3.55.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.54.1...@patternfly/react-core@3.55.0) (2019-06-27)
+
+
+### Features
+
+* **chipGroup:** add heading level prop to toolbar chip group label ([#2278](https://github.com/patternfly/patternfly-react/issues/2278)) ([d87ce91](https://github.com/patternfly/patternfly-react/commit/d87ce91))
+* **InputGroup:** Convert input group to typescript ([#2220](https://github.com/patternfly/patternfly-react/issues/2220)) ([0313519](https://github.com/patternfly/patternfly-react/commit/0313519))
+
+
+
+
+
+## [3.54.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.54.0...@patternfly/react-core@3.54.1) (2019-06-27)
+
+
+### Bug Fixes
+
+* **dropdown:** Automatically focus first dropdown item when DropdownMenu mounts ([#2355](https://github.com/patternfly/patternfly-react/issues/2355)) ([276f5fb](https://github.com/patternfly/patternfly-react/commit/276f5fb)), closes [#2083](https://github.com/patternfly/patternfly-react/issues/2083)
+* **Grid:** Update grid layout to support new 2xl breakpoint ([#2305](https://github.com/patternfly/patternfly-react/issues/2305)) ([2025c1c](https://github.com/patternfly/patternfly-react/commit/2025c1c))
+
+
+
+
+
+# [3.54.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.53.4...@patternfly/react-core@3.54.0) (2019-06-27)
+
+
+### Bug Fixes
+
+* **Data list:** Add DataListRow to imports ([#2353](https://github.com/patternfly/patternfly-react/issues/2353)) ([d20d481](https://github.com/patternfly/patternfly-react/commit/d20d481)), closes [#2338](https://github.com/patternfly/patternfly-react/issues/2338)
+
+
+### Features
+
+* **ClipboardCopy:** Convert clipboard copy to typescript ([#2131](https://github.com/patternfly/patternfly-react/issues/2131)) ([44168dd](https://github.com/patternfly/patternfly-react/commit/44168dd))
+* **PF Checkbox:** Add 3rd state to checkbox controlled by consumer ([#2252](https://github.com/patternfly/patternfly-react/issues/2252)) ([cf06254](https://github.com/patternfly/patternfly-react/commit/cf06254))
+
+
+
+
+
+## [3.53.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.53.3...@patternfly/react-core@3.53.4) (2019-06-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [3.53.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.53.2...@patternfly/react-core@3.53.3) (2019-06-25)
 
 

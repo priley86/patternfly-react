@@ -1,18 +1,18 @@
-// TODO Replace label props with PF css when available
-const COLOR_AXIS_FILL = 'transparent';
-const COLOR_AXIS_STROKE = '#D2D2D2';
+/* eslint-disable camelcase */
+import {
+  chart_axis_grid_stroke_Color,
+  chart_axis_tick_stroke_Color
+} from '@patternfly/react-tokens';
 
 // Axis theme
 export const AxisTheme = {
   axis: {
     style: {
       grid: {
-        stroke: COLOR_AXIS_STROKE
+        stroke: chart_axis_grid_stroke_Color.value
       },
       ticks: {
-        size: 5,
-        stroke: COLOR_AXIS_STROKE,
-        strokeWidth: 1
+        stroke: chart_axis_tick_stroke_Color.value
       }
     }
   },

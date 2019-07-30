@@ -1,5 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
+
 import {
   AnimatePropTypeInterface,
   D3Scale,
@@ -12,8 +13,9 @@ import {
   VictoryChart,
   VictoryChartProps,
   VictoryStyleInterface,
-  VictoryZoomContainer
+  VictoryZoomContainer,
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import {
   ChartLegend,
   ChartLegendOrientation,
@@ -21,14 +23,14 @@ import {
   ChartLegendWrapper
 } from "../ChartLegend";
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { getPaddingForSide, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartProps extends VictoryChartProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-area/
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-chart/
    */
   ' '?: any;
   /**
@@ -47,6 +49,20 @@ export interface ChartProps extends VictoryChartProps {
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: AnimatePropTypeInterface;
+  /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
   /**
    * The children to render with the chart
    */
@@ -152,6 +168,8 @@ export interface ChartProps extends VictoryChartProps {
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
+   *
+   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
   height?: number;
   /**
@@ -192,9 +210,9 @@ export interface ChartProps extends VictoryChartProps {
    */
   legendOrientation?: 'horizontal' | 'vertical';
   /**
-   * The legend position relation to the area chart. Valid values are 'bottom' and 'right'
+   * The legend position relation to the area chart. Valid values are 'bottom', 'bottom-left', and 'right'
    */
-  legendPosition?: 'bottom' | 'right';
+  legendPosition?: 'bottom' | 'bottom-left' | 'right';
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -330,17 +348,22 @@ export interface ChartProps extends VictoryChartProps {
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
+   *
+   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
   width?: number;
 }
 
 export const Chart: React.FunctionComponent<ChartProps> = ({
   allowZoom = false,
+  ariaDesc,
+  ariaTitle,
   children,
-  containerComponent = allowZoom ? <VictoryZoomContainer /> : undefined,
+  containerComponent = allowZoom ? <VictoryZoomContainer /> : <ChartContainer />,
+  legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
-  padding = {},
+  padding,
   standalone = true,
   themeColor,
   themeVariant,
@@ -348,17 +371,15 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
-  legendComponent = <ChartLegend data={legendData} orientation={legendOrientation} theme={theme} />,
   height = theme.chart.height,
   width = theme.chart.width,
   ...rest
 }: ChartProps) => {
   const defaultPadding = {
-    bottom: theme.chart.padding,
-    left: theme.chart.padding,
-    top: theme.chart.padding,
-    right: theme.chart.padding,
-    ...(padding as any)
+    bottom: getPaddingForSide('bottom',  padding, theme.chart.padding),
+    left: getPaddingForSide('left', padding, theme.chart.padding),
+    right: getPaddingForSide('right', padding, theme.chart.padding),
+    top: getPaddingForSide('top', padding, theme.chart.padding),
   };
 
   const chartSize = {
@@ -366,25 +387,32 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     width: Math.abs(width - (defaultPadding.left + defaultPadding.right))
   };
 
-  const getLegendComponent = () => {
-    const legendProps = legendComponent.props ? legendComponent.props : {};
-    return React.cloneElement(legendComponent as React.ReactElement<any>, {
-      data: legendData,
-      orientation: legendOrientation,
-      theme,
-      ...legendProps
-    });
-  };
+  const container = React.cloneElement(containerComponent as React.ReactElement<any>, {
+    desc: ariaDesc,
+    title: ariaTitle,
+    theme,
+    ...containerComponent.props
+  });
 
-  // Returns a legend
-  const getLegend = () => {
-    if (!legendComponent.props.data) {
+  const legend = React.cloneElement(legendComponent as React.ReactElement<any>, {
+    data: legendData,
+    orientation: legendOrientation,
+    theme,
+    ...legendComponent.props
+  });
+
+  // Returns a wrapped legend
+  const getWrappedLegend = () => {
+    if (!legend.props.data) {
       return null;
     }
     let dx = 0;
-    let dy = defaultPadding.top || 0;
+    let dy = defaultPadding.top;
     if (legendPosition === ChartLegendPosition.bottom) {
       dy += ChartCommonStyles.legend.margin;
+    } else if (legendPosition === ChartLegendPosition.bottomLeft) {
+      dy += ChartCommonStyles.legend.margin;
+      dx += defaultPadding.left > 10 ? defaultPadding.left - 10 : -10;
     } else if (legendPosition === ChartLegendPosition.right) {
       dx += defaultPadding.left;
     }
@@ -401,14 +429,14 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
         svgWidth={width}
         theme={theme}
       >
-        {getLegendComponent()}
+        {legend}
       </ChartLegendWrapper>
     );
   };
 
   return (
     <VictoryChart
-      containerComponent={containerComponent}
+      containerComponent={container}
       height={height}
       padding={defaultPadding}
       theme={theme}
@@ -416,7 +444,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       {...rest}
     >
       {children}
-      {getLegend()}
+      {getWrappedLegend()}
     </VictoryChart>
   );
 };

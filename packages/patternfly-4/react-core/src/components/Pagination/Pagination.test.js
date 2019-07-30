@@ -18,6 +18,11 @@ describe('component render', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test('zero results', () => {
+    const wrapper = mount(<Pagination itemCount={0} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test('last page', () => {
     const wrapper = mount(<Pagination itemCount={20} perPage={10} page={2} />);
     expect(wrapper).toMatchSnapshot();
@@ -111,7 +116,8 @@ describe('API', () => {
       wrapper
         .find('input')
         .first()
-        .simulate('change', { target: { value: '1' } });
+        .simulate('change', { target: { value: '1' } })
+        .simulate('keydown', { keyCode: 13 });
       expect(onSetPage.mock.calls).toHaveLength(1);
       expect(onSetPage.mock.calls[0][1]).toBe(1);
     });
@@ -121,7 +127,8 @@ describe('API', () => {
       wrapper
         .find('input')
         .first()
-        .simulate('change', { target: { value: 'a' } });
+        .simulate('change', { target: { value: 'a' } })
+        .simulate('keydown', { keyCode: 13 });
       expect(onSetPage.mock.calls).toHaveLength(1);
       expect(onSetPage.mock.calls[0][1]).toBe(1);
     });
@@ -131,7 +138,8 @@ describe('API', () => {
       wrapper
         .find('input')
         .first()
-        .simulate('change', { target: { value: '10' } });
+        .simulate('change', { target: { value: '10' } })
+        .simulate('keydown', { keyCode: 13 });
       expect(onSetPage.mock.calls).toHaveLength(1);
       expect(onSetPage.mock.calls[0][1]).toBe(4);
     });
@@ -141,7 +149,8 @@ describe('API', () => {
       wrapper
         .find('input')
         .first()
-        .simulate('change', { target: { value: '-10' } });
+        .simulate('change', { target: { value: '-10' } })
+        .simulate('keydown', { keyCode: 13 });
       expect(onSetPage.mock.calls).toHaveLength(1);
       expect(onSetPage.mock.calls[0][1]).toBe(1);
     });

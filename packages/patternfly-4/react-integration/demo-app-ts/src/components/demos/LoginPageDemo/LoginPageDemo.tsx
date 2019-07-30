@@ -68,6 +68,10 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
     this.setState({ showHelperText: !this.state.usernameValue || !this.state.passwordValue });
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const helperText = (
       <React.Fragment>
@@ -146,7 +150,6 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
         rememberMeLabel="Keep me logged in for 30 days."
         isRememberMeChecked={this.state.isRememberMeChecked}
         onChangeRememberMe={this.onRememberMeClick}
-        rememberMeAriaLabel="Remember me Checkbox"
         onLoginButtonClick={this.onLoginButtonClick}
       />
     );

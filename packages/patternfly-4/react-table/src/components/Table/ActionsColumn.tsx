@@ -1,53 +1,37 @@
 import * as React from 'react';
 import {
-  Omit,
   Dropdown,
+  DropdownPosition,
+  DropdownDirection,
   KebabToggle,
   DropdownItem,
-  DropdownItemProps,
   DropdownSeparator
 } from '@patternfly/react-core';
 
-//todo: export from react-core as enum
-export enum DropdownPosition {
-  right = 'right',
-  left= 'left'
-}
-
-//todo: export from react-core as enum
-export enum DropdownDirection {
-  up = 'up',
-  down = 'down',
-}
-
-export interface ActionsItem extends Omit<DropdownItemProps, 'title'> {
-  isSeparator?: boolean;
-  itemKey?: string;
-  title?: string | React.ReactNode;
-}
+import { IAction, IExtraData, IRowData } from './Table';
 
 export interface ActionsColumnProps {
   children?: React.ReactNode;
-  items: ActionsItem[];
+  items: IAction[];
   isDisabled?: boolean;
   dropdownPosition?: DropdownPosition;
   dropdownDirection?: DropdownDirection;
-  rowData?: object | undefined;
-  extraData?: { rowIndex: number, columnIndex: number, column: object, property: string };
+  rowData?: IRowData;
+  extraData?: IExtraData;
 };
 
 export interface ActionsColumnState {
   isOpen: boolean;
 }
 
-class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnState> {
-  public static defaultProps = {
+export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnState> {
+  static defaultProps = {
     children: null as React.ReactNode,
-    items: [] as ActionsItem[],
+    items: [] as IAction[],
     dropdownPosition: DropdownPosition.right,
     dropdownDirection: DropdownDirection.down,
-    rowData: {},
-    extraData: {}
+    rowData: {} as IRowData,
+    extraData: {} as IExtraData
   }
   constructor (props: ActionsColumnProps){
     super(props);
@@ -62,11 +46,12 @@ class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnSta
     });
   }
 
-  onSelect = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, 
-    onClick: ((event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, rowIndex: number | undefined, rowData: object | undefined, extraData: object | undefined) => void) | undefined): void => {
+  onSelect = (event:  React.MouseEvent<any> | React.KeyboardEvent | MouseEvent, 
+    onClick: ((event: React.MouseEvent, rowIndex: number | undefined, rowData: IRowData, extraData: IExtraData) => void) | undefined): void => {
     const { rowData, extraData } = this.props;
     event.preventDefault();
-    onClick && onClick(event, extraData && extraData.rowIndex, rowData, extraData);
+    // tslint:disable-next-line:no-unused-expression
+    onClick && onClick(event as React.MouseEvent, extraData && extraData.rowIndex, rowData, extraData);
     this.setState({
       isOpen: !this.state.isOpen
     });
@@ -104,5 +89,3 @@ class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnSta
     );
   }
 }
-
-export default ActionsColumn;

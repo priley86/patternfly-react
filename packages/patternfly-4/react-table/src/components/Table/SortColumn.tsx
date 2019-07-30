@@ -2,21 +2,17 @@ import * as React from 'react';
 import { LongArrowAltUpIcon, LongArrowAltDownIcon, ArrowsAltVIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+import { SortByDirection } from './Table';
 
-export enum SortByDirection {
-  asc = 'asc',
-  desc = 'desc'
-};
-
-interface SortColumnProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface SortColumnProps extends React.HTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   className?: string;
-  isSortedBy?: Boolean;
+  isSortedBy?: boolean;
   onSort?: Function;
   sortDirection?: string;
 } 
 
-const SortColumn: React.FunctionComponent<SortColumnProps> = ({
+export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
   children = null,
   className = '',
   isSortedBy = false,
@@ -39,5 +35,3 @@ const SortColumn: React.FunctionComponent<SortColumnProps> = ({
     </button>
   );
 };
-
-export default SortColumn;

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
@@ -19,9 +20,9 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** additional classes added to the Tabs */
   className?: string;
   /** the index of the active tab */
-  activeKey?: number;
+  activeKey?: number | string;
   /** handle tab selection */
-  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number) => void;
+  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
   /** uniquely identifies the Tabs */
   id?: string;
   /** enables the filled tab list layout */
@@ -33,7 +34,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** aria-label for the right Scroll Button */
   rightScrollAriaLabel?: string;
   /** determines what tag is used around the Tabs. Use "nav" to define the Tabs inside a navigation region */
-  variant?: typeof TabsVariant | 'div' | 'nav';
+  variant?: 'div' | 'nav';
   /** provides an accessible label for the Tabs. Labels should be unique for each set of Tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the Tabs from other navigation regions on the page. */
   'aria-label'?: string;
 }
@@ -64,7 +65,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     isFilled: false,
     isSecondary: false,
     leftScrollAriaLabel: 'Scroll left',
-    rightScrollAriaLabel: 'Scroll Right',
+    rightScrollAriaLabel: 'Scroll right',
     variant: TabsVariant.div
   };
 
@@ -204,15 +205,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           )}
           {...props}
         >
-          {!isSecondary && (
             <button
-              className={css(styles.tabsScrollButton)}
+              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={leftScrollAriaLabel}
               onClick={this.scrollLeft}
             >
               <AngleLeftIcon />
             </button>
-          )}
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
             {React.Children.map(children, (child: any, index) => (
               <li
@@ -225,7 +224,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               >
                 <Tab
                   className={css(styles.tabsButton)}
-                  onClick={event => this.handleTabClick(event, child.props.eventKey, child.props.tabContentRef)}
+                  onClick={(event: any) => this.handleTabClick(event, child.props.eventKey, child.props.tabContentRef)}
                   id={`pf-tab-${child.props.eventKey}-${child.props.id || uniqueId}`}
                   aria-controls={
                     child.props.tabContentId
@@ -239,15 +238,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               </li>
             ))}
           </ul>
-          {!isSecondary && (
             <button
-              className={css(styles.tabsScrollButton)}
+              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={rightScrollAriaLabel}
               onClick={this.scrollRight}
             >
               <AngleRightIcon />
             </button>
-          )}
         </Component>
         {React.Children.map(children, (child: any, index) =>
           !child.props.children ? null : (

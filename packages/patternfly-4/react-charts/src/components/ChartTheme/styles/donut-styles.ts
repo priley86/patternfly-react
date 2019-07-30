@@ -1,17 +1,23 @@
-// TODO Replace label props with PF css when available
+/* eslint-disable camelcase */
+import {
+  chart_global_FontSize_sm,
+  chart_global_FontSize_2xl,
+  chart_donut_label_subtitle_Fill,
+  chart_donut_label_subtitle_position
+} from '@patternfly/react-tokens';
 
 // Donut styles
 export const DonutStyles = {
   label: {
     subTitle: {
       // Victory props only
-      fill: '#bbb',
-      fontSize: 14
+      fill: chart_donut_label_subtitle_Fill.value,
+      fontSize: chart_global_FontSize_sm.value
     },
-    subTitlePosition: 'center',
+    subTitlePosition: chart_donut_label_subtitle_position.value,
     title: {
       // Victory props only
-      fontSize: 24
+      fontSize: chart_global_FontSize_2xl.value
     }
   }
 };
