@@ -433,6 +433,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabDemo
   },
   {
+    id: 'table-actions-demo',
+    name: 'Table Actions Demo',
+    componentType: Examples.TableActionsDemo
+  },
+  {
     id: 'table-breakpoint-modifers-demo',
     name: 'Table Breakpoint Modifers Demo',
     componentType: Examples.TableBreakpointModifersDemo
@@ -457,13 +462,18 @@ export const Demos: DemoInterface[] = [
     name: 'Table Compact Expandable Demo',
     componentType: Examples.TableCompactExpandableDemo
   },
-  {
-    id: 'table-compound-expandable-demo',
-    name: 'Table Compound Expandable Demo',
-    componentType: Examples.TableCompoundExpandableDemo
-  },
+  // {
+  //   id: 'table-compound-expandable-demo',
+  //   name: 'Table Compound Expandable Demo',
+  //   componentType: Examples.TableCompoundExpandableDemo
+  // },
   {
     id: 'table-first-cell-as-header-demo',
+    name: 'Table First Cell As Header Demo',
+    componentType: Examples.TableFirstCellAsHeaderDemo
+  },
+  {
+    id: 'table-headers-wrappable-demo',
     name: 'Table Headers Wrappable Demo',
     componentType: Examples.TableHeadersWrappableDemo
   },
