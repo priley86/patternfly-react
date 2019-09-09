@@ -161,7 +161,7 @@ export interface TableProps {
   contentId?: string;
   dropdownPosition?: 'right' | 'left';
   dropdownDirection?: 'up' | 'down';
-  rows: (IRow | string[])[];
+  rows?: (IRow | string[])[];
   cells: (ICell | string)[];
   bodyWrapper?: Function;
   rowWrapper?: Function;
@@ -189,7 +189,8 @@ export class Table extends React.Component<TableProps, {}> {
     "caption": undefined as React.ReactNode,
     'aria-label': undefined as string,
     "gridBreakPoint": TableGridBreakpoint.gridMd,
-    "role": 'grid'
+    "role": 'grid',
+    "rows": [] as (IRow | string[])[]
   };
 
   isSelected = (row: IRow) => row.selected === true;
