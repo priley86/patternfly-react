@@ -1,5 +1,17 @@
 import camelcase from 'camel-case';
-import { injectGlobal, caches as emotionCache } from 'emotion';
+import createEmotion from 'create-emotion'
+
+const globalNonce = 'emotion';
+if (typeof window === 'undefined') {
+  globalNonce = window.globalNonce || globalNonce;
+}
+
+const {
+  injectGlobal,
+  caches: emotionCache
+} = createEmotion({}, {
+  nonce: globalNonce
+});
 
 export function isValidStyleDeclaration(styleObj) {
   return Boolean(styleObj) && typeof styleObj.__className === 'string' && typeof styleObj.__inject === 'function';

@@ -1,4 +1,18 @@
-import { css as emotionCSS, cx, injectGlobal } from 'emotion';
+import createEmotion from 'create-emotion';
+
+const globalNonce = 'emotion';
+if (typeof window === 'undefined') {
+  globalNonce = window.globalNonce || globalNonce;
+}
+
+const {
+  cx,
+  injectGlobal,
+  css: emotionCSS
+} = createEmotion({}, {
+  nonce: globalNonce
+});
+
 import {
   formatClassName,
   getCSSClasses,
