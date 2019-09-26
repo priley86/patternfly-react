@@ -33,6 +33,8 @@ import {
 
 import DemoSortableTable from './demo/DemoSortableTable';
 
+import CustomRowWrapper from './demo/CustomRowWrapper';
+
 ## Simple table
 
 ```js
@@ -49,6 +51,8 @@ import {
   cellWidth,
   textCenter,
 } from '@patternfly/react-table';
+
+import CustomRowWrapper from './demo/CustomRowWrapper';
 
 class SimpleTable extends React.Component {
   constructor(props) {
@@ -99,7 +103,7 @@ class SimpleTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Simple Table" cells={columns} rows={rows}>
+      <Table caption="Simple Table" cells={columns} rows={rows} rowWrapper={CustomRowWrapper}>
         <TableHeader />
         <TableBody />
       </Table>
